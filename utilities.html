@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="../assets/lightpack.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <script src="../assets/lightpack.min.js"></script>
+  <style>
+    body {
+      font-family: 'Montserrat', Verdana, system-ui, sans-serif !important;
+      background-color: var(--color-background);
+      font-size: var(--fs-sm);
+    }
+
+    .demo-container {
+      margin: var(--g-5);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--g-2);
+      color: var(--color-text);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      margin: 0 auto;
+      align-items: flex-start;
+    }
+
+    .sidebar {
+      width: 300px;
+      background: var(--color-background);
+      border-right: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+      padding: 2.2rem 1.1rem 2.2rem 2.1rem;
+      height: 100vh;
+      overflow-y: auto;
+      border-radius: 0;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar .sidebar-logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2.2rem;
+      font-size: 1.12em;
+      font-weight: 700;
+      color: var(--color-text);
+      gap: 0.5em;
+    }
+
+    .sidebar .sidebar-logo img {
+      max-height: 2.5em;
+      margin-right: 0.5em;
+    }
+
+    .sidebar-section {
+      margin-bottom: 1em;
+    }
+
+    .sidebar-section-title {
+      margin-bottom: 0.7em;
+      color: var(--color-text);
+      font-size: --fs-sm
+      letter-spacing: 0.1px;
+      margin-top: 2.1em;
+      text-transform: uppercase;
+    }
+
+    .sidebar-section-title:first-child {
+      margin-top: 0;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 0.18em;
+    }
+
+    .sidebar a {
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: 1em;
+      display: flex;
+      align-items: center;
+      padding: 7px 0 7px 0.8em;
+      border-radius: 6px;
+      position: relative;
+      transition: background var(--transition-slow), color var(--transition-slow);
+    }
+
+    .sidebar a:hover {
+      background: var(--color-muted);
+    }
+
+    .sidebar a.active,
+    .sidebar a[aria-current="page"] {
+      background: var(--color-muted);
+      font-weight: 700;
+    }
+
+    .sidebar .sidebar-divider {
+      border-bottom: 1px solid var(--color-border);
+      margin: 1.5em 0 1.5em 0;
+    }
+
+    main {
+      flex: 1 1 0;
+      padding: 1rem 2.2rem 2.5rem 2.2rem;
+      max-width: 780px;
+      margin: 2.5rem auto 2.5rem auto;
+      margin-top: 0;
+      background: var(--color-background);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    code {
+      padding: 2px 5px;
+      background-color: var(--color-muted);
+      border-radius: var(--radius-sm);
+      font-size: var(--fs-xs);
+    }
+
+    pre,
+    pre>code {
+      background: var(--color-surface);
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', 'SFMono-Regular', 'Menlo', 'Monaco', monospace;
+      font-size: var(--fs-sm);
+    }
+
+    pre {
+      padding: 1em;
+      overflow-x: auto;
+    }
+
+    pre>code {
+      padding: 0;
+    }
+
+
+    .toc {
+      width: 300px;
+      min-width: 180px;
+      max-width: 300px;
+      padding: 2.2rem 1.1rem 2.2rem 0.5rem;
+      position: sticky;
+      top: 0;
+      align-self: flex-start;
+      font-size: var(--fs-sm);
+      color: #333;
+      background: none;
+      z-index: 5;
+      height: 100vh;
+      overflow-y: auto;
+      display: block;
+    }
+
+    .toc-title {
+      font-weight: 700;
+      margin-bottom: 1.1em;
+      color: var(--color-danger);
+    }
+
+    .toc-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .toc-list li {
+      padding: 0;
+    }
+
+    .toc-list>li {
+      padding-left: 0;
+      margin-bottom: 0.4em;
+    }
+
+    .toc-level2 {
+      padding-left: 1.3em;
+      margin-bottom: 0.2em;
+      font-size: 0.97em;
+    }
+
+    .toc-level3 {
+      padding-left: 2.2em;
+      margin-bottom: 0.15em;
+      font-size: 0.95em;
+    }
+
+    .toc a {
+      color: var(--color-text);
+      text-decoration: none;
+      display: block;
+      border-radius: 4px;
+      padding: 2px 4px;
+      transition: color 0.14s, background 0.14s;
+    }
+
+    .toc a:hover {
+      color: var(--color-danger);
+      text-decoration: underline;
+      background: var(--color-danger-lighter);
+    }
+
+    .toc a.active {
+      color: var(--color-danger);
+      background: var(--color-danger-lighter);
+      box-shadow: none;
+    }
+
+    @media (max-width: 1200px) {
+      .toc {
+        display: none;
+      }
+
+      main,
+      .blog-post {
+        max-width: 100%;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 950px) {
+      .container {
+        flex-direction: column;
+        padding: 0 0.5rem;
+      }
+
+      .sidebar {
+        width: 100%;
+        min-height: unset;
+        padding: 1.5rem 1rem;
+        position: static;
+        box-shadow: none;
+        height: unset;
+      }
+
+      main,
+      .blog-post {
+        margin: 1.5rem auto;
+        padding: 1.2rem 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="assets/logo.svg" /> Lightpack CSS
+      </div>
+                        <div class="sidebar-section">
+            <ul>
+                              <li>
+                  <a href="accordion.html"
+                    >
+                    Accordion                  </a>
+                </li>
+                              <li>
+                  <a href="alert.html"
+                    >
+                    Alert                  </a>
+                </li>
+                              <li>
+                  <a href="avatar.html"
+                    >
+                    Avatar                  </a>
+                </li>
+                              <li>
+                  <a href="badge.html"
+                    >
+                    Badge                  </a>
+                </li>
+                              <li>
+                  <a href="breadcrumb.html"
+                    >
+                    Breadcrumb                  </a>
+                </li>
+                              <li>
+                  <a href="button.html"
+                    >
+                    Button                  </a>
+                </li>
+                              <li>
+                  <a href="card.html"
+                    >
+                    Card                  </a>
+                </li>
+                              <li>
+                  <a href="drawer.html"
+                    >
+                    Drawer                  </a>
+                </li>
+                              <li>
+                  <a href="dropdown.html"
+                    >
+                    Dropdown                  </a>
+                </li>
+                              <li>
+                  <a href="form.html"
+                    >
+                    Form                  </a>
+                </li>
+                              <li>
+                  <a href="index.html"
+                    >
+                    Index                  </a>
+                </li>
+                              <li>
+                  <a href="layout.html"
+                    >
+                    Layout                  </a>
+                </li>
+                              <li>
+                  <a href="list.html"
+                    >
+                    List                  </a>
+                </li>
+                              <li>
+                  <a href="media.html"
+                    >
+                    Media                  </a>
+                </li>
+                              <li>
+                  <a href="modal.html"
+                    >
+                    Modal                  </a>
+                </li>
+                              <li>
+                  <a href="navbar.html"
+                    >
+                    Navbar                  </a>
+                </li>
+                              <li>
+                  <a href="pagination.html"
+                    >
+                    Pagination                  </a>
+                </li>
+                              <li>
+                  <a href="progress.html"
+                    >
+                    Progress                  </a>
+                </li>
+                              <li>
+                  <a href="spinner.html"
+                    >
+                    Spinner                  </a>
+                </li>
+                              <li>
+                  <a href="stepper.html"
+                    >
+                    Stepper                  </a>
+                </li>
+                              <li>
+                  <a href="table.html"
+                    >
+                    Table                  </a>
+                </li>
+                              <li>
+                  <a href="tabs.html"
+                    >
+                    Tabs                  </a>
+                </li>
+                              <li>
+                  <a href="theming.html"
+                    >
+                    Theming                  </a>
+                </li>
+                              <li>
+                  <a href="timeline.html"
+                    >
+                    Timeline                  </a>
+                </li>
+                              <li>
+                  <a href="toast.html"
+                    >
+                    Toast                  </a>
+                </li>
+                              <li>
+                  <a href="tooltip.html"
+                    >
+                    Tooltip                  </a>
+                </li>
+                              <li>
+                  <a href="utilities.html"
+                    class="active" aria-current="page" >
+                    Utilities                  </a>
+                </li>
+                              <li>
+                  <a href="variables.html"
+                    >
+                    Variables                  </a>
+                </li>
+                          </ul>
+          </div>
+                  </aside>
+    <main>
+      <h1>Lightpack CSS Utilities</h1>
+<p>This file lists <strong>every available utility class</strong> in Lightpack CSS, grouped by category. All utilities are defined in <code>/src/css/_utilities.css</code>.</p>
+<hr />
+<h2>Spacing Utilities</h2>
+<ul>
+<li><code>.gap-0</code> ... <code>.gap-9</code></li>
+<li><code>.gap-x-0</code> ... <code>.gap-x-9</code></li>
+<li><code>.gap-y-0</code> ... <code>.gap-y-9</code></li>
+<li><code>.m-0</code> ... <code>.m-9</code>, <code>.mt-0</code> ... <code>.mt-9</code>, <code>.mr-0</code> ... <code>.mr-9</code>, <code>.mb-0</code> ... <code>.mb-9</code>, <code>.ml-0</code> ... <code>.ml-9</code>, <code>.mx-auto</code></li>
+<li><code>.p-0</code> ... <code>.p-9</code>, <code>.pt-0</code> ... <code>.pt-9</code>, <code>.pr-0</code> ... <code>.pr-9</code>, <code>.pb-0</code> ... <code>.pb-9</code>, <code>.pl-0</code> ... <code>.pl-9</code></li>
+<li><code>.px-0</code> ... <code>.px-9</code>, <code>.py-0</code> ... <code>.py-9</code></li>
+</ul>
+<h2>Offset Utilities</h2>
+<ul>
+<li><code>.top-0</code> ... <code>.top-9</code>, <code>.right-0</code> ... <code>.right-9</code>, <code>.bottom-0</code> ... <code>.bottom-9</code>, <code>.left-0</code> ... <code>.left-9</code></li>
+</ul>
+<h2>Layout Utilities</h2>
+<ul>
+<li><code>.d-block</code>, <code>.d-inline</code>, <code>.d-inline-block</code>, <code>.d-none</code></li>
+<li><code>.visibility-hidden</code>, <code>.visibility-visible</code></li>
+<li><code>.static</code>, <code>.relative</code>, <code>.absolute</code>, <code>.fixed</code>, <code>.sticky</code></li>
+<li><code>.overflow-auto</code>, <code>.overflow-scroll</code>, <code>.overflow-hidden</code>, <code>.overflow-x-auto</code>, <code>.overflow-x-scroll</code>, <code>.overflow-x-hidden</code>, <code>.overflow-y-auto</code>, <code>.overflow-y-scroll</code>, <code>.overflow-y-hidden</code></li>
+<li><code>.scroll-smooth</code></li>
+<li><code>.flex</code>, <code>.inline-flex</code>, <code>.flex-row</code>, <code>.flex-row-reverse</code>, <code>.flex-col</code>, <code>.flex-col-reverse</code>, <code>.flex-wrap</code>, <code>.flex-nowrap</code>, <code>.flex-wrap-reverse</code>, <code>.flex-1</code>, <code>.flex-auto</code>, <code>.flex-initial</code>, <code>.flex-none</code>, <code>.grow</code>, <code>.grow-0</code>, <code>.shrink</code>, <code>.shrink-0</code></li>
+<li><code>.justify-start</code>, <code>.justify-center</code>, <code>.justify-between</code>, <code>.justify-end</code>, <code>.justify-around</code>, <code>.justify-evenly</code></li>
+<li><code>.items-start</code>, <code>.items-center</code>, <code>.items-end</code>, <code>.items-baseline</code>, <code>.items-stretch</code></li>
+<li><code>.content-start</code>, <code>.content-center</code>, <code>.content-end</code>, <code>.content-between</code>, <code>.content-around</code>, <code>.content-evenly</code></li>
+<li><code>.self-auto</code>, <code>.self-start</code>, <code>.self-center</code>, <code>.self-end</code>, <code>.self-stretch</code>, <code>.self-baseline</code></li>
+</ul>
+<h2>Content Utilities</h2>
+<ul>
+<li><code>.truncate</code>, <code>.text-ellipsis</code>, <code>.whitespace-nowrap</code>, <code>.break-words</code></li>
+</ul>
+<h2>Filter Utilities</h2>
+<ul>
+<li><code>.blur-sm</code>, <code>.brightness-110</code></li>
+</ul>
+<h2>Backdrop Filter Utilities</h2>
+<ul>
+<li><code>.backdrop-blur</code>, <code>.backdrop-brightness-125</code></li>
+</ul>
+<h2>Object Fit/Position Utilities</h2>
+<ul>
+<li><code>.object-cover</code>, <code>.object-contain</code>, <code>.object-center</code></li>
+</ul>
+<h2>Animation Utilities</h2>
+<ul>
+<li><code>.animate-spin</code>, <code>.animate-fade-in</code>, <code>.animate-fade-out</code>, <code>.animate-slide-up</code>, <code>.animate-bounce</code></li>
+<li><code>.duration-200</code>, <code>.duration-500</code>, <code>.duration-1000</code>, <code>.delay-100</code>, <code>.delay-300</code>, <code>.ease-in-out</code></li>
+</ul>
+<h2>Grid Utilities</h2>
+<ul>
+<li><code>.grid</code>, <code>.grid-cols-1</code> ... <code>.grid-cols-6</code>, <code>.grid-cols-none</code>, <code>.grid-rows-1</code> ... <code>.grid-rows-6</code>, <code>.grid-rows-none</code></li>
+<li><code>.grid-flow-row</code>, <code>.grid-flow-col</code>, <code>.grid-flow-dense</code></li>
+<li><code>.grid-rows-min</code>, <code>.grid-rows-max</code>, <code>.grid-rows-auto</code>, <code>.grid-cols-min</code>, <code>.grid-cols-max</code>, <code>.grid-cols-auto</code></li>
+</ul>
+<h2>Typography Utilities</h2>
+<ul>
+<li><code>.fs-xs</code>, <code>.fs-sm</code>, <code>.fs-base</code>, <code>.fs-lg</code>, <code>.fs-xl</code>, <code>.fs-2xl</code>, <code>.fs-3xl</code></li>
+<li><code>.fw-100</code>, <code>.fw-200</code>, <code>.fw-300</code>, <code>.fw-400</code>, <code>.fw-500</code>, <code>.fw-600</code>, <code>.fw-700</code></li>
+<li><code>.text-left</code>, <code>.text-center</code>, <code>.text-right</code>, <code>.text-justify</code></li>
+<li><code>.lh-base</code></li>
+</ul>
+<h2>Color Utilities</h2>
+<ul>
+<li><code>.bg-[color]</code>, <code>.text-[color]</code> for every color in variables</li>
+<li><code>.bg-muted</code>, <code>.text-muted</code>, <code>.bg-white</code>, <code>.bg-black</code>, etc.</li>
+</ul>
+<h2>Border Utilities</h2>
+<ul>
+<li><code>.border</code>, <code>.border-red</code>, <code>.border-green</code>, <code>.border-blue</code>, <code>.border-gray</code>, <code>.border-black</code>, <code>.border-white</code></li>
+<li><code>.radius-sm</code>, <code>.radius-md</code>, <code>.radius-lg</code></li>
+</ul>
+<h2>Shadow Utilities</h2>
+<ul>
+<li><code>.shadow-sm</code>, <code>.shadow-md</code>, <code>.shadow-lg</code></li>
+</ul>
+<h2>Width/Height Utilities</h2>
+<ul>
+<li><code>.w-100</code>, <code>.w-xs</code>, <code>.w-sm</code>, <code>.w-md</code>, <code>.w-lg</code></li>
+<li><code>.min-w-xs</code>, <code>.min-w-sm</code>, <code>.min-w-md</code>, <code>.min-w-lg</code></li>
+<li><code>.max-w-xs</code>, <code>.max-w-sm</code>, <code>.max-w-md</code>, <code>.max-w-lg</code></li>
+<li><code>.h-100</code>, <code>.h-100vh</code>, <code>.min-h-100vh</code>, <code>.max-h-50</code>, <code>.max-h-75</code></li>
+</ul>
+<h2>Opacity Utilities</h2>
+<ul>
+<li><code>.opacity-100</code>, <code>.opacity-80</code>, <code>.opacity-50</code>, <code>.opacity-25</code>, <code>.opacity-disabled</code>, <code>.opacity-overlay</code></li>
+</ul>
+<h2>Z-Index Utilities</h2>
+<ul>
+<li><code>.z-0</code>, <code>.z-10</code>, <code>.z-20</code>, <code>.z-30</code>, <code>.z-40</code>, <code>.z-50</code></li>
+</ul>
+<h2>Transition Utilities</h2>
+<ul>
+<li><code>.transition-fast</code>, <code>.transition-base</code>, <code>.transition-slow</code></li>
+</ul>
+<h2>Container Width Utilities</h2>
+<ul>
+<li><code>.container-xs</code>, <code>.container-sm</code>, <code>.container-md</code>, <code>.container-lg</code>, <code>.container-xl</code></li>
+</ul>
+<h2>Accessibility Utilities</h2>
+<ul>
+<li><code>.sr-only</code></li>
+</ul>
+<h2>Cursor Utilities</h2>
+<ul>
+<li><code>.cursor-pointer</code>, <code>.cursor-disabled</code>, <code>.cursor-default</code>, <code>.cursor-text</code>, <code>.cursor-move</code>, <code>.cursor-grab</code>, <code>.cursor-grabbing</code>, <code>.cursor-wait</code>, <code>.cursor-crosshair</code>, <code>.cursor-zoom-in</code>, <code>.cursor-zoom-out</code>, <code>.cursor-help</code>, <code>.pointer-events-none</code>, <code>.pointer-events-auto</code>, <code>.select-none</code>, <code>.select-text</code>, <code>.select-all</code>, <code>.select-auto</code></li>
+</ul>
+<h2>Scroll Snap Utilities</h2>
+<ul>
+<li><code>.snap-x</code>, <code>.snap-y</code>, <code>.snap-mandatory</code>, <code>.snap-proximity</code>, <code>.snap-start</code>, <code>.snap-center</code>, <code>.snap-end</code></li>
+</ul>
+<h2>Aspect Ratio Utilities</h2>
+<ul>
+<li><code>.aspect-1-1</code>, <code>.aspect-16-9</code>, <code>.aspect-4-3</code></li>
+</ul>
+<h2>Text Decoration &amp; Transform Utilities</h2>
+<ul>
+<li><code>.underline</code>, <code>.line-through</code>, <code>.uppercase</code>, <code>.lowercase</code>, <code>.capitalize</code></li>
+</ul>
+<h2>List Style Utilities</h2>
+<ul>
+<li><code>.list-none</code>, <code>.list-disc</code>, <code>.list-decimal</code></li>
+</ul>
+<hr />
+<h2>Usage Examples</h2>
+<h3>Spacing Utilities</h3>
+<div class="demo-container" style="display:flex; gap:1rem;">
+  <div class="bg-muted p-3 m-2">.p-3 .m-2</div>
+  <div class="bg-muted p-1 m-4">.p-1 .m-4</div>
+</div>
+<pre><code class="language-html">&lt;div class="bg-muted p-3 m-2"&gt;.p-3 .m-2&lt;/div&gt;
+&lt;div class="bg-muted p-1 m-4"&gt;.p-1 .m-4&lt;/div&gt;</code></pre>
+<h3>Layout Utilities</h3>
+<div class="demo-container" style="display:flex; gap:1rem;">
+  <div class="d-inline bg-muted p-2">.d-inline</div>
+  <div class="d-block bg-muted p-2">.d-block</div>
+  <div class="d-none bg-muted p-2">.d-none (hidden)</div>
+</div>
+<pre><code class="language-html">&lt;div class="d-inline bg-muted p-2"&gt;.d-inline&lt;/div&gt;
+&lt;div class="d-block bg-muted p-2"&gt;.d-block&lt;/div&gt;
+&lt;div class="d-none bg-muted p-2"&gt;.d-none (hidden)&lt;/div&gt;</code></pre>
+<h3>Flex Utilities</h3>
+<div class="demo-container" style="display:flex; gap:1rem;">
+  <div class="flex flex-row gap-2 p-2">
+    <div class="bg-muted p-2">A</div>
+    <div class="bg-muted p-2">B</div>
+    <div class="bg-muted p-2">C</div>
+  </div>
+</div>
+<pre><code class="language-html">&lt;div class="flex flex-row gap-2 bg-muted p-2"&gt;
+  &lt;span class="bg-indigo p-1"&gt;1&lt;/span&gt;
+  &lt;span class="bg-green p-1"&gt;2&lt;/span&gt;
+  &lt;span class="bg-red p-1"&gt;3&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+<h3>Grid Utilities</h3>
+<div class="demo-container">
+  <div class="grid grid-cols-3 gap-2">
+    <div class="bg-muted p-2">A</div>
+    <div class="bg-muted p-2">B</div>
+    <div class="bg-muted p-2">C</div>
+  </div>
+</div>
+<pre><code class="language-html">&lt;div class="grid grid-cols-3 gap-2"&gt;
+  &lt;div class="bg-muted p-2"&gt;A&lt;/div&gt;
+  &lt;div class="bg-muted p-2"&gt;B&lt;/div&gt;
+  &lt;div class="bg-muted p-2"&gt;C&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h3>Typography Utilities</h3>
+<div class="demo-container" style="display:flex; flex-direction:column; gap:0.5rem;">
+  <span class="fs-xs">.fs-xs</span>
+  <span class="fs-lg">.fs-lg</span>
+  <span class="fw-700">.fw-700</span>
+  <span class="text-center">.text-center (centered text)</span>
+</div>
+<pre><code class="language-html">&lt;span class="fs-xs"&gt;.fs-xs&lt;/span&gt;
+&lt;span class="fs-lg"&gt;.fs-lg&lt;/span&gt;
+&lt;span class="fw-700"&gt;.fw-700&lt;/span&gt;
+&lt;span class="text-center"&gt;.text-center (centered text)&lt;/span&gt;</code></pre>
+<h3>Color Utilities</h3>
+<div class="demo-container" style="display:flex; gap:1rem;">
+  <span class="bg-indigo text-white p-2">.bg-indigo .text-white</span>
+  <span class="bg-green text-white p-2">.bg-green .text-white</span>
+  <span class="bg-red text-white p-2">.bg-red .text-white</span>
+</div>
+<pre><code class="language-html">&lt;span class="bg-indigo text-white p-2"&gt;.bg-indigo .text-white&lt;/span&gt;
+&lt;span class="bg-green text-white p-2"&gt;.bg-green .text-white&lt;/span&gt;
+&lt;span class="bg-red text-white p-2"&gt;.bg-red .text-white&lt;/span&gt;</code></pre>
+<h3>Border &amp; Radius Utilities</h3>
+<div class="demo-container" style="display:flex; gap:1rem;">
+  <span class="border border-indigo radius-sm p-2">.border .border-indigo .radius-sm</span>
+  <span class="border border-red radius-lg p-2">.border .border-red .radius-lg</span>
+</div>
+<pre><code class="language-html">&lt;span class="border border-indigo radius-sm p-2"&gt;.border .border-indigo .radius-sm&lt;/span&gt;
+&lt;span class="border border-red radius-lg p-2"&gt;.border .border-red .radius-lg&lt;/span&gt;</code></pre>
+<h3>Shadow Utilities</h3>
+<div class="demo-container" style="display:flex; gap:1rem;">
+  <span class="shadow-sm p-2">.shadow-sm</span>
+  <span class="shadow-md p-2">.shadow-md</span>
+  <span class="shadow-lg p-2">.shadow-lg</span>
+</div>
+<pre><code class="language-html">&lt;span class="shadow-sm p-2"&gt;.shadow-sm&lt;/span&gt;
+&lt;span class="shadow-md p-2"&gt;.shadow-md&lt;/span&gt;
+&lt;span class="shadow-lg p-2"&gt;.shadow-lg&lt;/span&gt;</code></pre>
+<h3>Width/Height Utilities</h3>
+<div class="demo-container" style="display:flex; gap:1rem; align-items:center;">
+  <div class="bg-muted w-xs h-100 p-2">.w-xs .h-100</div>
+  <div class="bg-muted w-md h-100 p-2">.w-md .h-100</div>
+  <div class="bg-muted w-lg h-100 p-2">.w-lg .h-100</div>
+</div>
+<pre><code class="language-html">&lt;div class="bg-muted w-xs h-100 p-2"&gt;.w-xs .h-100&lt;/div&gt;
+&lt;div class="bg-muted w-md h-100 p-2"&gt;.w-md .h-100&lt;/div&gt;
+&lt;div class="bg-muted w-lg h-100 p-2"&gt;.w-lg .h-100&lt;/div&gt;</code></pre>
+<h3>Opacity Utilities</h3>
+<div class="demo-container" style="display:flex; gap:1rem;">
+  <span class="bg-indigo text-white p-2 opacity-100">.opacity-100</span>
+  <span class="bg-indigo text-white p-2 opacity-50">.opacity-50</span>
+  <span class="bg-indigo text-white p-2 opacity-25">.opacity-25</span>
+</div>
+<pre><code class="language-html">&lt;span class="bg-indigo text-white p-2 opacity-100"&gt;.opacity-100&lt;/span&gt;
+&lt;span class="bg-indigo text-white p-2 opacity-50"&gt;.opacity-50&lt;/span&gt;
+&lt;span class="bg-indigo text-white p-2 opacity-25"&gt;.opacity-25&lt;/span&gt;</code></pre>
+<h3>Animation Utilities</h3>
+<div class="demo-container" style="display:flex; gap:1rem; align-items:center;">
+  <span class="animate-spin bg-indigo text-white p-2">spin</span>
+  <span class="animate-bounce bg-green text-white p-2">bounce</span>
+</div>
+<pre><code class="language-html">&lt;span class="animate-spin bg-indigo text-white p-2"&gt;spin&lt;/span&gt;
+&lt;span class="animate-bounce bg-green text-white p-2"&gt;bounce&lt;/span&gt;</code></pre>
+<hr />    </main>
+    <nav class="toc"></nav>
+  </div>
+  <script src="assets/toc.js"></script>
+  <script src="assets/html-highlighter.js"></script>
+</body>
+
+</html>
