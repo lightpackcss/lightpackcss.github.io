@@ -445,95 +445,75 @@
 <li><strong>Stacking:</strong> Multiple toasts stack per position</li>
 </ul>
 <hr />
-<h2>JS Usage</h2>
-<p><strong>Show Info Toast (default position):</strong></p>
-<pre><code class="language-js">Lightpack.showToast('This is an info toast');</code></pre>
-<p><strong>Show Success Toast (top-right):</strong></p>
-<pre><code class="language-js">Lightpack.showToast('Operation successful!', 'success', false, 'top-right');</code></pre>
-<p><strong>Show Error Toast (bottom-left):</strong></p>
-<pre><code class="language-js">Lightpack.showToast('Something went wrong', 'danger', false, 'bottom-left');</code></pre>
-<p><strong>Show Warning Toast (top-left):</strong></p>
-<pre><code class="language-js">Lightpack.showToast('Check your input', 'warning', false, 'top-left');</code></pre>
-<p><strong>Show Sticky Toast (must be closed manually):</strong></p>
-<pre><code class="language-js">Lightpack.showToast('Sticky toast!', 'info', true, 'bottom-right');</code></pre>
-<hr />
 <h2>Examples</h2>
 <div class="demo-container">
   <div style="display: flex; flex-wrap: wrap; gap: 1em; margin-bottom: 1em;">
     <div>
       <strong>Bottom Right</strong><br>
-      <button class="btn btn-info" onclick="Lightpack.showToast('BR info toast', 'info', false, 'bottom-right')">Info</button>
-      <button class="btn btn-success" onclick="Lightpack.showToast('BR success toast', 'success', false, 'bottom-right')">Success</button>
-      <button class="btn btn-danger" onclick="Lightpack.showToast('BR error toast', 'danger', false, 'bottom-right')">Error</button>
-      <button class="btn btn-warning" onclick="Lightpack.showToast('BR warning toast', 'warning', false, 'bottom-right')">Warning</button>
-      <button class="btn btn-dark" onclick="Lightpack.showToast('BR sticky toast', 'info', true, 'bottom-right')">Sticky</button>
+      <button class="btn btn-primary" onclick="Lightpack.showToast({ message: 'BR info toast', type: 'info', sticky: false, position: 'bottom-right' })">Info</button>
+      <button class="btn btn-success" onclick="Lightpack.showToast({ message: 'BR success toast', type: 'success', sticky: false, position: 'bottom-right' })">Success</button>
+      <button class="btn btn-danger" onclick="Lightpack.showToast({ message: 'BR error toast', type: 'danger', sticky: false, position: 'bottom-right' })">Error</button>
+      <button class="btn btn-warning" onclick="Lightpack.showToast({ message: 'BR warning toast', type: 'warning', sticky: false, position: 'bottom-right' })">Warning</button>
+      <button class="btn btn-dark" onclick="Lightpack.showToast({ message: 'BR sticky toast', type: 'info', sticky: true, position: 'bottom-right' })">Sticky</button>
     </div>
     <div>
       <strong>Bottom Left</strong><br>
-      <button class="btn btn-info" onclick="Lightpack.showToast('BL info toast', 'info', false, 'bottom-left')">Info</button>
-      <button class="btn btn-success" onclick="Lightpack.showToast('BL success toast', 'success', false, 'bottom-left')">Success</button>
-      <button class="btn btn-danger" onclick="Lightpack.showToast('BL error toast', 'danger', false, 'bottom-left')">Error</button>
-      <button class="btn btn-warning" onclick="Lightpack.showToast('BL warning toast', 'warning', false, 'bottom-left')">Warning</button>
-      <button class="btn btn-dark" onclick="Lightpack.showToast('BL sticky toast', 'info', true, 'bottom-left')">Sticky</button>
+      <button class="btn btn-primary" onclick="Lightpack.showToast({ message: 'BL info toast', type: 'info', sticky: false, position: 'bottom-left' })">Info</button>
+      <button class="btn btn-success" onclick="Lightpack.showToast({ message: 'BL success toast', type: 'success', sticky: false, position: 'bottom-left' })">Success</button>
+      <button class="btn btn-danger" onclick="Lightpack.showToast({ message: 'BL error toast', type: 'danger', sticky: false, position: 'bottom-left' })">Error</button>
+      <button class="btn btn-warning" onclick="Lightpack.showToast({ message: 'BL warning toast', type: 'warning', sticky: false, position: 'bottom-left' })">Warning</button>
+      <button class="btn btn-dark" onclick="Lightpack.showToast({ message: 'BL sticky toast', type: 'info', sticky: true, position: 'bottom-left' })">Sticky</button>
     </div>
     <div>
       <strong>Top Right</strong><br>
-      <button class="btn btn-info" onclick="Lightpack.showToast('TR info toast', 'info', false, 'top-right')">Info</button>
-      <button class="btn btn-success" onclick="Lightpack.showToast('TR success toast', 'success', false, 'top-right')">Success</button>
-      <button class="btn btn-danger" onclick="Lightpack.showToast('TR error toast', 'danger', false, 'top-right')">Error</button>
-      <button class="btn btn-warning" onclick="Lightpack.showToast('TR warning toast', 'warning', false, 'top-right')">Warning</button>
-      <button class="btn btn-dark" onclick="Lightpack.showToast('TR sticky toast', 'info', true, 'top-right')">Sticky</button>
+      <button class="btn btn-primary" onclick="Lightpack.showToast({ message: 'TR info toast', type: 'info', sticky: false, position: 'top-right' })">Info</button>
+      <button class="btn btn-success" onclick="Lightpack.showToast({ message: 'TR success toast', type: 'success', sticky: false, position: 'top-right' })">Success</button>
+      <button class="btn btn-danger" onclick="Lightpack.showToast({ message: 'TR error toast', type: 'danger', sticky: false, position: 'top-right' })">Error</button>
+      <button class="btn btn-warning" onclick="Lightpack.showToast({ message: 'TR warning toast', type: 'warning', sticky: false, position: 'top-right' })">Warning</button>
+      <button class="btn btn-dark" onclick="Lightpack.showToast({ message: 'TR sticky toast', type: 'info', sticky: true, position: 'top-right' })">Sticky</button>
     </div>
     <div>
       <strong>Top Left</strong><br>
-      <button class="btn btn-info" onclick="Lightpack.showToast('TL info toast', 'info', false, 'top-left')">Info</button>
-      <button class="btn btn-success" onclick="Lightpack.showToast('TL success toast', 'success', false, 'top-left')">Success</button>
-      <button class="btn btn-danger" onclick="Lightpack.showToast('TL error toast', 'danger', false, 'top-left')">Error</button>
-      <button class="btn btn-warning" onclick="Lightpack.showToast('TL warning toast', 'warning', false, 'top-left')">Warning</button>
-      <button class="btn btn-dark" onclick="Lightpack.showToast('TL sticky toast', 'info', true, 'top-left')">Sticky</button>
+      <button class="btn btn-primary" onclick="Lightpack.showToast({ message: 'TL info toast', type: 'info', sticky: false, position: 'top-left' })">Info</button>
+      <button class="btn btn-success" onclick="Lightpack.showToast({ message: 'TL success toast', type: 'success', sticky: false, position: 'top-left' })">Success</button>
+      <button class="btn btn-danger" onclick="Lightpack.showToast({ message: 'TL error toast', type: 'danger', sticky: false, position: 'top-left' })">Error</button>
+      <button class="btn btn-warning" onclick="Lightpack.showToast({ message: 'TL warning toast', type: 'warning', sticky: false, position: 'top-left' })">Warning</button>
+      <button class="btn btn-dark" onclick="Lightpack.showToast({ message: 'TL sticky toast', type: 'info', sticky: true, position: 'top-left' })">Sticky</button>
     </div>
   </div>
-<div id="toast-container-bottom-right" class="toast-bottom-right"></div>
-  <div id="toast-container-bottom-left" class="toast-bottom-left"></div>
-  <div id="toast-container-top-right" class="toast-top-right"></div>
-  <div id="toast-container-top-left" class="toast-top-left"></div>
 </div>
 <p><strong>Usage</strong></p>
 <pre><code class="language-html">&lt;!-- Bottom right --&gt;
-&lt;div id="toast-container-bottom-right" class="toast-bottom-right"&gt;&lt;/div&gt;
 &lt;strong&gt;Bottom Right&lt;/strong&gt;&lt;br&gt;
-&lt;button class="btn btn-info" onclick="Lightpack.showToast('BR info toast', 'info', false, 'bottom-right')"&gt;Info&lt;/button&gt;
-&lt;button class="btn btn-success" onclick="Lightpack.showToast('BR success toast', 'success', false, 'bottom-right')"&gt;Success&lt;/button&gt;
-&lt;button class="btn btn-danger" onclick="Lightpack.showToast('BR error toast', 'danger', false, 'bottom-right')"&gt;Error&lt;/button&gt;
-&lt;button class="btn btn-warning" onclick="Lightpack.showToast('BR warning toast', 'warning', false, 'bottom-right')"&gt;Warning&lt;/button&gt;
-&lt;button class="btn btn-dark" onclick="Lightpack.showToast('BR sticky toast', 'info', true, 'bottom-right')"&gt;Sticky&lt;/button&gt;
+&lt;button class="btn btn-primary" onclick="Lightpack.showToast({ message: 'BR info toast', type: 'info', sticky: false, position: 'bottom-right' })"&gt;Info&lt;/button&gt;
+&lt;button class="btn btn-success" onclick="Lightpack.showToast({ message: 'BR success toast', type: 'success', sticky: false, position: 'bottom-right' })"&gt;Success&lt;/button&gt;
+&lt;button class="btn btn-danger" onclick="Lightpack.showToast({ message: 'BR error toast', type: 'danger', sticky: false, position: 'bottom-right' })"&gt;Error&lt;/button&gt;
+&lt;button class="btn btn-warning" onclick="Lightpack.showToast({ message: 'BR warning toast', type: 'warning', sticky: false, position: 'bottom-right' })"&gt;Warning&lt;/button&gt;
+&lt;button class="btn btn-dark" onclick="Lightpack.showToast({ message: 'BR sticky toast', type: 'info', sticky: true, position: 'bottom-right' })"&gt;Sticky&lt;/button&gt;
 
 &lt;!-- Bottom left --&gt;
-&lt;div id="toast-container-bottom-left" class="toast-bottom-left"&gt;&lt;/div&gt;
 &lt;strong&gt;Bottom Left&lt;/strong&gt;&lt;br&gt;
-&lt;button class="btn btn-info" onclick="Lightpack.showToast('BL info toast', 'info', false, 'bottom-left')"&gt;Info&lt;/button&gt;
-&lt;button class="btn btn-success" onclick="Lightpack.showToast('BL success toast', 'success', false, 'bottom-left')"&gt;Success&lt;/button&gt;
-&lt;button class="btn btn-danger" onclick="Lightpack.showToast('BL error toast', 'danger', false, 'bottom-left')"&gt;Error&lt;/button&gt;
-&lt;button class="btn btn-warning" onclick="Lightpack.showToast('BL warning toast', 'warning', false, 'bottom-left')"&gt;Warning&lt;/button&gt;
-&lt;button class="btn btn-dark" onclick="Lightpack.showToast('BL sticky toast', 'info', true, 'bottom-left')"&gt;Sticky&lt;/button&gt;
+&lt;button class="btn btn-primary" onclick="Lightpack.showToast({ message: 'BL info toast', type: 'info', sticky: false, position: 'bottom-left' })"&gt;Info&lt;/button&gt;
+&lt;button class="btn btn-success" onclick="Lightpack.showToast({ message: 'BL success toast', type: 'success', sticky: false, position: 'bottom-left' })"&gt;Success&lt;/button&gt;
+&lt;button class="btn btn-danger" onclick="Lightpack.showToast({ message: 'BL error toast', type: 'danger', sticky: false, position: 'bottom-left' })"&gt;Error&lt;/button&gt;
+&lt;button class="btn btn-warning" onclick="Lightpack.showToast({ message: 'BL warning toast', type: 'warning', sticky: false, position: 'bottom-left' })"&gt;Warning&lt;/button&gt;
+&lt;button class="btn btn-dark" onclick="Lightpack.showToast({ message: 'BL sticky toast', type: 'info', sticky: true, position: 'bottom-left' })"&gt;Sticky&lt;/button&gt;
 
 &lt;!-- Top right --&gt;
-&lt;div id="toast-container-top-right" class="toast-top-right"&gt;&lt;/div&gt;
 &lt;strong&gt;Top Right&lt;/strong&gt;&lt;br&gt;
-&lt;button class="btn btn-info" onclick="Lightpack.showToast('TR info toast', 'info', false, 'top-right')"&gt;Info&lt;/button&gt;
-&lt;button class="btn btn-success" onclick="Lightpack.showToast('TR success toast', 'success', false, 'top-right')"&gt;Success&lt;/button&gt;
-&lt;button class="btn btn-danger" onclick="Lightpack.showToast('TR error toast', 'danger', false, 'top-right')"&gt;Error&lt;/button&gt;
-&lt;button class="btn btn-warning" onclick="Lightpack.showToast('TR warning toast', 'warning', false, 'top-right')"&gt;Warning&lt;/button&gt;
-&lt;button class="btn btn-dark" onclick="Lightpack.showToast('TR sticky toast', 'info', true, 'top-right')"&gt;Sticky&lt;/button&gt;
+&lt;button class="btn btn-primary" onclick="Lightpack.showToast({ message: 'TR info toast', type: 'info', sticky: false, position: 'top-right' })"&gt;Info&lt;/button&gt;
+&lt;button class="btn btn-success" onclick="Lightpack.showToast({ message: 'TR success toast', type: 'success', sticky: false, position: 'top-right' })"&gt;Success&lt;/button&gt;
+&lt;button class="btn btn-danger" onclick="Lightpack.showToast({ message: 'TR error toast', type: 'danger', sticky: false, position: 'top-right' })"&gt;Error&lt;/button&gt;
+&lt;button class="btn btn-warning" onclick="Lightpack.showToast({ message: 'TR warning toast', type: 'warning', sticky: false, position: 'top-right' })"&gt;Warning&lt;/button&gt;
+&lt;button class="btn btn-dark" onclick="Lightpack.showToast({ message: 'TR sticky toast', type: 'info', sticky: true, position: 'top-right' })"&gt;Sticky&lt;/button&gt;
 
 &lt;!-- Top left --&gt;
-&lt;div id="toast-container-top-left" class="toast-top-left"&gt;&lt;/div&gt;
 &lt;strong&gt;Top Left&lt;/strong&gt;&lt;br&gt;
-&lt;button class="btn btn-info" onclick="Lightpack.showToast('TL info toast', 'info', false, 'top-left')"&gt;Info&lt;/button&gt;
-&lt;button class="btn btn-success" onclick="Lightpack.showToast('TL success toast', 'success', false, 'top-left')"&gt;Success&lt;/button&gt;
-&lt;button class="btn btn-danger" onclick="Lightpack.showToast('TL error toast', 'danger', false, 'top-left')"&gt;Error&lt;/button&gt;
-&lt;button class="btn btn-warning" onclick="Lightpack.showToast('TL warning toast', 'warning', false, 'top-left')"&gt;Warning&lt;/button&gt;
-&lt;button class="btn btn-dark" onclick="Lightpack.showToast('TL sticky toast', 'info', true, 'top-left')"&gt;Sticky&lt;/button&gt;</code></pre>
+&lt;button class="btn btn-primary" onclick="Lightpack.showToast({ message: 'TL info toast', type: 'info', sticky: false, position: 'top-left' })"&gt;Info&lt;/button&gt;
+&lt;button class="btn btn-success" onclick="Lightpack.showToast({ message: 'TL success toast', type: 'success', sticky: false, position: 'top-left' })"&gt;Success&lt;/button&gt;
+&lt;button class="btn btn-danger" onclick="Lightpack.showToast({ message: 'TL error toast', type: 'danger', sticky: false, position: 'top-left' })"&gt;Error&lt;/button&gt;
+&lt;button class="btn btn-warning" onclick="Lightpack.showToast({ message: 'TL warning toast', type: 'warning', sticky: false, position: 'top-left' })"&gt;Warning&lt;/button&gt;
+&lt;button class="btn btn-dark" onclick="Lightpack.showToast({ message: 'TL sticky toast', type: 'info', sticky: true, position: 'top-left' })"&gt;Sticky&lt;/button&gt;</code></pre>
 <hr />    </main>
     <nav class="toc"></nav>
   </div>
