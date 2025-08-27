@@ -5,11 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
-  <link rel="stylesheet" href="../assets/lightpack.min.css">
+  <link rel="icon" type="image/x-icon" href="assets/logo.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@latest/dist/lightpack.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-  <script src="../assets/lightpack.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@latest/dist/lightpack.min.js"></script>
   <style>
     body {
       font-family: 'Montserrat', Verdana, system-ui, sans-serif !important;
@@ -422,10 +423,24 @@
 <ul>
 <li>Flexible media object pattern for images/icons with content</li>
 </ul>
+<p><strong>Example</strong></p>
+<div class="demo-container">
+  <div class="media">
+    <div class="media-img">
+      <span class="avatar">
+        <img src="https://i.pravatar.cc/100?img=2" />
+      </span>
+    </div>
+    <div class="media-body">
+      <strong>Title</strong>
+      <p>Description text goes here.</p>
+    </div>
+  </div>
+</div>
 <p><strong>Usage:</strong></p>
 <pre><code class="language-html">&lt;div class="media"&gt;
   &lt;div class="media-img"&gt;
-    &lt;img src="avatar.png" alt="Avatar" /&gt;
+    &lt;img src="https://api.dicebear.com/7.x/personas/svg?seed=AB" /&gt;
   &lt;/div&gt;
   &lt;div class="media-body"&gt;
     &lt;h4&gt;Title&lt;/h4&gt;
@@ -436,8 +451,7 @@
 <ul>
 <li>Add utility classes for spacing or alignment</li>
 </ul>
-<hr />
-<p><strong>See <code>/src/css/components/_media.css</code> for implementation.</strong></p>    </main>
+<hr />    </main>
     <nav class="toc"></nav>
   </div>
   <script src="assets/toc.js"></script>
