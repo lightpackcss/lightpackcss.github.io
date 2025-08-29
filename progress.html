@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Progress | Lightpack CSS Framework</title>
   <link rel="icon" type="image/x-icon" href="assets/logo.ico">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@latest/dist/lightpack.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.5-beta/dist/lightpack.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@latest/dist/lightpack.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.5-beta/dist/lightpack.min.js"></script>
   <style>
     body {
       font-family: 'Montserrat', Verdana, system-ui, sans-serif !important;
@@ -274,11 +274,6 @@
                         <div class="sidebar-section">
             <ul>
                               <li>
-                  <a href="accordion.html"
-                    >
-                    Accordion                  </a>
-                </li>
-                              <li>
                   <a href="alert.html"
                     >
                     Alert                  </a>
@@ -309,6 +304,11 @@
                     Card                  </a>
                 </li>
                               <li>
+                  <a href="collapse.html"
+                    >
+                    Collapse                  </a>
+                </li>
+                              <li>
                   <a href="drawer.html"
                     >
                     Drawer                  </a>
@@ -326,7 +326,7 @@
                               <li>
                   <a href="index.html"
                     >
-                    Home                  </a>
+                    Index                  </a>
                 </li>
                               <li>
                   <a href="layout.html"
@@ -424,14 +424,124 @@
 <li>Progress bars with color/status variants</li>
 <li>Thin style, labels, and striped effect</li>
 </ul>
+<p><strong>Example</strong></p>
+<div class="demo-container">
+  <div class="progress progress-thin">
+    <div class="progress-bar progress-bar-success" style="width: 80%"></div>
+  </div>
+<div class="progress progress-thin">
+    <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
+  </div>
+<div class="progress progress-thin">
+    <div class="progress-bar progress-bar-warning" style="width: 80%"></div>
+  </div>
+<div class="progress progress-thin">
+    <div class="progress-bar progress-bar-primary" style="width: 80%"></div>
+  </div>
+<div class="progress">
+    <div class="progress-bar progress-bar-success" style="width: 80%">
+      <span class="progress-label">Success 80%</span>
+    </div>
+  </div>
+<div class="progress">
+    <div class="progress-bar progress-bar-success progress-bar-striped" style="width: 80%">
+      <span class="progress-label">Success 80%</span>
+    </div>
+  </div>
+<div class="progress">
+    <div class="progress-bar progress-bar-danger progress-bar-danger" style="width: 60%">
+      <span class="progress-label">Danger 60%</span>
+    </div>
+  </div>
+<div class="progress">
+    <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: 60%">
+      <span class="progress-label">Danger 60%</span>
+    </div>
+  </div>
+<div class="progress">
+    <div class="progress-bar progress-bar-warning" style="width: 50%">
+      <span class="progress-label">Warning 50%</span>
+    </div>
+  </div>
+<div class="progress">
+    <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 50%">
+      <span class="progress-label">Warning 50%</span>
+    </div>
+  </div>
+<div class="progress">
+    <div class="progress-bar progress-bar-primary" style="width: 70%">
+      <span class="progress-label">Primary 70%</span>
+    </div>
+  </div>
+<div class="progress">
+    <div class="progress-bar progress-bar-primary progress-bar-striped" style="width: 70%">
+      <span class="progress-label">Primary 70%</span>
+    </div>
+  </div>
+</div>
 <p><strong>Usage:</strong></p>
-<pre><code class="language-html">&lt;div class="progress"&gt;
-  &lt;div class="progress-bar progress-bar-success" style="width: 60%"&gt;
-    &lt;span class="progress-label"&gt;60%&lt;/span&gt;
+<pre><code class="language-html">&lt;div class="progress progress-thin"&gt;
+  &lt;div class="progress-bar progress-bar-success" style="width: 80%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress progress-thin"&gt;
+  &lt;div class="progress-bar progress-bar-danger" style="width: 80%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress progress-thin"&gt;
+  &lt;div class="progress-bar progress-bar-warning" style="width: 80%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress progress-thin"&gt;
+  &lt;div class="progress-bar progress-bar-primary" style="width: 80%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-success" style="width: 80%"&gt;
+    &lt;span class="progress-label"&gt;Success 80%&lt;/span&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="progress progress-thin"&gt;
-  &lt;div class="progress-bar progress-bar-striped progress-bar-primary" style="width: 30%"&gt;&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-success progress-bar-striped" style="width: 80%"&gt;
+    &lt;span class="progress-label"&gt;Success 80%&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-danger progress-bar-danger" style="width: 60%"&gt;
+    &lt;span class="progress-label"&gt;Danger 60%&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-danger progress-bar-striped" style="width: 60%"&gt;
+    &lt;span class="progress-label"&gt;Danger 60%&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-warning" style="width: 50%"&gt;
+    &lt;span class="progress-label"&gt;Warning 50%&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 50%"&gt;
+    &lt;span class="progress-label"&gt;Warning 50%&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-primary" style="width: 70%"&gt;
+    &lt;span class="progress-label"&gt;Primary 70%&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-primary progress-bar-striped" style="width: 70%"&gt;
+    &lt;span class="progress-label"&gt;Primary 70%&lt;/span&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 <p><strong>Customization:</strong></p>
 <ul>

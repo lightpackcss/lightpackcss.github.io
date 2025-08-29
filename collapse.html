@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Media | Lightpack CSS Framework</title>
+  <title>Collapse | Lightpack CSS Framework</title>
   <link rel="icon" type="image/x-icon" href="assets/logo.ico">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.5-beta/dist/lightpack.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -305,7 +305,7 @@
                 </li>
                               <li>
                   <a href="collapse.html"
-                    >
+                    class="active" aria-current="page" >
                     Collapse                  </a>
                 </li>
                               <li>
@@ -340,7 +340,7 @@
                 </li>
                               <li>
                   <a href="media.html"
-                    class="active" aria-current="page" >
+                    >
                     Media                  </a>
                 </li>
                               <li>
@@ -417,40 +417,109 @@
           </div>
                   </aside>
     <main>
-      <h1>Media Object Component</h1>
-<p><strong>Classes:</strong> <code>.media</code>, <code>.media-img</code>, <code>.media-body</code></p>
+      <h1>Collapse Component</h1>
+<p><strong>Classes:</strong> <code>.collapsible</code>, <code>.collapse-item</code>, <code>.collapse-toggle</code>, <code>.collapse-content</code>, <code>.collapse-icon</code>, <code>collapse-indicator</code></p>
 <p><strong>Features:</strong></p>
 <ul>
-<li>Flexible media object pattern for images/icons with content</li>
+<li>Fully customizable UI</li>
+<li>Single or multiple open panels at a time (by default)</li>
+<li>Make collapsible menu, navigation, accordion with ease</li>
 </ul>
 <p><strong>Example</strong></p>
 <div class="demo-container">
-  <div class="media">
-    <div class="media-img">
-      <span class="avatar">
-        <img src="https://i.pravatar.cc/100?img=2" />
-      </span>
+  <div class="collapsible">
+    <div class="collapse-item mb-4 fw-700">
+        <a class="collapse-toggle fs-md cursor-pointer">Section 1</a>
+        <div class="collapse-content p-3">Content 1</div>
     </div>
-    <div class="media-body">
-      <strong>Title</strong>
-      <p>Description text goes here.</p>
+    <div class="collapse-item mb-4 fw-700">
+        <a class="collapse-toggle fs-md cursor-pointer">Section 2</a>
+        <div class="collapse-content p-3">Content 2</div>
+    </div>
+    <div class="collapse-item mb-4 fw-700">
+        <a class="collapse-toggle fs-md cursor-pointer">
+            <span>Section 3</span>
+            <span class="collapse-indicator">+</span>
+        </a>
+        <div class="collapse-content p-3">Content 3</div>
+    </div>
+    <div class="collapse-item mb-4 fw-700">
+        <a class="collapse-toggle fs-md cursor-pointer">
+            <span>Section 3</span>
+            <span class="collapse-indicator fs-xs" data-open="▼" data-closed="►">►</span>
+        </a>
+        <div class="collapse-content p-3">Content 3</div>
+    </div>
+    <div class="collapse-item mb-4 fw-700">
+        <a class="collapse-toggle fs-md cursor-pointer">
+            <span>Section 3</span>
+            <span class="collapse-indicator" data-open="(hide)" data-closed="(show)">(show)</span>
+        </a>
+        <div class="collapse-content p-3">Content 3</div>
+    </div>
+    <div class="collapse-item mb-4 fw-700">
+        <a class="collapse-toggle fs-md cursor-pointer">
+            <span>Section 3</span>
+            <span class="collapse-indicator">
+                <svg class="collapse-icon" width="1em" height="1em" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+                    <path d="M7 5l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+        </a>
+        <div class="collapse-content p-3">Content 3</div>
     </div>
   </div>
 </div>
-<p><strong>Usage:</strong></p>
-<pre><code class="language-html">&lt;div class="media"&gt;
-  &lt;div class="media-img"&gt;
-    &lt;img src="https://api.dicebear.com/7.x/personas/svg?seed=AB" /&gt;
+<p><strong>Usage</strong></p>
+<pre><code class="language-html">&lt;div class="collapsible"&gt;
+  &lt;div class="collapse-item"&gt;
+      &lt;a class="collapse-toggle"&gt;Section 1&lt;/a&gt;
+      &lt;div class="collapse-content"&gt;Content 1&lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class="media-body"&gt;
-    &lt;h4&gt;Title&lt;/h4&gt;
-    &lt;p&gt;Description text goes here.&lt;/p&gt;
+
+  &lt;div class="collapse-item"&gt;
+      &lt;a class="collapse-toggle"&gt;Section 2&lt;/a&gt;
+      &lt;div class="collapse-content"&gt;Content 2&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="collapse-item"&gt;
+      &lt;a class="collapse-toggle"&gt;
+          &lt;span&gt;Section 3&lt;/span&gt;
+          &lt;span class="collapse-indicator"&gt;+&lt;/span&gt;
+      &lt;/a&gt;
+      &lt;div class="collapse-content"&gt;Content 3&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="collapse-item"&gt;
+      &lt;a class="collapse-toggle"&gt;
+          &lt;span&gt;Section 3&lt;/span&gt;
+          &lt;span class="collapse-indicator" data-open="▼" data-closed="►"&gt;►&lt;/span&gt;
+      &lt;/a&gt;
+      &lt;div class="collapse-content"&gt;Content 3&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="collapse-item"&gt;
+      &lt;a class="collapse-toggle"&gt;
+          &lt;span&gt;Section 3&lt;/span&gt;
+          &lt;span class="collapse-indicator" data-open="(hide)" data-closed="(show)"&gt;(show)&lt;/span&gt;
+      &lt;/a&gt;
+      &lt;div class="collapse-content"&gt;Content 3&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="collapse-item"&gt;
+      &lt;a class="collapse-toggle"&gt;
+          &lt;span&gt;Section 3&lt;/span&gt;
+          &lt;span class="collapse-indicator"&gt;
+              &lt;svg class="collapse-icon" width="1em" height="1em" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"&gt;
+                  &lt;path d="M7 5l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/&gt;
+              &lt;/svg&gt;
+          &lt;/span&gt;
+      &lt;/a&gt;
+      &lt;div class="collapse-content"&gt;Content 3&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-<p><strong>Customization:</strong></p>
-<ul>
-<li>Add utility classes for spacing or alignment</li>
-</ul>
+<p>To restrict only one open content at a time, declare <code>data-collapse="accordion"</code>.</p>
+<pre><code class="language-html">&lt;div class="collapsible" data-collapse="accordion"&gt;</code></pre>
 <hr />    </main>
     <nav class="toc"></nav>
   </div>
