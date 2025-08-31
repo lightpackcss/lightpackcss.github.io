@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Collapse | Lightpack CSS Framework</title>
+  <title>Toc | Lightpack CSS Framework</title>
   <link rel="icon" type="image/x-icon" href="assets/logo.ico">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.7-beta/dist/lightpack.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -229,7 +229,7 @@
                 </li>
                               <li>
                   <a href="collapse.html"
-                    class="active" aria-current="page" >
+                    >
                     Collapse                  </a>
                 </li>
                               <li>
@@ -324,7 +324,7 @@
                 </li>
                               <li>
                   <a href="toc.html"
-                    >
+                    class="active" aria-current="page" >
                     Toc                  </a>
                 </li>
                               <li>
@@ -346,109 +346,16 @@
           </div>
                   </aside>
     <main>
-      <h1>Collapse Component</h1>
-<p><strong>Classes:</strong> <code>.collapsible</code>, <code>.collapse-item</code>, <code>.collapse-toggle</code>, <code>.collapse-content</code>, <code>.collapse-icon</code>, <code>collapse-indicator</code></p>
-<p><strong>Features:</strong></p>
-<ul>
-<li>Fully customizable UI</li>
-<li>Single or multiple open panels at a time (by default)</li>
-<li>Make collapsible menu, navigation, accordion with ease</li>
-</ul>
-<p><strong>Example</strong></p>
-<div class="demo-container">
-  <div class="collapsible">
-    <div class="collapse-item mb-4 fw-700">
-        <a class="collapse-toggle fs-md cursor-pointer">Section 1</a>
-        <div class="collapse-content p-3">Content 1</div>
-    </div>
-    <div class="collapse-item mb-4 fw-700">
-        <a class="collapse-toggle fs-md cursor-pointer">Section 2</a>
-        <div class="collapse-content p-3">Content 2</div>
-    </div>
-    <div class="collapse-item mb-4 fw-700">
-        <a class="collapse-toggle fs-md cursor-pointer">
-            <span>Section 3</span>
-            <span class="collapse-indicator">+</span>
-        </a>
-        <div class="collapse-content p-3">Content 3</div>
-    </div>
-    <div class="collapse-item mb-4 fw-700">
-        <a class="collapse-toggle fs-md cursor-pointer">
-            <span>Section 3</span>
-            <span class="collapse-indicator fs-xs" data-open="▼" data-closed="►">►</span>
-        </a>
-        <div class="collapse-content p-3">Content 3</div>
-    </div>
-    <div class="collapse-item mb-4 fw-700">
-        <a class="collapse-toggle fs-md cursor-pointer">
-            <span>Section 3</span>
-            <span class="collapse-indicator" data-open="(hide)" data-closed="(show)">(show)</span>
-        </a>
-        <div class="collapse-content p-3">Content 3</div>
-    </div>
-    <div class="collapse-item mb-4 fw-700">
-        <a class="collapse-toggle fs-md cursor-pointer">
-            <span>Section 3</span>
-            <span class="collapse-indicator">
-                <svg class="collapse-icon" width="1em" height="1em" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
-                    <path d="M7 5l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </span>
-        </a>
-        <div class="collapse-content p-3">Content 3</div>
-    </div>
-  </div>
-</div>
+      <h1>Table of Contents</h1>
+<p>Lightpack CSS framework support auto-generation of <code>table-of-contents</code> with a simple <strong>JavaScript</strong> utility function.</p>
 <p><strong>Usage</strong></p>
-<pre><code class="language-html">&lt;div class="collapsible"&gt;
-  &lt;div class="collapse-item"&gt;
-      &lt;a class="collapse-toggle"&gt;Section 1&lt;/a&gt;
-      &lt;div class="collapse-content"&gt;Content 1&lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;div class="collapse-item"&gt;
-      &lt;a class="collapse-toggle"&gt;Section 2&lt;/a&gt;
-      &lt;div class="collapse-content"&gt;Content 2&lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;div class="collapse-item"&gt;
-      &lt;a class="collapse-toggle"&gt;
-          &lt;span&gt;Section 3&lt;/span&gt;
-          &lt;span class="collapse-indicator"&gt;+&lt;/span&gt;
-      &lt;/a&gt;
-      &lt;div class="collapse-content"&gt;Content 3&lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;div class="collapse-item"&gt;
-      &lt;a class="collapse-toggle"&gt;
-          &lt;span&gt;Section 3&lt;/span&gt;
-          &lt;span class="collapse-indicator" data-open="▼" data-closed="►"&gt;►&lt;/span&gt;
-      &lt;/a&gt;
-      &lt;div class="collapse-content"&gt;Content 3&lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;div class="collapse-item"&gt;
-      &lt;a class="collapse-toggle"&gt;
-          &lt;span&gt;Section 3&lt;/span&gt;
-          &lt;span class="collapse-indicator" data-open="(hide)" data-closed="(show)"&gt;(show)&lt;/span&gt;
-      &lt;/a&gt;
-      &lt;div class="collapse-content"&gt;Content 3&lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;div class="collapse-item"&gt;
-      &lt;a class="collapse-toggle"&gt;
-          &lt;span&gt;Section 3&lt;/span&gt;
-          &lt;span class="collapse-indicator"&gt;
-              &lt;svg class="collapse-icon" width="1em" height="1em" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"&gt;
-                  &lt;path d="M7 5l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/&gt;
-              &lt;/svg&gt;
-          &lt;/span&gt;
-      &lt;/a&gt;
-      &lt;div class="collapse-content"&gt;Content 3&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-<p>To restrict only one open content at a time, declare <code>data-collapse="accordion"</code>.</p>
-<pre><code class="language-html">&lt;div class="collapsible" data-collapse="accordion"&gt;</code></pre>
+<p>Add a container with the toc class wherever you want your Table of Contents to appear:</p>
+<pre><code class="language-html">&lt;nav class="toc"&gt;&lt;/nav&gt;</code></pre>
+<pre><code class="language-javascript">Lightpack.generateToc('.toc', {
+  levels: [2, 3],         // Include &lt;h2&gt; and &lt;h3&gt; headings
+  scrollOffset: 64,       // Offset for fixed headers (in pixels)
+  activeClass: 'toc-active' // Class for the currently active section link
+});</code></pre>
 <hr />    </main>
 
     <div class="sticky top-0 p-6 w-xs">

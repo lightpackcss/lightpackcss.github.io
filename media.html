@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Media | Lightpack CSS Framework</title>
   <link rel="icon" type="image/x-icon" href="assets/logo.ico">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.6-beta/dist/lightpack.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.7-beta/dist/lightpack.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.6-beta/dist/lightpack.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.7-beta/dist/lightpack.min.js"></script>
   <style>
     body {
       font-family: 'Montserrat', Verdana, system-ui, sans-serif !important;
@@ -157,83 +157,7 @@
       padding: 0;
     }
 
-
-    .toc {
-      width: 300px;
-      min-width: 180px;
-      max-width: 300px;
-      padding: 2.2rem 1.1rem 2.2rem 0.5rem;
-      position: sticky;
-      top: 0;
-      align-self: flex-start;
-      font-size: var(--fs-sm);
-      color: #333;
-      background: none;
-      z-index: 5;
-      height: 100vh;
-      overflow-y: auto;
-      display: block;
-    }
-
-    .toc-title {
-      font-weight: 700;
-      margin-bottom: 1.1em;
-      color: var(--color-danger);
-    }
-
-    .toc-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-    }
-
-    .toc-list li {
-      padding: 0;
-    }
-
-    .toc-list>li {
-      padding-left: 0;
-      margin-bottom: 0.4em;
-    }
-
-    .toc-level2 {
-      padding-left: 1.3em;
-      margin-bottom: 0.2em;
-      font-size: 0.97em;
-    }
-
-    .toc-level3 {
-      padding-left: 2.2em;
-      margin-bottom: 0.15em;
-      font-size: 0.95em;
-    }
-
-    .toc a {
-      color: var(--color-text);
-      text-decoration: none;
-      display: block;
-      border-radius: 4px;
-      padding: 2px 4px;
-      transition: color 0.14s, background 0.14s;
-    }
-
-    .toc a:hover {
-      color: var(--color-danger);
-      text-decoration: underline;
-      background: var(--color-danger-lighter);
-    }
-
-    .toc a.active {
-      color: var(--color-danger);
-      background: var(--color-danger-lighter);
-      box-shadow: none;
-    }
-
     @media (max-width: 1200px) {
-      .toc {
-        display: none;
-      }
-
       main,
       .blog-post {
         max-width: 100%;
@@ -399,6 +323,11 @@
                     Toast                  </a>
                 </li>
                               <li>
+                  <a href="toc.html"
+                    >
+                    Toc                  </a>
+                </li>
+                              <li>
                   <a href="tooltip.html"
                     >
                     Tooltip                  </a>
@@ -452,10 +381,16 @@
 <li>Add utility classes for spacing or alignment</li>
 </ul>
 <hr />    </main>
-    <nav class="toc"></nav>
+
+    <div class="sticky top-0 p-6 w-xs">
+      <nav class="toc d-none d-block-sm"></nav>
+    </div>
   </div>
-  <script src="assets/toc.js"></script>
+  <!-- <script src="assets/toc.js"></script> -->
   <script src="assets/html-highlighter.js"></script>
+  <script>
+    Lightpack.generateToc('.toc');
+  </script>
 </body>
 
 </html>
