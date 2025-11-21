@@ -233,6 +233,11 @@
                     Collapse                  </a>
                 </li>
                               <li>
+                  <a href="customization.html"
+                    >
+                    Customization                  </a>
+                </li>
+                              <li>
                   <a href="drawer.html"
                     >
                     Drawer                  </a>
@@ -342,380 +347,706 @@
                     class="active" aria-current="page" >
                     Utilities                  </a>
                 </li>
-                              <li>
-                  <a href="variables.html"
-                    >
-                    Variables                  </a>
-                </li>
                           </ul>
           </div>
                   </aside>
     <main>
-      <h1>Lightpack CSS Utilities</h1>
-<p>This file lists <strong>every available utility class</strong> in Lightpack CSS, grouped by category. All utilities are defined in <code>/src/css/_utilities.css</code>.</p>
+      <h1>Utility Classes</h1>
+<p>Lightpack provides a comprehensive set of utility classes for rapid UI development. These single-purpose classes let you build complex layouts and designs without writing custom CSS.</p>
 <hr />
-<h2>Spacing Utilities</h2>
-<h3>Gap Utilities</h3>
+<h2>Spacing</h2>
+<p>Lightpack uses a consistent spacing scale based on CSS variables (<code>--g-1</code> through <code>--g-9</code>).</p>
+<p><strong>Scale Reference:</strong></p>
 <ul>
-<li><code>.gap-0</code> ... <code>.gap-9</code> - Gap on both axes</li>
-<li><code>.gap-x-0</code> ... <code>.gap-x-9</code> - Column gap only</li>
-<li><code>.gap-y-0</code> ... <code>.gap-y-9</code> - Row gap only</li>
+<li><code>0</code> = 0</li>
+<li><code>1</code> = 0.25rem (4px)</li>
+<li><code>2</code> = 0.5rem (8px)</li>
+<li><code>3</code> = 1rem (16px)</li>
+<li><code>4</code> = 1.5rem (24px)</li>
+<li><code>5</code> = 2rem (32px)</li>
+<li><code>6</code> = 3rem (48px)</li>
+<li><code>7</code> = 4rem (64px)</li>
+<li><code>8</code> = 6rem (96px)</li>
+<li><code>9</code> = 8rem (128px)</li>
 </ul>
-<h3>Margin Utilities</h3>
-<ul>
-<li><code>.m-0</code> ... <code>.m-9</code> - All sides</li>
-<li><code>.mt-0</code> ... <code>.mt-9</code> - Top</li>
-<li><code>.mr-0</code> ... <code>.mr-9</code> - Right</li>
-<li><code>.mb-0</code> ... <code>.mb-9</code> - Bottom</li>
-<li><code>.ml-0</code> ... <code>.ml-9</code> - Left</li>
-<li><code>.mx-0</code> ... <code>.mx-9</code> - Horizontal (left + right)</li>
-<li><code>.my-0</code> ... <code>.my-9</code> - Vertical (top + bottom)</li>
-<li><code>.mx-auto</code> - Horizontal auto margin (centering)</li>
-</ul>
-<h3>Padding Utilities</h3>
-<ul>
-<li><code>.p-0</code> ... <code>.p-9</code> - All sides</li>
-<li><code>.pt-0</code> ... <code>.pt-9</code> - Top</li>
-<li><code>.pr-0</code> ... <code>.pr-9</code> - Right</li>
-<li><code>.pb-0</code> ... <code>.pb-9</code> - Bottom</li>
-<li><code>.pl-0</code> ... <code>.pl-9</code> - Left</li>
-<li><code>.px-0</code> ... <code>.px-9</code> - Horizontal (left + right)</li>
-<li><code>.py-0</code> ... <code>.py-9</code> - Vertical (top + bottom)</li>
-</ul>
-<h2>Offset Utilities</h2>
-<ul>
-<li><code>.top-0</code> ... <code>.top-9</code>, <code>.right-0</code> ... <code>.right-9</code>, <code>.bottom-0</code> ... <code>.bottom-9</code>, <code>.left-0</code> ... <code>.left-9</code></li>
-</ul>
-<h2>Layout Utilities</h2>
+<h3>Margin</h3>
+<p>Control outer spacing around elements.</p>
+<p><strong>All Sides:</strong></p>
+<pre><code class="language-html">&lt;div class="m-0"&gt;No margin&lt;/div&gt;
+&lt;div class="m-3"&gt;1rem margin on all sides&lt;/div&gt;
+&lt;div class="m-5"&gt;2rem margin on all sides&lt;/div&gt;</code></pre>
+<p><strong>Individual Sides:</strong></p>
+<pre><code class="language-html">&lt;div class="mt-4"&gt;Margin top: 1.5rem&lt;/div&gt;
+&lt;div class="mr-2"&gt;Margin right: 0.5rem&lt;/div&gt;
+&lt;div class="mb-3"&gt;Margin bottom: 1rem&lt;/div&gt;
+&lt;div class="ml-1"&gt;Margin left: 0.25rem&lt;/div&gt;</code></pre>
+<p><strong>Horizontal &amp; Vertical:</strong></p>
+<pre><code class="language-html">&lt;!-- Horizontal (left + right) --&gt;
+&lt;div class="mx-4"&gt;Margin left &amp; right: 1.5rem&lt;/div&gt;
+
+&lt;!-- Vertical (top + bottom) --&gt;
+&lt;div class="my-3"&gt;Margin top &amp; bottom: 1rem&lt;/div&gt;
+
+&lt;!-- Center horizontally --&gt;
+&lt;div class="mx-auto" style="width: 300px;"&gt;Centered block&lt;/div&gt;</code></pre>
+<p><strong>Common Patterns:</strong></p>
+<pre><code class="language-html">&lt;!-- Card spacing --&gt;
+&lt;div class="card p-4 mb-3"&gt;
+  &lt;h3 class="mb-2"&gt;Card Title&lt;/h3&gt;
+  &lt;p class="mb-0"&gt;Card content&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Section spacing --&gt;
+&lt;section class="py-8 px-4"&gt;
+  &lt;h2 class="mb-4"&gt;Section Title&lt;/h2&gt;
+  &lt;p&gt;Content&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+<h3>Padding</h3>
+<p>Control inner spacing within elements.</p>
+<p><strong>All Sides:</strong></p>
+<pre><code class="language-html">&lt;div class="p-0"&gt;No padding&lt;/div&gt;
+&lt;div class="p-3"&gt;1rem padding on all sides&lt;/div&gt;
+&lt;div class="p-6"&gt;3rem padding on all sides&lt;/div&gt;</code></pre>
+<p><strong>Individual Sides:</strong></p>
+<pre><code class="language-html">&lt;div class="pt-4"&gt;Padding top: 1.5rem&lt;/div&gt;
+&lt;div class="pr-2"&gt;Padding right: 0.5rem&lt;/div&gt;
+&lt;div class="pb-3"&gt;Padding bottom: 1rem&lt;/div&gt;
+&lt;div class="pl-1"&gt;Padding left: 0.25rem&lt;/div&gt;</code></pre>
+<p><strong>Horizontal &amp; Vertical:</strong></p>
+<pre><code class="language-html">&lt;!-- Horizontal (left + right) --&gt;
+&lt;button class="btn px-5"&gt;Wide button&lt;/button&gt;
+
+&lt;!-- Vertical (top + bottom) --&gt;
+&lt;div class="py-4"&gt;Tall container&lt;/div&gt;</code></pre>
+<h3>Gap</h3>
+<p>Control spacing between flex/grid children.</p>
+<pre><code class="language-html">&lt;!-- Flexbox with gap --&gt;
+&lt;div class="flex gap-3"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Grid with gap --&gt;
+&lt;div class="grid grid-cols-3 gap-4"&gt;
+  &lt;div&gt;Cell 1&lt;/div&gt;
+  &lt;div&gt;Cell 2&lt;/div&gt;
+  &lt;div&gt;Cell 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Column gap only --&gt;
+&lt;div class="flex flex-wrap gap-x-4"&gt;
+  &lt;div&gt;Item&lt;/div&gt;
+  &lt;div&gt;Item&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Row gap only --&gt;
+&lt;div class="flex flex-wrap gap-y-3"&gt;
+  &lt;div&gt;Item&lt;/div&gt;
+  &lt;div&gt;Item&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<hr />
+<h2>Layout &amp; Display</h2>
 <h3>Display</h3>
-<ul>
-<li><code>.d-block</code>, <code>.d-inline</code>, <code>.d-inline-block</code>, <code>.d-none</code></li>
-<li>Responsive: <code>.d-block-sm/md/lg/xl</code>, <code>.d-inline-sm/md/lg/xl</code>, <code>.d-inline-block-sm/md/lg/xl</code>, <code>.d-none-sm/md/lg/xl</code></li>
-</ul>
-<h3>Visibility &amp; Position</h3>
-<ul>
-<li><code>.visibility-hidden</code>, <code>.visibility-visible</code></li>
-<li><code>.static</code>, <code>.relative</code>, <code>.absolute</code>, <code>.fixed</code>, <code>.sticky</code></li>
-</ul>
+<p>Control how elements are displayed.</p>
+<pre><code class="language-html">&lt;!-- Block (full width, stacks vertically) --&gt;
+&lt;div class="d-block"&gt;Block element&lt;/div&gt;
+
+&lt;!-- Inline (flows with text) --&gt;
+&lt;span class="d-inline"&gt;Inline element&lt;/span&gt;
+
+&lt;!-- Inline-block (flows with text but accepts width/height) --&gt;
+&lt;span class="d-inline-block" style="width: 100px;"&gt;Inline-block&lt;/span&gt;
+
+&lt;!-- Hide element --&gt;
+&lt;div class="d-none"&gt;Hidden element&lt;/div&gt;</code></pre>
+<p><strong>Use Cases:</strong></p>
+<pre><code class="language-html">&lt;!-- Show/hide on mobile --&gt;
+&lt;div class="d-none d-block-md"&gt;Visible on desktop only&lt;/div&gt;
+&lt;div class="d-block d-none-md"&gt;Visible on mobile only&lt;/div&gt;
+
+&lt;!-- Toggle visibility --&gt;
+&lt;button onclick="document.querySelector('.content').classList.toggle('d-none')"&gt;
+  Toggle
+&lt;/button&gt;
+&lt;div class="content"&gt;Toggleable content&lt;/div&gt;</code></pre>
+<h3>Position</h3>
+<p>Control element positioning.</p>
+<pre><code class="language-html">&lt;!-- Static (default) --&gt;
+&lt;div class="static"&gt;Normal flow&lt;/div&gt;
+
+&lt;!-- Relative (positioned relative to normal position) --&gt;
+&lt;div class="relative"&gt;
+  &lt;span class="absolute" style="top: 0; right: 0;"&gt;Badge&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Absolute (positioned relative to nearest positioned ancestor) --&gt;
+&lt;div class="relative"&gt;
+  &lt;div class="absolute" style="top: 10px; left: 10px;"&gt;Overlay&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Fixed (positioned relative to viewport) --&gt;
+&lt;div class="fixed" style="top: 0; right: 0;"&gt;Fixed notification&lt;/div&gt;
+
+&lt;!-- Sticky (toggles between relative and fixed) --&gt;
+&lt;div class="sticky" style="top: 0;"&gt;Sticky header&lt;/div&gt;</code></pre>
+<p><strong>Positioning Utilities:</strong></p>
+<pre><code class="language-html">&lt;!-- Position from edges --&gt;
+&lt;div class="absolute top-0 right-0"&gt;Top-right corner&lt;/div&gt;
+&lt;div class="absolute bottom-0 left-0"&gt;Bottom-left corner&lt;/div&gt;
+
+&lt;!-- Center absolutely --&gt;
+&lt;div class="absolute" style="top: 50%; left: 50%; transform: translate(-50%, -50%);"&gt;
+  Centered
+&lt;/div&gt;</code></pre>
 <h3>Overflow</h3>
-<ul>
-<li><code>.overflow-auto</code>, <code>.overflow-scroll</code>, <code>.overflow-hidden</code></li>
-<li><code>.overflow-x-auto</code>, <code>.overflow-x-scroll</code>, <code>.overflow-x-hidden</code></li>
-<li><code>.overflow-y-auto</code>, <code>.overflow-y-scroll</code>, <code>.overflow-y-hidden</code></li>
-<li><code>.scroll-smooth</code></li>
-</ul>
-<h3>Flexbox</h3>
-<ul>
-<li><code>.flex</code>, <code>.inline-flex</code></li>
-<li><code>.flex-row</code>, <code>.flex-row-reverse</code>, <code>.flex-col</code>, <code>.flex-col-reverse</code></li>
-<li><code>.flex-wrap</code>, <code>.flex-nowrap</code>, <code>.flex-wrap-reverse</code></li>
-<li><code>.flex-1</code>, <code>.flex-auto</code>, <code>.flex-initial</code>, <code>.flex-none</code></li>
-<li><code>.grow</code>, <code>.grow-0</code>, <code>.shrink</code>, <code>.shrink-0</code></li>
-<li>Responsive: <code>.flex-sm/md/lg/xl</code>, <code>.flex-row-sm/md/lg/xl</code>, <code>.flex-col-sm/md/lg/xl</code>, <code>.flex-wrap-sm/md/lg/xl</code></li>
-</ul>
-<h3>Flexbox Alignment</h3>
-<ul>
-<li><strong>Justify Content:</strong> <code>.justify-start</code>, <code>.justify-center</code>, <code>.justify-between</code>, <code>.justify-end</code>, <code>.justify-around</code>, <code>.justify-evenly</code></li>
-<li><strong>Align Items:</strong> <code>.items-start</code>, <code>.items-center</code>, <code>.items-end</code>, <code>.items-baseline</code>, <code>.items-stretch</code></li>
-<li><strong>Align Content:</strong> <code>.content-start</code>, <code>.content-center</code>, <code>.content-end</code>, <code>.content-between</code>, <code>.content-around</code>, <code>.content-evenly</code></li>
-<li><strong>Align Self:</strong> <code>.self-auto</code>, <code>.self-start</code>, <code>.self-center</code>, <code>.self-end</code>, <code>.self-stretch</code>, <code>.self-baseline</code></li>
-<li>Responsive: <code>.items-center-sm/md/lg/xl</code>, <code>.justify-center-sm/md/lg/xl</code>, etc.</li>
-</ul>
-<h3>Centering Utility</h3>
-<ul>
-<li><code>.center-content</code> - Flexbox centering (both axes)</li>
-</ul>
-<h2>Content Utilities</h2>
-<ul>
-<li><code>.truncate</code>, <code>.text-ellipsis</code>, <code>.whitespace-nowrap</code>, <code>.break-words</code></li>
-</ul>
-<h2>Filter Utilities</h2>
-<ul>
-<li><code>.blur-sm</code>, <code>.brightness-110</code></li>
-</ul>
-<h2>Backdrop Filter Utilities</h2>
-<ul>
-<li><code>.backdrop-blur</code>, <code>.backdrop-brightness-125</code></li>
-</ul>
-<h2>Object Fit/Position Utilities</h2>
-<ul>
-<li><code>.object-cover</code>, <code>.object-contain</code>, <code>.object-center</code></li>
-</ul>
-<h2>Animation Utilities</h2>
-<ul>
-<li><code>.animate-spin</code>, <code>.animate-fade-in</code>, <code>.animate-fade-out</code>, <code>.animate-slide-up</code>, <code>.animate-bounce</code></li>
-<li><code>.duration-200</code>, <code>.duration-500</code>, <code>.duration-1000</code>, <code>.delay-100</code>, <code>.delay-300</code>, <code>.ease-in-out</code></li>
-</ul>
-<h2>Grid Utilities</h2>
-<ul>
-<li><code>.grid</code>, <code>.grid-cols-1</code> ... <code>.grid-cols-6</code>, <code>.grid-cols-none</code>, <code>.grid-rows-1</code> ... <code>.grid-rows-6</code>, <code>.grid-rows-none</code></li>
-<li><code>.grid-flow-row</code>, <code>.grid-flow-col</code>, <code>.grid-flow-dense</code></li>
-<li><code>.grid-rows-min</code>, <code>.grid-rows-max</code>, <code>.grid-rows-auto</code>, <code>.grid-cols-min</code>, <code>.grid-cols-max</code>, <code>.grid-cols-auto</code></li>
-</ul>
-<h2>Typography Utilities</h2>
-<h3>Font Sizes</h3>
-<ul>
-<li><code>.fs-xs</code>, <code>.fs-sm</code>, <code>.fs-base</code>, <code>.fs-md</code>, <code>.fs-lg</code>, <code>.fs-xl</code>, <code>.fs-2xl</code>, <code>.fs-3xl</code>, <code>.fs-4xl</code>, <code>.fs-5xl</code></li>
-</ul>
-<h3>Font Weights</h3>
-<ul>
-<li><code>.fw-100</code>, <code>.fw-200</code>, <code>.fw-300</code>, <code>.fw-400</code>, <code>.fw-500</code>, <code>.fw-600</code>, <code>.fw-700</code>, <code>.fw-800</code>, <code>.fw-900</code></li>
-</ul>
-<h3>Text Alignment</h3>
-<ul>
-<li><code>.text-left</code>, <code>.text-center</code>, <code>.text-right</code>, <code>.text-justify</code></li>
-<li>Responsive: <code>.text-left-sm/md/lg/xl</code>, <code>.text-center-sm/md/lg/xl</code>, <code>.text-right-sm/md/lg/xl</code>, <code>.text-justify-sm/md/lg/xl</code></li>
-</ul>
-<h3>Line Height</h3>
-<ul>
-<li><code>.lh-base</code></li>
-</ul>
-<h3>Vertical Alignment</h3>
-<ul>
-<li><code>.align-baseline</code>, <code>.align-top</code>, <code>.align-middle</code>, <code>.align-bottom</code>, <code>.align-text-top</code>, <code>.align-text-bottom</code></li>
-</ul>
-<h2>Color Utilities</h2>
-<h3>Natural Color Backgrounds</h3>
-<ul>
-<li><code>.bg-red</code>, <code>.bg-red-light</code>, <code>.bg-red-dark</code></li>
-<li><code>.bg-pink</code>, <code>.bg-pink-light</code>, <code>.bg-pink-dark</code></li>
-<li><code>.bg-orange</code>, <code>.bg-orange-light</code>, <code>.bg-orange-dark</code></li>
-<li><code>.bg-yellow</code>, <code>.bg-yellow-light</code>, <code>.bg-yellow-dark</code></li>
-<li><code>.bg-green</code>, <code>.bg-green-light</code>, <code>.bg-green-dark</code></li>
-<li><code>.bg-teal</code>, <code>.bg-teal-light</code>, <code>.bg-teal-dark</code></li>
-<li><code>.bg-blue</code>, <code>.bg-blue-light</code>, <code>.bg-blue-dark</code></li>
-<li><code>.bg-indigo</code>, <code>.bg-indigo-light</code>, <code>.bg-indigo-dark</code></li>
-<li><code>.bg-purple</code>, <code>.bg-purple-light</code>, <code>.bg-purple-dark</code></li>
-<li><code>.bg-brown</code>, <code>.bg-brown-light</code>, <code>.bg-brown-dark</code></li>
-<li><code>.bg-gray</code>, <code>.bg-gray-light</code>, <code>.bg-gray-dark</code></li>
-<li><code>.bg-black</code>, <code>.bg-black-light</code>, <code>.bg-black-dark</code></li>
-<li><code>.bg-white</code>, <code>.bg-white-light</code></li>
-<li><code>.bg-muted</code></li>
-</ul>
-<h3>Semantic Color Backgrounds</h3>
-<ul>
-<li><code>.bg-primary</code>, <code>.bg-primary-light</code>, <code>.bg-primary-lighter</code>, <code>.bg-primary-dark</code></li>
-<li><code>.bg-secondary</code>, <code>.bg-secondary-light</code>, <code>.bg-secondary-lighter</code>, <code>.bg-secondary-dark</code></li>
-<li><code>.bg-success</code>, <code>.bg-success-light</code>, <code>.bg-success-lighter</code>, <code>.bg-success-dark</code></li>
-<li><code>.bg-warning</code>, <code>.bg-warning-light</code>, <code>.bg-warning-lighter</code>, <code>.bg-warning-dark</code></li>
-<li><code>.bg-danger</code>, <code>.bg-danger-light</code>, <code>.bg-danger-lighter</code>, <code>.bg-danger-dark</code></li>
-<li><code>.bg-info</code>, <code>.bg-info-light</code>, <code>.bg-info-lighter</code>, <code>.bg-info-dark</code></li>
-<li><code>.bg-accent</code>, <code>.bg-accent-light</code>, <code>.bg-accent-lighter</code>, <code>.bg-accent-dark</code></li>
-<li><code>.bg-background</code>, <code>.bg-surface</code>, <code>.bg-surface-dark</code>, <code>.bg-surface-alt</code>, <code>.bg-border</code>, <code>.bg-border-dark</code></li>
-</ul>
-<h3>Natural Color Text</h3>
-<ul>
-<li><code>.text-red</code>, <code>.text-red-light</code>, <code>.text-red-dark</code></li>
-<li><code>.text-pink</code>, <code>.text-pink-light</code>, <code>.text-pink-dark</code></li>
-<li><code>.text-orange</code>, <code>.text-orange-light</code>, <code>.text-orange-dark</code></li>
-<li><code>.text-yellow</code>, <code>.text-yellow-light</code>, <code>.text-yellow-dark</code></li>
-<li><code>.text-green</code>, <code>.text-green-light</code>, <code>.text-green-dark</code></li>
-<li><code>.text-teal</code>, <code>.text-teal-light</code>, <code>.text-teal-dark</code></li>
-<li><code>.text-blue</code>, <code>.text-blue-light</code>, <code>.text-blue-dark</code></li>
-<li><code>.text-indigo</code>, <code>.text-indigo-light</code>, <code>.text-indigo-dark</code></li>
-<li><code>.text-purple</code>, <code>.text-purple-light</code>, <code>.text-purple-dark</code></li>
-<li><code>.text-brown</code>, <code>.text-brown-light</code>, <code>.text-brown-dark</code></li>
-<li><code>.text-gray</code>, <code>.text-gray-light</code>, <code>.text-gray-dark</code></li>
-<li><code>.text-black</code>, <code>.text-black-light</code>, <code>.text-black-dark</code></li>
-<li><code>.text-white</code></li>
-</ul>
-<h3>Semantic Color Text</h3>
-<ul>
-<li><code>.text-primary</code>, <code>.text-primary-light</code>, <code>.text-primary-lighter</code>, <code>.text-primary-dark</code></li>
-<li><code>.text-secondary</code>, <code>.text-secondary-light</code>, <code>.text-secondary-lighter</code>, <code>.text-secondary-dark</code></li>
-<li><code>.text-success</code>, <code>.text-success-light</code>, <code>.text-success-lighter</code>, <code>.text-success-dark</code></li>
-<li><code>.text-warning</code>, <code>.text-warning-light</code>, <code>.text-warning-lighter</code>, <code>.text-warning-dark</code></li>
-<li><code>.text-danger</code>, <code>.text-danger-light</code>, <code>.text-danger-lighter</code>, <code>.text-danger-dark</code></li>
-<li><code>.text-info</code>, <code>.text-info-light</code>, <code>.text-info-lighter</code>, <code>.text-info-dark</code></li>
-<li><code>.text-accent</code>, <code>.text-accent-light</code>, <code>.text-accent-lighter</code>, <code>.text-accent-dark</code></li>
-<li><code>.text</code>, <code>.text-muted</code>, <code>.text-inverse</code></li>
-</ul>
-<h2>Border Utilities</h2>
-<h3>Border Sides</h3>
-<ul>
-<li><code>.border</code> - All sides</li>
-<li><code>.border-0</code> - No border</li>
-<li><code>.border-top</code>, <code>.border-right</code>, <code>.border-bottom</code>, <code>.border-left</code></li>
-<li><code>.border-x</code> - Left + right</li>
-<li><code>.border-y</code> - Top + bottom</li>
-<li><code>.border-top-0</code>, <code>.border-right-0</code>, <code>.border-bottom-0</code>, <code>.border-left-0</code></li>
-<li><code>.border-x-0</code>, <code>.border-y-0</code></li>
-</ul>
-<h3>Border Colors</h3>
-<ul>
-<li><code>.border-red</code>, <code>.border-green</code>, <code>.border-blue</code>, <code>.border-indigo</code>, <code>.border-gray</code>, <code>.border-black</code>, <code>.border-white</code></li>
-</ul>
-<h3>Border Radius</h3>
-<ul>
-<li><code>.radius-sm</code>, <code>.radius-md</code>, <code>.radius-lg</code></li>
-</ul>
-<h2>Shadow Utilities</h2>
-<ul>
-<li><code>.shadow-sm</code>, <code>.shadow-md</code>, <code>.shadow-lg</code></li>
-</ul>
-<h2>Width/Height Utilities</h2>
-<h3>Width</h3>
-<ul>
-<li><code>.w-1</code> ... <code>.w-9</code> - Fixed widths using gap scale</li>
-<li><code>.w-100</code> - 100% width</li>
-<li><code>.w-xs</code>, <code>.w-sm</code>, <code>.w-md</code>, <code>.w-lg</code> - Container widths</li>
-<li><code>.min-w-xs</code>, <code>.min-w-sm</code>, <code>.min-w-md</code>, <code>.min-w-lg</code> - Min widths</li>
-<li><code>.max-w-xs</code>, <code>.max-w-sm</code>, <code>.max-w-md</code>, <code>.max-w-lg</code> - Max widths</li>
-</ul>
-<h3>Height</h3>
-<ul>
-<li><code>.h-1</code> ... <code>.h-9</code> - Fixed heights using gap scale</li>
-<li><code>.h-100</code> - 100% height</li>
-<li><code>.h-100vh</code> - 100vh height</li>
-<li><code>.min-h-100vh</code> - Min height 100vh</li>
-<li><code>.max-h-50</code>, <code>.max-h-75</code> - Max heights</li>
-</ul>
-<h2>Opacity Utilities</h2>
-<ul>
-<li><code>.opacity-100</code>, <code>.opacity-80</code>, <code>.opacity-50</code>, <code>.opacity-25</code>, <code>.opacity-disabled</code>, <code>.opacity-overlay</code></li>
-</ul>
-<h2>Z-Index Utilities</h2>
-<ul>
-<li><code>.z-0</code>, <code>.z-10</code>, <code>.z-20</code>, <code>.z-30</code>, <code>.z-40</code>, <code>.z-50</code></li>
-</ul>
-<h2>Transition Utilities</h2>
-<ul>
-<li><code>.transition-fast</code>, <code>.transition-base</code>, <code>.transition-slow</code></li>
-</ul>
-<h2>Container Width Utilities</h2>
-<ul>
-<li><code>.container-xs</code>, <code>.container-sm</code>, <code>.container-md</code>, <code>.container-lg</code>, <code>.container-xl</code></li>
-</ul>
-<h2>Accessibility Utilities</h2>
-<ul>
-<li><code>.sr-only</code></li>
-</ul>
-<h2>Cursor Utilities</h2>
-<ul>
-<li><code>.cursor-pointer</code>, <code>.cursor-disabled</code>, <code>.cursor-default</code>, <code>.cursor-text</code>, <code>.cursor-move</code>, <code>.cursor-grab</code>, <code>.cursor-grabbing</code>, <code>.cursor-wait</code>, <code>.cursor-crosshair</code>, <code>.cursor-zoom-in</code>, <code>.cursor-zoom-out</code>, <code>.cursor-help</code>, <code>.pointer-events-none</code>, <code>.pointer-events-auto</code>, <code>.select-none</code>, <code>.select-text</code>, <code>.select-all</code>, <code>.select-auto</code></li>
-</ul>
-<h2>Scroll Snap Utilities</h2>
-<ul>
-<li><code>.snap-x</code>, <code>.snap-y</code>, <code>.snap-mandatory</code>, <code>.snap-proximity</code>, <code>.snap-start</code>, <code>.snap-center</code>, <code>.snap-end</code></li>
-</ul>
-<h2>Aspect Ratio Utilities</h2>
-<ul>
-<li><code>.aspect-1-1</code>, <code>.aspect-16-9</code>, <code>.aspect-4-3</code></li>
-</ul>
-<h2>Text Decoration &amp; Transform Utilities</h2>
-<ul>
-<li><code>.underline</code>, <code>.line-through</code>, <code>.uppercase</code>, <code>.lowercase</code>, <code>.capitalize</code></li>
-</ul>
-<h2>List Style Utilities</h2>
-<ul>
-<li><code>.list-none</code>, <code>.list-disc</code>, <code>.list-decimal</code></li>
-</ul>
+<p>Control content overflow behavior.</p>
+<pre><code class="language-html">&lt;!-- Auto scrollbars (only when needed) --&gt;
+&lt;div class="overflow-auto" style="height: 200px;"&gt;
+  Long content...
+&lt;/div&gt;
+
+&lt;!-- Always show scrollbars --&gt;
+&lt;div class="overflow-scroll" style="height: 200px;"&gt;
+  Long content...
+&lt;/div&gt;
+
+&lt;!-- Hide overflow --&gt;
+&lt;div class="overflow-hidden"&gt;
+  Content is clipped
+&lt;/div&gt;
+
+&lt;!-- Horizontal only --&gt;
+&lt;div class="overflow-x-auto"&gt;
+  &lt;table style="width: 2000px;"&gt;Wide table&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;!-- Vertical only --&gt;
+&lt;div class="overflow-y-auto" style="height: 300px;"&gt;
+  Long vertical content...
+&lt;/div&gt;</code></pre>
 <hr />
-<h2>Usage Examples</h2>
-<h3>Spacing Utilities</h3>
-<div class="demo-container" style="display:flex; gap:1rem;">
-  <div class="bg-muted p-3 m-2">.p-3 .m-2</div>
-  <div class="bg-muted p-1 m-4">.p-1 .m-4</div>
-</div>
-<pre><code class="language-html">&lt;div class="bg-muted p-3 m-2"&gt;.p-3 .m-2&lt;/div&gt;
-&lt;div class="bg-muted p-1 m-4"&gt;.p-1 .m-4&lt;/div&gt;</code></pre>
-<h3>Layout Utilities</h3>
-<div class="demo-container" style="display:flex; gap:1rem;">
-  <div class="d-inline bg-muted p-2">.d-inline</div>
-  <div class="d-block bg-muted p-2">.d-block</div>
-  <div class="d-none bg-muted p-2">.d-none (hidden)</div>
-</div>
-<pre><code class="language-html">&lt;div class="d-inline bg-muted p-2"&gt;.d-inline&lt;/div&gt;
-&lt;div class="d-block bg-muted p-2"&gt;.d-block&lt;/div&gt;
-&lt;div class="d-none bg-muted p-2"&gt;.d-none (hidden)&lt;/div&gt;</code></pre>
-<h3>Flex Utilities</h3>
-<div class="demo-container" style="display:flex; gap:1rem;">
-  <div class="flex flex-row gap-2 p-2">
-    <div class="bg-muted p-2">A</div>
-    <div class="bg-muted p-2">B</div>
-    <div class="bg-muted p-2">C</div>
-  </div>
-</div>
-<pre><code class="language-html">&lt;div class="flex flex-row gap-2 bg-muted p-2"&gt;
-  &lt;span class="bg-indigo p-1"&gt;1&lt;/span&gt;
-  &lt;span class="bg-green p-1"&gt;2&lt;/span&gt;
-  &lt;span class="bg-red p-1"&gt;3&lt;/span&gt;
+<h2>Flexbox</h2>
+<p>Build flexible layouts with flexbox utilities.</p>
+<h3>Basic Flex</h3>
+<pre><code class="language-html">&lt;!-- Enable flexbox --&gt;
+&lt;div class="flex"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Inline flex --&gt;
+&lt;div class="inline-flex"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-<h3>Grid Utilities</h3>
-<div class="demo-container">
-  <div class="grid grid-cols-3 gap-2">
-    <div class="bg-muted p-2">A</div>
-    <div class="bg-muted p-2">B</div>
-    <div class="bg-muted p-2">C</div>
-  </div>
-</div>
-<pre><code class="language-html">&lt;div class="grid grid-cols-3 gap-2"&gt;
-  &lt;div class="bg-muted p-2"&gt;A&lt;/div&gt;
-  &lt;div class="bg-muted p-2"&gt;B&lt;/div&gt;
-  &lt;div class="bg-muted p-2"&gt;C&lt;/div&gt;
+<h3>Direction</h3>
+<pre><code class="language-html">&lt;!-- Row (default - horizontal) --&gt;
+&lt;div class="flex flex-row"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Row reverse --&gt;
+&lt;div class="flex flex-row-reverse"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Column (vertical) --&gt;
+&lt;div class="flex flex-col"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Column reverse --&gt;
+&lt;div class="flex flex-col-reverse"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-<h3>Typography Utilities</h3>
-<div class="demo-container" style="display:flex; flex-direction:column; gap:0.5rem;">
-  <span class="fs-xs">.fs-xs</span>
-  <span class="fs-lg">.fs-lg</span>
-  <span class="fw-700">.fw-700</span>
-  <span class="text-center">.text-center (centered text)</span>
-</div>
-<pre><code class="language-html">&lt;span class="fs-xs"&gt;.fs-xs&lt;/span&gt;
-&lt;span class="fs-lg"&gt;.fs-lg&lt;/span&gt;
-&lt;span class="fw-700"&gt;.fw-700&lt;/span&gt;
-&lt;span class="text-center"&gt;.text-center (centered text)&lt;/span&gt;</code></pre>
-<h3>Color Utilities</h3>
-<div class="demo-container" style="display:flex; gap:1rem;">
-  <span class="bg-indigo text-white p-2">.bg-indigo .text-white</span>
-  <span class="bg-green text-white p-2">.bg-green .text-white</span>
-  <span class="bg-red text-white p-2">.bg-red .text-white</span>
-</div>
-<pre><code class="language-html">&lt;span class="bg-indigo text-white p-2"&gt;.bg-indigo .text-white&lt;/span&gt;
-&lt;span class="bg-green text-white p-2"&gt;.bg-green .text-white&lt;/span&gt;
-&lt;span class="bg-red text-white p-2"&gt;.bg-red .text-white&lt;/span&gt;</code></pre>
-<h3>Border &amp; Radius Utilities</h3>
-<div class="demo-container" style="display:flex; gap:1rem;">
-  <span class="border border-indigo radius-sm p-2">.border .border-indigo .radius-sm</span>
-  <span class="border border-red radius-lg p-2">.border .border-red .radius-lg</span>
-</div>
-<pre><code class="language-html">&lt;span class="border border-indigo radius-sm p-2"&gt;.border .border-indigo .radius-sm&lt;/span&gt;
-&lt;span class="border border-red radius-lg p-2"&gt;.border .border-red .radius-lg&lt;/span&gt;</code></pre>
-<h3>Shadow Utilities</h3>
-<div class="demo-container" style="display:flex; gap:1rem;">
-  <span class="shadow-sm p-2">.shadow-sm</span>
-  <span class="shadow-md p-2">.shadow-md</span>
-  <span class="shadow-lg p-2">.shadow-lg</span>
-</div>
-<pre><code class="language-html">&lt;span class="shadow-sm p-2"&gt;.shadow-sm&lt;/span&gt;
-&lt;span class="shadow-md p-2"&gt;.shadow-md&lt;/span&gt;
-&lt;span class="shadow-lg p-2"&gt;.shadow-lg&lt;/span&gt;</code></pre>
-<h3>Width/Height Utilities</h3>
-<div class="demo-container" style="display:flex; gap:1rem; align-items:center;">
-  <div class="bg-muted w-xs h-100 p-2">.w-xs .h-100</div>
-  <div class="bg-muted w-md h-100 p-2">.w-md .h-100</div>
-  <div class="bg-muted w-lg h-100 p-2">.w-lg .h-100</div>
-</div>
-<pre><code class="language-html">&lt;div class="bg-muted w-xs h-100 p-2"&gt;.w-xs .h-100&lt;/div&gt;
-&lt;div class="bg-muted w-md h-100 p-2"&gt;.w-md .h-100&lt;/div&gt;
-&lt;div class="bg-muted w-lg h-100 p-2"&gt;.w-lg .h-100&lt;/div&gt;</code></pre>
-<h3>Opacity Utilities</h3>
-<div class="demo-container" style="display:flex; gap:1rem;">
-  <span class="bg-indigo text-white p-2 opacity-100">.opacity-100</span>
-  <span class="bg-indigo text-white p-2 opacity-50">.opacity-50</span>
-  <span class="bg-indigo text-white p-2 opacity-25">.opacity-25</span>
-</div>
-<pre><code class="language-html">&lt;span class="bg-indigo text-white p-2 opacity-100"&gt;.opacity-100&lt;/span&gt;
-&lt;span class="bg-indigo text-white p-2 opacity-50"&gt;.opacity-50&lt;/span&gt;
-&lt;span class="bg-indigo text-white p-2 opacity-25"&gt;.opacity-25&lt;/span&gt;</code></pre>
-<h3>Animation Utilities</h3>
-<div class="demo-container" style="display:flex; gap:1rem; align-items:center;">
-  <span class="animate-spin bg-indigo text-white p-2">spin</span>
-  <span class="animate-bounce bg-green text-white p-2">bounce</span>
-</div>
-<pre><code class="language-html">&lt;span class="animate-spin bg-indigo text-white p-2"&gt;spin&lt;/span&gt;
-&lt;span class="animate-bounce bg-green text-white p-2"&gt;bounce&lt;/span&gt;</code></pre>
-<hr />    </main>
+<h3>Wrapping</h3>
+<pre><code class="language-html">&lt;!-- Wrap items --&gt;
+&lt;div class="flex flex-wrap gap-2"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+  &lt;div&gt;Item 4&lt;/div&gt;
+  &lt;div&gt;Item 5&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- No wrap (default) --&gt;
+&lt;div class="flex flex-nowrap"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h3>Justify Content (Horizontal Alignment)</h3>
+<pre><code class="language-html">&lt;!-- Start (default) --&gt;
+&lt;div class="flex justify-start"&gt;
+  &lt;div&gt;Item&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Center --&gt;
+&lt;div class="flex justify-center"&gt;
+  &lt;div&gt;Centered&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- End --&gt;
+&lt;div class="flex justify-end"&gt;
+  &lt;div&gt;Item&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Space between --&gt;
+&lt;div class="flex justify-between"&gt;
+  &lt;div&gt;Left&lt;/div&gt;
+  &lt;div&gt;Right&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Space around --&gt;
+&lt;div class="flex justify-around"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Space evenly --&gt;
+&lt;div class="flex justify-evenly"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h3>Align Items (Vertical Alignment)</h3>
+<pre><code class="language-html">&lt;!-- Start --&gt;
+&lt;div class="flex items-start" style="height: 200px;"&gt;
+  &lt;div&gt;Top aligned&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Center --&gt;
+&lt;div class="flex items-center" style="height: 200px;"&gt;
+  &lt;div&gt;Vertically centered&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- End --&gt;
+&lt;div class="flex items-end" style="height: 200px;"&gt;
+  &lt;div&gt;Bottom aligned&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Stretch (default) --&gt;
+&lt;div class="flex items-stretch" style="height: 200px;"&gt;
+  &lt;div&gt;Stretched&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Baseline --&gt;
+&lt;div class="flex items-baseline"&gt;
+  &lt;div class="fs-xl"&gt;Large&lt;/div&gt;
+  &lt;div class="fs-sm"&gt;Small&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h3>Common Flexbox Patterns</h3>
+<pre><code class="language-html">&lt;!-- Center everything --&gt;
+&lt;div class="flex items-center justify-center" style="height: 300px;"&gt;
+  &lt;div&gt;Perfectly centered&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Navbar layout --&gt;
+&lt;nav class="flex items-center justify-between p-4"&gt;
+  &lt;div class="navbar-brand"&gt;Logo&lt;/div&gt;
+  &lt;div class="flex gap-4"&gt;
+    &lt;a href="#"&gt;Link 1&lt;/a&gt;
+    &lt;a href="#"&gt;Link 2&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;!-- Card with footer at bottom --&gt;
+&lt;div class="card flex flex-col" style="height: 300px;"&gt;
+  &lt;div class="flex-1 p-4"&gt;
+    &lt;h3&gt;Title&lt;/h3&gt;
+    &lt;p&gt;Content&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="p-4"&gt;
+    &lt;button class="btn"&gt;Action&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Equal width columns --&gt;
+&lt;div class="flex gap-4"&gt;
+  &lt;div class="flex-1"&gt;Column 1&lt;/div&gt;
+  &lt;div class="flex-1"&gt;Column 2&lt;/div&gt;
+  &lt;div class="flex-1"&gt;Column 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Sidebar layout --&gt;
+&lt;div class="flex gap-4"&gt;
+  &lt;aside class="flex-none" style="width: 250px;"&gt;Sidebar&lt;/aside&gt;
+  &lt;main class="flex-1"&gt;Main content&lt;/main&gt;
+&lt;/div&gt;</code></pre>
+<hr />
+<h2>Grid</h2>
+<p>Build grid layouts with CSS Grid utilities.</p>
+<h3>Basic Grid</h3>
+<pre><code class="language-html">&lt;!-- 3 column grid --&gt;
+&lt;div class="grid grid-cols-3 gap-4"&gt;
+  &lt;div&gt;Cell 1&lt;/div&gt;
+  &lt;div&gt;Cell 2&lt;/div&gt;
+  &lt;div&gt;Cell 3&lt;/div&gt;
+  &lt;div&gt;Cell 4&lt;/div&gt;
+  &lt;div&gt;Cell 5&lt;/div&gt;
+  &lt;div&gt;Cell 6&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 4 column grid --&gt;
+&lt;div class="grid grid-cols-4 gap-3"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h3>Responsive Grid</h3>
+<pre><code class="language-html">&lt;!-- 1 column on mobile, 2 on tablet, 4 on desktop --&gt;
+&lt;div class="grid grid-cols-1 grid-cols-md-2 grid-cols-lg-4 gap-4"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+  &lt;div&gt;Item 4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h3>Common Grid Patterns</h3>
+<pre><code class="language-html">&lt;!-- Product grid --&gt;
+&lt;div class="grid grid-cols-2 grid-cols-md-3 grid-cols-lg-4 gap-5"&gt;
+  &lt;div class="card"&gt;Product 1&lt;/div&gt;
+  &lt;div class="card"&gt;Product 2&lt;/div&gt;
+  &lt;div class="card"&gt;Product 3&lt;/div&gt;
+  &lt;div class="card"&gt;Product 4&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Dashboard grid --&gt;
+&lt;div class="grid grid-cols-1 grid-cols-lg-3 gap-4"&gt;
+  &lt;div class="card"&gt;Stat 1&lt;/div&gt;
+  &lt;div class="card"&gt;Stat 2&lt;/div&gt;
+  &lt;div class="card"&gt;Stat 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Gallery grid --&gt;
+&lt;div class="grid grid-cols-2 grid-cols-md-4 gap-2"&gt;
+  &lt;img src="image1.jpg" alt=""&gt;
+  &lt;img src="image2.jpg" alt=""&gt;
+  &lt;img src="image3.jpg" alt=""&gt;
+  &lt;img src="image4.jpg" alt=""&gt;
+&lt;/div&gt;</code></pre>
+<hr />
+<h2>Typography</h2>
+<h3>Font Sizes</h3>
+<pre><code class="language-html">&lt;p class="fs-xs"&gt;Extra small text (12px)&lt;/p&gt;
+&lt;p class="fs-sm"&gt;Small text (14px)&lt;/p&gt;
+&lt;p class="fs-base"&gt;Base text (16px)&lt;/p&gt;
+&lt;p class="fs-md"&gt;Medium text (18px)&lt;/p&gt;
+&lt;p class="fs-lg"&gt;Large text (20px)&lt;/p&gt;
+&lt;p class="fs-xl"&gt;Extra large text (24px)&lt;/p&gt;
+&lt;p class="fs-2xl"&gt;2X large text (30px)&lt;/p&gt;
+&lt;p class="fs-3xl"&gt;3X large text (36px)&lt;/p&gt;
+&lt;p class="fs-4xl"&gt;4X large text (48px)&lt;/p&gt;
+&lt;p class="fs-5xl"&gt;5X large text (60px)&lt;/p&gt;</code></pre>
+<p><strong>Use Cases:</strong></p>
+<pre><code class="language-html">&lt;!-- Hero heading --&gt;
+&lt;h1 class="fs-5xl fw-700"&gt;Welcome&lt;/h1&gt;
+
+&lt;!-- Subheading --&gt;
+&lt;h2 class="fs-2xl fw-600"&gt;Subtitle&lt;/h2&gt;
+
+&lt;!-- Small print --&gt;
+&lt;p class="fs-sm text-muted"&gt;Terms and conditions apply&lt;/p&gt;</code></pre>
+<h3>Font Weights</h3>
+<pre><code class="language-html">&lt;p class="fw-100"&gt;Thin (100)&lt;/p&gt;
+&lt;p class="fw-200"&gt;Extra Light (200)&lt;/p&gt;
+&lt;p class="fw-300"&gt;Light (300)&lt;/p&gt;
+&lt;p class="fw-400"&gt;Normal (400)&lt;/p&gt;
+&lt;p class="fw-500"&gt;Medium (500)&lt;/p&gt;
+&lt;p class="fw-600"&gt;Semi Bold (600)&lt;/p&gt;
+&lt;p class="fw-700"&gt;Bold (700)&lt;/p&gt;
+&lt;p class="fw-800"&gt;Extra Bold (800)&lt;/p&gt;
+&lt;p class="fw-900"&gt;Black (900)&lt;/p&gt;</code></pre>
+<h3>Text Alignment</h3>
+<pre><code class="language-html">&lt;p class="text-left"&gt;Left aligned text&lt;/p&gt;
+&lt;p class="text-center"&gt;Center aligned text&lt;/p&gt;
+&lt;p class="text-right"&gt;Right aligned text&lt;/p&gt;
+&lt;p class="text-justify"&gt;Justified text that stretches to fill the line width&lt;/p&gt;</code></pre>
+<p><strong>Responsive:</strong></p>
+<pre><code class="language-html">&lt;!-- Left on mobile, center on desktop --&gt;
+&lt;p class="text-left text-center-md"&gt;Responsive alignment&lt;/p&gt;</code></pre>
+<h3>Text Transform &amp; Decoration</h3>
+<pre><code class="language-html">&lt;p class="uppercase"&gt;UPPERCASE TEXT&lt;/p&gt;
+&lt;p class="lowercase"&gt;lowercase text&lt;/p&gt;
+&lt;p class="capitalize"&gt;Capitalized Text&lt;/p&gt;
+
+&lt;p class="underline"&gt;Underlined text&lt;/p&gt;
+&lt;p class="line-through"&gt;Strikethrough text&lt;/p&gt;</code></pre>
+<h3>Text Utilities</h3>
+<pre><code class="language-html">&lt;!-- Truncate with ellipsis --&gt;
+&lt;p class="truncate" style="width: 200px;"&gt;
+  This is a very long text that will be truncated with an ellipsis
+&lt;/p&gt;
+
+&lt;!-- Prevent wrapping --&gt;
+&lt;p class="whitespace-nowrap"&gt;This text will not wrap&lt;/p&gt;
+
+&lt;!-- Break long words --&gt;
+&lt;p class="break-words"&gt;
+  Supercalifragilisticexpialidocious
+&lt;/p&gt;</code></pre>
+<hr />
+<h2>Colors</h2>
+<h3>Background Colors</h3>
+<p><strong>Semantic Colors:</strong></p>
+<pre><code class="language-html">&lt;div class="bg-primary text-white p-3"&gt;Primary background&lt;/div&gt;
+&lt;div class="bg-secondary text-white p-3"&gt;Secondary background&lt;/div&gt;
+&lt;div class="bg-success text-white p-3"&gt;Success background&lt;/div&gt;
+&lt;div class="bg-danger text-white p-3"&gt;Danger background&lt;/div&gt;
+&lt;div class="bg-warning text-white p-3"&gt;Warning background&lt;/div&gt;
+&lt;div class="bg-info text-white p-3"&gt;Info background&lt;/div&gt;</code></pre>
+<p><strong>Shades:</strong></p>
+<pre><code class="language-html">&lt;div class="bg-primary-lighter p-3"&gt;Lighter primary&lt;/div&gt;
+&lt;div class="bg-primary-light p-3"&gt;Light primary&lt;/div&gt;
+&lt;div class="bg-primary p-3"&gt;Primary&lt;/div&gt;
+&lt;div class="bg-primary-dark text-white p-3"&gt;Dark primary&lt;/div&gt;</code></pre>
+<p><strong>Natural Colors:</strong></p>
+<pre><code class="language-html">&lt;div class="bg-red text-white p-3"&gt;Red&lt;/div&gt;
+&lt;div class="bg-blue text-white p-3"&gt;Blue&lt;/div&gt;
+&lt;div class="bg-green text-white p-3"&gt;Green&lt;/div&gt;
+&lt;div class="bg-purple text-white p-3"&gt;Purple&lt;/div&gt;
+&lt;div class="bg-indigo text-white p-3"&gt;Indigo&lt;/div&gt;
+&lt;div class="bg-gray p-3"&gt;Gray&lt;/div&gt;</code></pre>
+<p><strong>Surface Colors:</strong></p>
+<pre><code class="language-html">&lt;div class="bg-surface p-3"&gt;Surface background&lt;/div&gt;
+&lt;div class="bg-surface-dark p-3"&gt;Dark surface&lt;/div&gt;
+&lt;div class="bg-muted p-3"&gt;Muted background&lt;/div&gt;</code></pre>
+<h3>Text Colors</h3>
+<pre><code class="language-html">&lt;p class="text-primary"&gt;Primary text&lt;/p&gt;
+&lt;p class="text-secondary"&gt;Secondary text&lt;/p&gt;
+&lt;p class="text-success"&gt;Success text&lt;/p&gt;
+&lt;p class="text-danger"&gt;Danger text&lt;/p&gt;
+&lt;p class="text-warning"&gt;Warning text&lt;/p&gt;
+&lt;p class="text-info"&gt;Info text&lt;/p&gt;
+&lt;p class="text-muted"&gt;Muted text&lt;/p&gt;</code></pre>
+<p><strong>Use Cases:</strong></p>
+<pre><code class="language-html">&lt;!-- Status indicators --&gt;
+&lt;span class="text-success"&gt;✓ Completed&lt;/span&gt;
+&lt;span class="text-danger"&gt;✗ Failed&lt;/span&gt;
+&lt;span class="text-warning"&gt;⚠ Warning&lt;/span&gt;
+
+&lt;!-- Highlighted text --&gt;
+&lt;p&gt;This is &lt;span class="text-primary fw-600"&gt;important&lt;/span&gt; information&lt;/p&gt;</code></pre>
+<hr />
+<h2>Borders</h2>
+<h3>Border Sides</h3>
+<pre><code class="language-html">&lt;!-- All sides --&gt;
+&lt;div class="border p-3"&gt;Border on all sides&lt;/div&gt;
+
+&lt;!-- Individual sides --&gt;
+&lt;div class="border-top p-3"&gt;Top border only&lt;/div&gt;
+&lt;div class="border-right p-3"&gt;Right border only&lt;/div&gt;
+&lt;div class="border-bottom p-3"&gt;Bottom border only&lt;/div&gt;
+&lt;div class="border-left p-3"&gt;Left border only&lt;/div&gt;
+
+&lt;!-- Horizontal &amp; Vertical --&gt;
+&lt;div class="border-x p-3"&gt;Left and right borders&lt;/div&gt;
+&lt;div class="border-y p-3"&gt;Top and bottom borders&lt;/div&gt;</code></pre>
+<h3>Border Radius</h3>
+<pre><code class="language-html">&lt;div class="border radius-sm p-3"&gt;Small radius (4px)&lt;/div&gt;
+&lt;div class="border radius-md p-3"&gt;Medium radius (8px)&lt;/div&gt;
+&lt;div class="border radius-lg p-3"&gt;Large radius (12px)&lt;/div&gt;</code></pre>
+<p><strong>Use Cases:</strong></p>
+<pre><code class="language-html">&lt;!-- Rounded button --&gt;
+&lt;button class="btn btn-primary radius-lg"&gt;Rounded Button&lt;/button&gt;
+
+&lt;!-- Circular avatar --&gt;
+&lt;img src="avatar.jpg" class="avatar" style="border-radius: 50%;"&gt;
+
+&lt;!-- Card with rounded corners --&gt;
+&lt;div class="card radius-md"&gt;
+  &lt;div class="card-body"&gt;Content&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h3>Border Colors</h3>
+<pre><code class="language-html">&lt;div class="border border-red p-3"&gt;Red border&lt;/div&gt;
+&lt;div class="border border-blue p-3"&gt;Blue border&lt;/div&gt;
+&lt;div class="border border-green p-3"&gt;Green border&lt;/div&gt;
+&lt;div class="border border-gray p-3"&gt;Gray border&lt;/div&gt;</code></pre>
+<hr />
+<h2>Sizing</h2>
+<h3>Width</h3>
+<pre><code class="language-html">&lt;!-- Percentage widths --&gt;
+&lt;div class="w-100"&gt;100% width&lt;/div&gt;
+
+&lt;!-- Fixed widths (using gap scale) --&gt;
+&lt;div class="w-1"&gt;Width: 0.25rem&lt;/div&gt;
+&lt;div class="w-5"&gt;Width: 2rem&lt;/div&gt;
+
+&lt;!-- Container widths --&gt;
+&lt;div class="w-xs"&gt;Extra small container&lt;/div&gt;
+&lt;div class="w-sm"&gt;Small container&lt;/div&gt;
+&lt;div class="w-md"&gt;Medium container&lt;/div&gt;
+&lt;div class="w-lg"&gt;Large container&lt;/div&gt;
+
+&lt;!-- Min/Max widths --&gt;
+&lt;div class="min-w-sm"&gt;Minimum small width&lt;/div&gt;
+&lt;div class="max-w-md"&gt;Maximum medium width&lt;/div&gt;</code></pre>
+<p><strong>Use Cases:</strong></p>
+<pre><code class="language-html">&lt;!-- Centered container --&gt;
+&lt;div class="max-w-lg mx-auto"&gt;
+  &lt;h1&gt;Centered Content&lt;/h1&gt;
+  &lt;p&gt;This content is centered and has a max width&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Sidebar layout --&gt;
+&lt;div class="flex gap-4"&gt;
+  &lt;aside class="w-sm"&gt;Sidebar&lt;/aside&gt;
+  &lt;main class="flex-1"&gt;Main content&lt;/main&gt;
+&lt;/div&gt;</code></pre>
+<h3>Height</h3>
+<pre><code class="language-html">&lt;!-- Percentage heights --&gt;
+&lt;div class="h-100"&gt;100% height&lt;/div&gt;
+
+&lt;!-- Viewport height --&gt;
+&lt;div class="h-100vh"&gt;Full viewport height&lt;/div&gt;
+
+&lt;!-- Min height --&gt;
+&lt;div class="min-h-100vh"&gt;Minimum full viewport height&lt;/div&gt;</code></pre>
+<p><strong>Use Cases:</strong></p>
+<pre><code class="language-html">&lt;!-- Full-screen hero --&gt;
+&lt;section class="h-100vh flex items-center justify-center"&gt;
+  &lt;div class="text-center"&gt;
+    &lt;h1 class="fs-5xl"&gt;Welcome&lt;/h1&gt;
+    &lt;p class="fs-lg"&gt;Scroll down to explore&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- Sticky footer --&gt;
+&lt;div class="flex flex-col min-h-100vh"&gt;
+  &lt;header&gt;Header&lt;/header&gt;
+  &lt;main class="flex-1"&gt;Content&lt;/main&gt;
+  &lt;footer&gt;Footer&lt;/footer&gt;
+&lt;/div&gt;</code></pre>
+<hr />
+<h2>Effects &amp; Animations</h2>
+<h3>Shadows</h3>
+<pre><code class="language-html">&lt;div class="shadow-sm p-4"&gt;Small shadow&lt;/div&gt;
+&lt;div class="shadow-md p-4"&gt;Medium shadow&lt;/div&gt;
+&lt;div class="shadow-lg p-4"&gt;Large shadow&lt;/div&gt;</code></pre>
+<p><strong>Use Cases:</strong></p>
+<pre><code class="language-html">&lt;!-- Elevated card --&gt;
+&lt;div class="card shadow-md"&gt;
+  &lt;div class="card-body"&gt;Elevated content&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Hover effect --&gt;
+&lt;style&gt;
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+&lt;/style&gt;
+&lt;div class="card shadow-sm hover-lift transition-base"&gt;
+  Hover me
+&lt;/div&gt;</code></pre>
+<h3>Opacity</h3>
+<pre><code class="language-html">&lt;div class="opacity-100"&gt;Fully opaque&lt;/div&gt;
+&lt;div class="opacity-80"&gt;80% opaque&lt;/div&gt;
+&lt;div class="opacity-50"&gt;50% opaque&lt;/div&gt;
+&lt;div class="opacity-25"&gt;25% opaque&lt;/div&gt;</code></pre>
+<h3>Transitions</h3>
+<pre><code class="language-html">&lt;div class="transition-fast"&gt;Fast transition (150ms)&lt;/div&gt;
+&lt;div class="transition-base"&gt;Base transition (250ms)&lt;/div&gt;
+&lt;div class="transition-slow"&gt;Slow transition (500ms)&lt;/div&gt;</code></pre>
+<h3>Animations</h3>
+<pre><code class="language-html">&lt;div class="animate-spin"&gt;Spinning element&lt;/div&gt;
+&lt;div class="animate-bounce"&gt;Bouncing element&lt;/div&gt;
+&lt;div class="animate-fade-in"&gt;Fading in&lt;/div&gt;
+&lt;div class="animate-fade-out"&gt;Fading out&lt;/div&gt;
+&lt;div class="animate-slide-up"&gt;Sliding up&lt;/div&gt;</code></pre>
+<hr />
+<h2>Responsive Design</h2>
+<h3>Breakpoints</h3>
+<ul>
+<li><code>sm</code>: 640px</li>
+<li><code>md</code>: 768px</li>
+<li><code>lg</code>: 1024px</li>
+<li><code>xl</code>: 1280px</li>
+</ul>
+<h3>Mobile-First Approach</h3>
+<p>Classes apply to all screen sizes unless overridden at larger breakpoints.</p>
+<pre><code class="language-html">&lt;!-- Stack on mobile, row on desktop --&gt;
+&lt;div class="flex flex-col flex-row-md gap-4"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 1 column on mobile, 2 on tablet, 4 on desktop --&gt;
+&lt;div class="grid grid-cols-1 grid-cols-md-2 grid-cols-lg-4 gap-4"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+  &lt;div&gt;Item 4&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Hide on mobile, show on desktop --&gt;
+&lt;div class="d-none d-block-md"&gt;Desktop only&lt;/div&gt;
+
+&lt;!-- Show on mobile, hide on desktop --&gt;
+&lt;div class="d-block d-none-md"&gt;Mobile only&lt;/div&gt;
+
+&lt;!-- Different padding at different sizes --&gt;
+&lt;div class="p-3 p-md-5 p-lg-7"&gt;
+  Responsive padding
+&lt;/div&gt;
+
+&lt;!-- Center on mobile, left-align on desktop --&gt;
+&lt;p class="text-center text-left-md"&gt;
+  Responsive text alignment
+&lt;/p&gt;</code></pre>
+<hr />
+<h2>Best Practices</h2>
+<h3>✅ Do's</h3>
+<ol>
+<li><strong>Combine utilities</strong> for complex layouts</li>
+<li><strong>Use responsive variants</strong> for mobile-first design</li>
+<li><strong>Leverage flexbox and grid</strong> for layouts</li>
+<li><strong>Use semantic color classes</strong> for consistency</li>
+<li><strong>Apply spacing consistently</strong> using the scale</li>
+</ol>
+<h3>❌ Don'ts</h3>
+<ol>
+<li><strong>Don't mix layout systems</strong> (flexbox + grid on same element)</li>
+<li><strong>Don't override utilities</strong> with inline styles</li>
+<li><strong>Don't use arbitrary values</strong> - stick to the scale</li>
+<li><strong>Don't forget responsive design</strong></li>
+<li><strong>Don't use utilities for complex components</strong> - create component classes instead</li>
+</ol>
+<hr />
+<h2>Quick Reference</h2>
+<p><strong>Most Common Utilities:</strong></p>
+<pre><code class="language-html">&lt;!-- Layout --&gt;
+flex, grid, d-block, d-none, relative, absolute
+
+&lt;!-- Spacing --&gt;
+m-0 to m-9, p-0 to p-9, gap-0 to gap-9, mx-auto
+
+&lt;!-- Flexbox --&gt;
+flex-col, flex-row, items-center, justify-between, flex-1
+
+&lt;!-- Typography --&gt;
+fs-xs to fs-5xl, fw-400 to fw-700, text-center
+
+&lt;!-- Colors --&gt;
+bg-primary, text-primary, bg-surface, text-muted
+
+&lt;!-- Sizing --&gt;
+w-100, h-100vh, max-w-lg, min-h-100vh
+
+&lt;!-- Effects --&gt;
+shadow-md, opacity-50, transition-base</code></pre>
+<hr />
+<p>For customization options, see <a href="customization.md">Customization Guide</a>.</p>    </main>
 
     <div class="sticky top-0 p-6 w-xs">
       <nav class="toc d-none d-block-sm"></nav>

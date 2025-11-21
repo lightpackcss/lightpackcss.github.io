@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customization | Lightpack CSS Framework</title>
+  <link rel="icon" type="image/x-icon" href="assets/logo.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.13-beta/dist/lightpack.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.13-beta/dist/lightpack.min.js"></script>
+  <style>
+    body {
+      font-family: 'Montserrat', Verdana, system-ui, sans-serif !important;
+      background-color: var(--color-background);
+      font-size: var(--fs-sm);
+    }
+
+    .demo-container {
+      margin: var(--g-5);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--g-2);
+      color: var(--color-text);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      margin: 0 auto;
+      align-items: flex-start;
+    }
+
+    .sidebar {
+      width: 300px;
+      background: var(--color-background);
+      border-right: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+      padding: 2.2rem 1.1rem 2.2rem 2.1rem;
+      height: 100vh;
+      overflow-y: auto;
+      border-radius: 0;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar .sidebar-logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2.2rem;
+      font-size: 1.12em;
+      font-weight: 700;
+      color: var(--color-text);
+      gap: 0.5em;
+    }
+
+    .sidebar .sidebar-logo img {
+      max-height: 2.5em;
+      margin-right: 0.5em;
+    }
+
+    .sidebar-section {
+      margin-bottom: 1em;
+    }
+
+    .sidebar-section-title {
+      margin-bottom: 0.7em;
+      color: var(--color-text);
+      font-size: --fs-sm
+      letter-spacing: 0.1px;
+      margin-top: 2.1em;
+      text-transform: uppercase;
+    }
+
+    .sidebar-section-title:first-child {
+      margin-top: 0;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 0.18em;
+    }
+
+    .sidebar a {
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: 1em;
+      display: flex;
+      align-items: center;
+      padding: 7px 0 7px 0.8em;
+      border-radius: 6px;
+      position: relative;
+      transition: background var(--transition-slow), color var(--transition-slow);
+    }
+
+    .sidebar a:hover {
+      background: var(--color-muted);
+    }
+
+    .sidebar a.active,
+    .sidebar a[aria-current="page"] {
+      background: var(--color-muted);
+      font-weight: 700;
+    }
+
+    .sidebar .sidebar-divider {
+      border-bottom: 1px solid var(--color-border);
+      margin: 1.5em 0 1.5em 0;
+    }
+
+    main {
+      flex: 1 1 0;
+      padding: 1rem 2.2rem 2.5rem 2.2rem;
+      max-width: 780px;
+      margin: 2.5rem auto 2.5rem auto;
+      margin-top: 0;
+      background: var(--color-background);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    code {
+      padding: 2px 5px;
+      background-color: var(--color-muted);
+      border-radius: var(--radius-sm);
+      font-size: var(--fs-xs);
+    }
+
+    pre,
+    pre>code {
+      background: var(--color-surface);
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', 'SFMono-Regular', 'Menlo', 'Monaco', monospace;
+      font-size: var(--fs-sm);
+    }
+
+    pre {
+      padding: 1em;
+      overflow-x: auto;
+    }
+
+    pre>code {
+      padding: 0;
+    }
+
+    @media (max-width: 1200px) {
+      main,
+      .blog-post {
+        max-width: 100%;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 950px) {
+      .container {
+        flex-direction: column;
+        padding: 0 0.5rem;
+      }
+
+      .sidebar {
+        width: 100%;
+        min-height: unset;
+        padding: 1.5rem 1rem;
+        position: static;
+        box-shadow: none;
+        height: unset;
+      }
+
+      main,
+      .blog-post {
+        margin: 1.5rem auto;
+        padding: 1.2rem 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="assets/logo.svg" /> Lightpack CSS
+      </div>
+                        <div class="sidebar-section">
+            <ul>
+                              <li>
+                  <a href="alert.html"
+                    >
+                    Alert                  </a>
+                </li>
+                              <li>
+                  <a href="avatar.html"
+                    >
+                    Avatar                  </a>
+                </li>
+                              <li>
+                  <a href="badge.html"
+                    >
+                    Badge                  </a>
+                </li>
+                              <li>
+                  <a href="breadcrumb.html"
+                    >
+                    Breadcrumb                  </a>
+                </li>
+                              <li>
+                  <a href="button.html"
+                    >
+                    Button                  </a>
+                </li>
+                              <li>
+                  <a href="card.html"
+                    >
+                    Card                  </a>
+                </li>
+                              <li>
+                  <a href="collapse.html"
+                    >
+                    Collapse                  </a>
+                </li>
+                              <li>
+                  <a href="customization.html"
+                    class="active" aria-current="page" >
+                    Customization                  </a>
+                </li>
+                              <li>
+                  <a href="drawer.html"
+                    >
+                    Drawer                  </a>
+                </li>
+                              <li>
+                  <a href="dropdown.html"
+                    >
+                    Dropdown                  </a>
+                </li>
+                              <li>
+                  <a href="form.html"
+                    >
+                    Form                  </a>
+                </li>
+                              <li>
+                  <a href="index.html"
+                    >
+                    Index                  </a>
+                </li>
+                              <li>
+                  <a href="layout.html"
+                    >
+                    Layout                  </a>
+                </li>
+                              <li>
+                  <a href="list.html"
+                    >
+                    List                  </a>
+                </li>
+                              <li>
+                  <a href="media.html"
+                    >
+                    Media                  </a>
+                </li>
+                              <li>
+                  <a href="modal.html"
+                    >
+                    Modal                  </a>
+                </li>
+                              <li>
+                  <a href="navbar.html"
+                    >
+                    Navbar                  </a>
+                </li>
+                              <li>
+                  <a href="pagination.html"
+                    >
+                    Pagination                  </a>
+                </li>
+                              <li>
+                  <a href="progress.html"
+                    >
+                    Progress                  </a>
+                </li>
+                              <li>
+                  <a href="reset.html"
+                    >
+                    Reset                  </a>
+                </li>
+                              <li>
+                  <a href="spinner.html"
+                    >
+                    Spinner                  </a>
+                </li>
+                              <li>
+                  <a href="stepper.html"
+                    >
+                    Stepper                  </a>
+                </li>
+                              <li>
+                  <a href="table.html"
+                    >
+                    Table                  </a>
+                </li>
+                              <li>
+                  <a href="tabs.html"
+                    >
+                    Tabs                  </a>
+                </li>
+                              <li>
+                  <a href="theming.html"
+                    >
+                    Theming                  </a>
+                </li>
+                              <li>
+                  <a href="timeline.html"
+                    >
+                    Timeline                  </a>
+                </li>
+                              <li>
+                  <a href="toast.html"
+                    >
+                    Toast                  </a>
+                </li>
+                              <li>
+                  <a href="toc.html"
+                    >
+                    Toc                  </a>
+                </li>
+                              <li>
+                  <a href="tooltip.html"
+                    >
+                    Tooltip                  </a>
+                </li>
+                              <li>
+                  <a href="utilities.html"
+                    >
+                    Utilities                  </a>
+                </li>
+                          </ul>
+          </div>
+                  </aside>
+    <main>
+      <h1>Customization Guide</h1>
+<p>Lightpack is built with customization in mind. Every aspect of the framework can be tailored to match your brand and design requirements using CSS variables, utility classes, and component overrides.</p>
+<hr />
+<h2>CSS Variables (Design Tokens)</h2>
+<p>Lightpack uses CSS custom properties (variables) for all design tokens. This means you can customize the entire framework by simply overriding these variables.</p>
+<p><strong>In your CSS file</strong></p>
+<pre><code class="language-css">:root {
+  --color-primary: #6366f1;
+  --font-family: 'Inter', sans-serif;
+  --radius-md: 8px;
+}</code></pre>
+<hr />
+<h2>Customizing Colors</h2>
+<h3>Brand Colors</h3>
+<p>Override the primary and secondary colors to match your brand:</p>
+<pre><code class="language-css">:root {
+  /* Primary brand color */
+  --color-primary: #6366f1;
+  --color-primary-light: #818cf8;
+  --color-primary-lighter: #a5b4fc;
+  --color-primary-dark: #4f46e5;
+
+  /* Secondary brand color */
+  --color-secondary: #8b5cf6;
+  --color-secondary-light: #a78bfa;
+  --color-secondary-lighter: #c4b5fd;
+  --color-secondary-dark: #7c3aed;
+}</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html">&lt;button class="btn btn-primary"&gt;Branded Button&lt;/button&gt;</code></pre>
+<h3>Semantic Colors</h3>
+<p>Customize feedback colors for your application:</p>
+<pre><code class="language-css">:root {
+  /* Success - green by default */
+  --color-success: #10b981;
+  --color-success-light: #34d399;
+  --color-success-lighter: #6ee7b7;
+  --color-success-dark: #059669;
+
+  /* Danger - red by default */
+  --color-danger: #ef4444;
+  --color-danger-light: #f87171;
+  --color-danger-lighter: #fca5a5;
+  --color-danger-dark: #dc2626;
+
+  /* Warning - yellow/orange by default */
+  --color-warning: #f59e0b;
+  --color-warning-light: #fbbf24;
+  --color-warning-lighter: #fcd34d;
+  --color-warning-dark: #d97706;
+
+  /* Info - blue by default */
+  --color-info: #3b82f6;
+  --color-info-light: #60a5fa;
+  --color-info-lighter: #93c5fd;
+  --color-info-dark: #2563eb;
+}</code></pre>
+<h3>Surface &amp; Background Colors</h3>
+<p>Control the overall look and feel:</p>
+<pre><code class="language-css">:root {
+  --color-background: #ffffff;
+  --color-surface: #f9fafb;
+  --color-surface-dark: #f3f4f6;
+  --color-surface-alt: #e5e7eb;
+  --color-border: #d1d5db;
+  --color-border-dark: #9ca3af;
+}</code></pre>
+<h3>Text Colors</h3>
+<pre><code class="language-css">:root {
+  --color-text: #1f2937;
+  --color-text-muted: #6b7280;
+  --color-text-inverse: #ffffff;
+}</code></pre>
+<h3>Complete Brand Example</h3>
+<pre><code class="language-css">/* Acme Corp Brand */
+:root {
+  --color-primary: #ff6b35;
+  --color-primary-light: #ff8c61;
+  --color-primary-lighter: #ffad8d;
+  --color-primary-dark: #e55a2b;
+
+  --color-secondary: #004e89;
+  --color-secondary-light: #1a6ba8;
+  --color-secondary-lighter: #3388c7;
+  --color-secondary-dark: #003a6a;
+
+  --font-family: 'Poppins', sans-serif;
+  --radius-md: 12px;
+}</code></pre>
+<hr />
+<h2>Customizing Typography</h2>
+<h3>Font Families</h3>
+<pre><code class="language-css">:root {
+  /* Main font stack */
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-serif: 'Merriweather', Georgia, serif;
+  --font-family-mono: 'Fira Code', 'Courier New', monospace;
+  --font-family: var(--font-family-sans);
+}</code></pre>
+<p><strong>Example: Using Google Fonts</strong></p>
+<pre><code class="language-html">&lt;head&gt;
+  &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"&gt;
+  &lt;style&gt;
+    :root {
+      --font-family: 'Inter', sans-serif;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+<h3>Font Sizes</h3>
+<p>Create your own type scale:</p>
+<pre><code class="language-css">:root {
+  --fs-xs: 0.75rem;    /* 12px */
+  --fs-sm: 0.875rem;   /* 14px */
+  --fs-base: 1rem;     /* 16px */
+  --fs-md: 1.125rem;   /* 18px */
+  --fs-lg: 1.25rem;    /* 20px */
+  --fs-xl: 1.5rem;     /* 24px */
+  --fs-2xl: 1.875rem;  /* 30px */
+  --fs-3xl: 2.25rem;   /* 36px */
+  --fs-4xl: 3rem;      /* 48px */
+  --fs-5xl: 3.75rem;   /* 60px */
+}</code></pre>
+<p><strong>Larger Type Scale Example:</strong></p>
+<pre><code class="language-css">:root {
+  --fs-base: 1.125rem;  /* 18px base instead of 16px */
+  --fs-xl: 1.75rem;     /* 28px */
+  --fs-2xl: 2.25rem;    /* 36px */
+  --fs-3xl: 3rem;       /* 48px */
+  --fs-4xl: 4rem;       /* 64px */
+  --fs-5xl: 5rem;       /* 80px */
+}</code></pre>
+<h3>Line Heights</h3>
+<pre><code class="language-css">:root {
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+}</code></pre>
+<h3>Letter Spacing</h3>
+<pre><code class="language-css">:root {
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+}</code></pre>
+<hr />
+<h2>Customizing Spacing</h2>
+<h3>Gap Scale</h3>
+<p>Lightpack uses a consistent spacing scale (<code>--g-1</code> through <code>--g-9</code>):</p>
+<pre><code class="language-css">:root {
+  --g-1: 0.25rem;  /* 4px */
+  --g-2: 0.5rem;   /* 8px */
+  --g-3: 1rem;     /* 16px */
+  --g-4: 1.5rem;   /* 24px */
+  --g-5: 2rem;     /* 32px */
+  --g-6: 3rem;     /* 48px */
+  --g-7: 4rem;     /* 64px */
+  --g-8: 6rem;     /* 96px */
+  --g-9: 8rem;     /* 128px */
+}</code></pre>
+<p><strong>Custom Spacing Scale:</strong></p>
+<pre><code class="language-css">/* Tighter spacing */
+:root {
+  --g-1: 0.125rem;  /* 2px */
+  --g-2: 0.25rem;   /* 4px */
+  --g-3: 0.5rem;    /* 8px */
+  --g-4: 1rem;      /* 16px */
+  --g-5: 1.5rem;    /* 24px */
+  --g-6: 2rem;      /* 32px */
+  --g-7: 3rem;      /* 48px */
+  --g-8: 4rem;      /* 64px */
+  --g-9: 6rem;      /* 96px */
+}</code></pre>
+<hr />
+<h2>Customizing Components</h2>
+<p>Components don't have their own CSS variables - they use the global design tokens. Customize by overriding component classes directly.</p>
+<h3>Example</h3>
+<pre><code class="language-css">/* Override button styles */
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-weight: var(--fw-600);
+  border-radius: var(--radius-lg);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* Custom button variant */
+.btn-brand {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base) var(--easing-base);
+}
+
+.btn-brand:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}</code></pre>
+<hr />
+<h2>Creating Custom Themes</h2>
+<h3>Light &amp; Dark Theme</h3>
+<pre><code class="language-css">/* Light theme (default) */
+:root {
+  --color-background: #ffffff;
+  --color-surface: #f9fafb;
+  --color-text: #1f2937;
+  --color-border: #e5e7eb;
+}
+
+/* Dark theme */
+.theme-dark {
+  --color-background: #111827;
+  --color-surface: #1f2937;
+  --color-surface-dark: #374151;
+  --color-text: #f9fafb;
+  --color-text-muted: #9ca3af;
+  --color-border: #374151;
+  --color-border-dark: #4b5563;
+
+  /* Adjust semantic colors for dark mode */
+  --color-primary: #818cf8;
+  --color-success: #34d399;
+  --color-danger: #f87171;
+  --color-warning: #fbbf24;
+}</code></pre>
+<h3>Custom Brand Theme</h3>
+<pre><code class="language-css">/* Acme Corp Theme */
+.theme-acme {
+  /* Brand colors - using Lightpack's color palette */
+  --color-primary: var(--orange);
+  --color-primary-light: var(--orange-light);
+  --color-primary-dark: var(--orange-dark);
+
+  --color-secondary: var(--blue);
+  --color-secondary-light: var(--blue-light);
+  --color-secondary-dark: var(--blue-dark);
+
+  --color-accent: var(--indigo);
+  --color-accent-light: var(--indigo-light);
+  --color-accent-dark: var(--indigo-dark);
+
+  /* Surfaces */
+  --color-background: var(--orange-lighter);
+  --color-surface: var(--white);
+  --color-border: var(--orange-light);
+
+  /* Typography */
+  --font-family: 'Poppins', sans-serif;
+
+  /* Spacing */
+  --radius-md: 12px;
+  --radius-lg: 16px;
+}</code></pre>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-html">&lt;body class="theme-acme"&gt;
+  &lt;!-- Your content --&gt;
+&lt;/body&gt;</code></pre>
+<h3>High Contrast Theme</h3>
+<pre><code class="language-css">.theme-high-contrast {
+  --color-background: #000000;
+  --color-surface: #1a1a1a;
+  --color-text: #ffffff;
+  --color-border: #ffffff;
+
+  --color-primary: #00d4ff;
+  --color-success: #00ff00;
+  --color-danger: #ff0000;
+  --color-warning: #ffff00;
+}</code></pre>
+<hr />
+<h2>Complete Customization Example</h2>
+<pre><code class="language-css">/* custom-theme.css */
+
+/* 1. Brand Colors - Use Lightpack's color palette */
+:root {
+  --color-primary: var(--indigo);
+  --color-primary-light: var(--indigo-light);
+  --color-primary-lighter: var(--indigo-lighter);
+  --color-primary-dark: var(--indigo-dark);
+
+  --color-secondary: var(--pink);
+  --color-secondary-light: var(--pink-light);
+  --color-secondary-lighter: var(--pink-lighter);
+  --color-secondary-dark: var(--pink-dark);
+}
+
+/* 2. Typography */
+:root {
+  --font-family: 'Inter', sans-serif;
+  --fs-base: 1.125rem;
+}
+
+/* 3. Spacing &amp; Layout */
+:root {
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --g-4: 2rem;
+}
+
+/* 4. Component Overrides */
+.btn {
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  font-weight: var(--fw-600);
+}
+
+.card {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base) var(--easing-base);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* 5. Custom Utilities */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}</code></pre>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-html">&lt;head&gt;
+  &lt;link rel="stylesheet" href="lightpack.min.css"&gt;
+  &lt;link rel="stylesheet" href="custom-theme.css"&gt;
+&lt;/head&gt;</code></pre>
+<hr />
+<h2>Tips &amp; Best Practices</h2>
+<h3>✅ Do's</h3>
+<ol>
+<li><strong>Use CSS variables</strong> for easy theming</li>
+<li><strong>Override at the :root level</strong> for global changes</li>
+<li><strong>Scope overrides</strong> to specific sections when needed</li>
+<li><strong>Test in dark mode</strong> if you support it</li>
+<li><strong>Maintain consistency</strong> with your design system</li>
+</ol>
+<h3>❌ Don'ts</h3>
+<ol>
+<li><strong>Don't modify the source CSS</strong> - override instead</li>
+<li><strong>Don't use !important</strong> unless absolutely necessary</li>
+<li><strong>Don't break responsive behavior</strong> when customizing</li>
+<li><strong>Don't forget accessibility</strong> (contrast, focus states)</li>
+<li><strong>Don't override utility classes</strong> - create new ones instead</li>
+</ol>
+<hr />
+<h2>Need Help?</h2>
+<ul>
+<li>Check <a href="variables.md">Variables Reference</a> for all available CSS variables</li>
+<li>See <a href="utilities.md">Utilities</a> for extending with utility classes</li>
+<li>Review <a href="theming.md">Theming Guide</a> for dark mode customization</li>
+<li>Browse component docs for component-specific customization options</li>
+</ul>    </main>
+
+    <div class="sticky top-0 p-6 w-xs">
+      <nav class="toc d-none d-block-sm"></nav>
+    </div>
+  </div>
+  <!-- <script src="assets/toc.js"></script> -->
+  <script src="assets/html-highlighter.js"></script>
+  <script>
+    Lightpack.generateToc('.toc');
+  </script>
+</body>
+
+</html>
