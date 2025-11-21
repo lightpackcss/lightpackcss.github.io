@@ -288,6 +288,11 @@
                     Progress                  </a>
                 </li>
                               <li>
+                  <a href="reset.html"
+                    >
+                    Reset                  </a>
+                </li>
+                              <li>
                   <a href="spinner.html"
                     >
                     Spinner                  </a>
@@ -358,28 +363,40 @@
 </ul>
 <p><strong>Example</strong></p>
 <div class="demo-container">
-    <button class="btn btn-primary">Primary</button>
-    <button class="btn btn-secondary">Secondary</button>
-    <button class="btn btn-danger">Danger</button>
-    <button class="btn btn-success">Success</button>
+    <div class="mb-3">
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-danger">Danger</button>
+    </div>
+    <button class="btn btn-warning">Warning</button>
     <button class="btn btn-info">Info</button>
-    <button class="btn btn-ghost">Ghost</button>
 </div>
 <p><strong>Usage</strong></p>
 <pre><code class="language-html">&lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
 &lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
-&lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;
 &lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
-&lt;button class="btn btn-info"&gt;Info&lt;/button&gt;
-&lt;button class="btn btn-ghost"&gt;Ghost&lt;/button&gt;</code></pre>
-<p><strong>Example</strong></p>
+&lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;
+&lt;button class="btn btn-warning"&gt;Warning&lt;/button&gt;
+&lt;button class="btn btn-info"&gt;Info&lt;/button&gt;</code></pre>
+<p><strong>Ghost Buttons</strong></p>
 <div class="demo-container">
-    <button class="btn btn-primary disabled">Primary</button>
-    <button class="btn btn-secondary disabled">Secondary</button>
-    <button class="btn btn-danger disabled">Danger</button>
-    <button class="btn btn-success disabled">Success</button>
-    <button class="btn btn-info disabled">Info</button>
-    <button class="btn btn-ghost disabled">Ghost</button>
+    <div class="mb-3">
+        <button class="btn btn-primary btn-ghost">Primary Ghost</button>
+        <button class="btn btn-success btn-ghost">Success Ghost</button>
+        <button class="btn btn-danger btn-ghost">Danger Ghost</button>
+    </div>
+    <button class="btn btn-warning btn-ghost">Warning Ghost</button>
+    <button class="btn btn-info btn-ghost">Info Ghost</button>
+</div>
+<pre><code class="language-html">&lt;button class="btn btn-primary btn-ghost"&gt;Primary Ghost&lt;/button&gt;
+&lt;button class="btn btn-success btn-ghost"&gt;Success Ghost&lt;/button&gt;
+&lt;button class="btn btn-danger btn-ghost"&gt;Danger Ghost&lt;/button&gt;</code></pre>
+<p><strong>Disabled State</strong></p>
+<div class="demo-container">
+    <button class="btn btn-primary" disabled>Primary</button>
+    <button class="btn btn-secondary" disabled>Secondary</button>
+    <button class="btn btn-danger" disabled>Danger</button>
 </div>
 <p><strong>Usage</strong></p>
 <pre><code class="language-html">&lt;button class="btn btn-primary disabled"&gt;Primary&lt;/button&gt;
@@ -390,10 +407,12 @@
 &lt;button class="btn btn-ghost disabled"&gt;Ghost&lt;/button&gt;</code></pre>
 <p><strong>Example</strong></p>
 <div class="demo-container">
-    <button class="btn btn-primary btn-outline">Primary</button>
-    <button class="btn btn-secondary btn-outline">Secondary</button>
-    <button class="btn btn-danger btn-outline">Danger</button>
-    <button class="btn btn-success btn-outline">Success</button>
+    <div class="mb-3">
+        <button class="btn btn-primary btn-outline">Primary</button>
+        <button class="btn btn-secondary btn-outline">Secondary</button>
+        <button class="btn btn-danger btn-outline">Danger</button>
+        <button class="btn btn-success btn-outline">Success</button>
+    </div>
     <button class="btn btn-info btn-outline">Info</button>
     <button class="btn btn-ghost btn-outline">Ghost</button>
 </div>
@@ -402,8 +421,24 @@
 &lt;button class="btn btn-secondary btn-outline"&gt;Secondary&lt;/button&gt;
 &lt;button class="btn btn-danger btn-outline"&gt;Danger&lt;/button&gt;
 &lt;button class="btn btn-success btn-outline"&gt;Success&lt;/button&gt;
-&lt;button class="btn btn-info btn-outline"&gt;Info&lt;/button&gt;
-&lt;button class="btn btn-ghost btn-outline"&gt;Ghost&lt;/button&gt;</code></pre>
+&lt;button class="btn btn-warning btn-outline"&gt;Warning&lt;/button&gt;
+&lt;button class="btn btn-info btn-outline"&gt;Info&lt;/button&gt;</code></pre>
+<p><strong>Button Sizes</strong></p>
+<div class="demo-container">
+    <button class="btn btn-primary btn-sm">Small</button>
+    <button class="btn btn-primary">Default</button>
+    <button class="btn btn-primary btn-lg">Large</button>
+</div>
+<pre><code class="language-html">&lt;button class="btn btn-primary btn-sm"&gt;Small&lt;/button&gt;
+&lt;button class="btn btn-primary"&gt;Default&lt;/button&gt;
+&lt;button class="btn btn-primary btn-lg"&gt;Large&lt;/button&gt;</code></pre>
+<p><strong>Icon Button</strong></p>
+<div class="demo-container">
+    <button class="btn btn-primary btn-icon">×</button>
+    <button class="btn btn-secondary btn-icon">+</button>
+</div>
+<pre><code class="language-html">&lt;button class="btn btn-primary btn-icon"&gt;×&lt;/button&gt;
+&lt;button class="btn btn-secondary btn-icon"&gt;+&lt;/button&gt;</code></pre>
 <p><strong>Customization:</strong></p>
 <ul>
 <li>Add more color variants by extending variables</li>

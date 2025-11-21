@@ -288,6 +288,11 @@
                     Progress                  </a>
                 </li>
                               <li>
+                  <a href="reset.html"
+                    >
+                    Reset                  </a>
+                </li>
+                              <li>
                   <a href="spinner.html"
                     >
                     Spinner                  </a>
@@ -347,52 +352,66 @@
                   </aside>
     <main>
       <h1>Alert Component</h1>
-<p><strong>Classes:</strong> <code>.alert</code>, <code>.alert-close</code>, <code>.alert-sm</code>, <code>.alert-success</code>, <code>.alert-warning</code>, <code>.alert-danger</code>, <code>.alert-info</code></p>
+<p><strong>Classes:</strong> <code>.alert</code>, <code>.alert-content</code>, <code>.alert-title</code>, <code>.alert-close</code>, <code>.alert-success</code>, <code>.alert-warning</code>, <code>.alert-danger</code>, <code>.alert-info</code></p>
 <p><strong>Features:</strong></p>
 <ul>
 <li>Dismissible alerts</li>
 <li>Color/status variants: success, warning, danger, info</li>
-<li>Small size modifier: <code>.alert-sm</code></li>
 <li>Includes close button: <code>.alert-close</code></li>
 <li>Accessible markup</li>
 </ul>
 <p><strong>Example</strong></p>
 <div class="demo-container">
   <div class="alert alert-success">
-    <span>Success message!</span>
+    <div class="alert-content">
+      <div class="alert-title">Success!</div>
+      <div>Your action was completed successfully.</div>
+    </div>
     <button class="alert-close">&times;</button>
   </div>
   <div class="alert alert-danger">
-    <span>Danger message!</span>
+    <div class="alert-content">
+      <div class="alert-title">Error!</div>
+      <div>Something went wrong. Please try again.</div>
+    </div>
     <button class="alert-close">&times;</button>
   </div>
   <div class="alert alert-warning">
-    <span>Warning message!</span>
+    <div class="alert-content">
+      <div class="alert-title">Warning!</div>
+      <div>Please review your input before proceeding.</div>
+    </div>
     <button class="alert-close">&times;</button>
   </div>
   <div class="alert alert-info">
-    <span>Info message!</span>
+    <div class="alert-content">
+      <div class="alert-title">Info</div>
+      <div>Here's some helpful information.</div>
+    </div>
     <button class="alert-close">&times;</button>
   </div>
 </div>
 <p><strong>Usage:</strong></p>
-<pre><code class="language-html">&lt;div class="alert alert-success"&gt;
+<pre><code class="language-html">&lt;!-- Simple alert --&gt;
+&lt;div class="alert alert-success"&gt;
   &lt;span&gt;Success message!&lt;/span&gt;
   &lt;button class="alert-close"&gt;&amp;times;&lt;/button&gt;
 &lt;/div&gt;
 
+&lt;!-- Alert with title and content --&gt;
+&lt;div class="alert alert-success"&gt;
+  &lt;div class="alert-content"&gt;
+    &lt;div class="alert-title"&gt;Success!&lt;/div&gt;
+    &lt;div&gt;Your action was completed successfully.&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="alert-close"&gt;&amp;times;&lt;/button&gt;
+&lt;/div&gt;
+
 &lt;div class="alert alert-danger"&gt;
-  &lt;span&gt;Danger message!&lt;/span&gt;
-  &lt;button class="alert-close"&gt;&amp;times;&lt;/button&gt;
-&lt;/div&gt;
-
-&lt;div class="alert alert-warning"&gt;
-  &lt;span&gt;Warning message!&lt;/span&gt;
-  &lt;button class="alert-close"&gt;&amp;times;&lt;/button&gt;
-&lt;/div&gt;
-
-&lt;div class="alert alert-info"&gt;
-  &lt;span&gt;Info message!&lt;/span&gt;
+  &lt;div class="alert-content"&gt;
+    &lt;div class="alert-title"&gt;Error!&lt;/div&gt;
+    &lt;div&gt;Something went wrong.&lt;/div&gt;
+  &lt;/div&gt;
   &lt;button class="alert-close"&gt;&amp;times;&lt;/button&gt;
 &lt;/div&gt;</code></pre>
 <p><strong>JS Interactivity:</strong></p>

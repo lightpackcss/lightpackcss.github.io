@@ -288,6 +288,11 @@
                     Progress                  </a>
                 </li>
                               <li>
+                  <a href="reset.html"
+                    >
+                    Reset                  </a>
+                </li>
+                              <li>
                   <a href="spinner.html"
                     >
                     Spinner                  </a>
@@ -347,11 +352,13 @@
                   </aside>
     <main>
       <h1>Table Component</h1>
-<p><strong>Classes:</strong> <code>.table</code>, <code>.table-hover</code>, <code>.table-bordered</code>, <code>.thead</code>, <code>.tbody</code>, <code>.tr</code>, <code>.th</code>, <code>.td</code></p>
+<p><strong>Classes:</strong> <code>.table</code>, <code>.table-hover</code>, <code>.table-bordered</code>, <code>.table-responsive</code>, <code>.table-responsive-sm</code>, <code>.table-responsive-md</code>, <code>.table-responsive-lg</code>, <code>.table-responsive-xl</code></p>
 <p><strong>Features:</strong></p>
 <ul>
 <li>Modern, responsive tables</li>
 <li>Hover, bordered variants</li>
+<li>Responsive wrappers for horizontal scrolling on small screens</li>
+<li>Breakpoint-specific responsive behavior</li>
 </ul>
 <p><strong>Example</strong></p>
 <div class="demo-container">
@@ -417,9 +424,37 @@
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
+<p><strong>Responsive Tables</strong></p>
+<p>Wrap tables in responsive containers to enable horizontal scrolling on smaller screens:</p>
+<pre><code class="language-html">&lt;!-- Always responsive --&gt;
+&lt;div class="table-responsive"&gt;
+  &lt;table class="table"&gt;...&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;!-- Responsive only below sm breakpoint (640px) --&gt;
+&lt;div class="table-responsive-sm"&gt;
+  &lt;table class="table"&gt;...&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;!-- Responsive only below md breakpoint (768px) --&gt;
+&lt;div class="table-responsive-md"&gt;
+  &lt;table class="table"&gt;...&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;!-- Responsive only below lg breakpoint (1024px) --&gt;
+&lt;div class="table-responsive-lg"&gt;
+  &lt;table class="table"&gt;...&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;!-- Responsive only below xl breakpoint (1280px) --&gt;
+&lt;div class="table-responsive-xl"&gt;
+  &lt;table class="table"&gt;...&lt;/table&gt;
+&lt;/div&gt;</code></pre>
 <p><strong>Customization:</strong></p>
 <ul>
 <li>Add utility classes for custom color, spacing, or typography</li>
+<li>Use <code>.table-hover</code> for row hover effects</li>
+<li>Use <code>.table-bordered</code> for borders on all cells</li>
 </ul>
 <hr />    </main>
 

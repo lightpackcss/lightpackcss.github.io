@@ -288,6 +288,11 @@
                     Progress                  </a>
                 </li>
                               <li>
+                  <a href="reset.html"
+                    >
+                    Reset                  </a>
+                </li>
+                              <li>
                   <a href="spinner.html"
                     >
                     Spinner                  </a>
@@ -347,11 +352,12 @@
                   </aside>
     <main>
       <h1>Form Component</h1>
-<p><strong>Classes:</strong> <code>.form</code>, <code>.input</code>, <code>.label</code>, <code>.textarea</code>, <code>.select</code>, <code>.switch</code>, <code>.slider</code>, <code>.input-group</code>, <code>.form-inline</code>, <code>.required</code></p>
+<p><strong>Classes:</strong> <code>.form</code>, <code>.input</code>, <code>.input-sm</code>, <code>.label</code>, <code>.textarea</code>, <code>.select</code>, <code>.switch</code>, <code>.slider</code>, <code>.input-group</code>, <code>.form-inline</code>, <code>.required</code></p>
 <p><strong>Features:</strong></p>
 <ul>
 <li>Modern, accessible form controls</li>
 <li>Supports text inputs, selects, checkboxes, radios, switches, range sliders, file inputs</li>
+<li>Small size variant (<code>.input-sm</code>) for compact forms</li>
 <li>Grouped controls and inline forms</li>
 <li>Responsive layout</li>
 </ul>
@@ -432,6 +438,10 @@
         <input type="text" id="search-group" placeholder="Search...">
         <button type="button" class="btn btn-primary">Go</button>
       </div>
+    </div>
+    <div class="mb-4">
+      <label for="small-input">Small Input</label>
+      <input type="text" id="small-input" class="input-sm" placeholder="Small input...">
     </div>
     <div class="mb-4">
       <button type="submit" class="btn btn-primary">Submit</button>

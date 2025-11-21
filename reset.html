@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modal | Lightpack CSS Framework</title>
+  <title>Reset | Lightpack CSS Framework</title>
   <link rel="icon" type="image/x-icon" href="assets/logo.ico">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.13-beta/dist/lightpack.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -269,7 +269,7 @@
                 </li>
                               <li>
                   <a href="modal.html"
-                    class="active" aria-current="page" >
+                    >
                     Modal                  </a>
                 </li>
                               <li>
@@ -289,7 +289,7 @@
                 </li>
                               <li>
                   <a href="reset.html"
-                    >
+                    class="active" aria-current="page" >
                     Reset                  </a>
                 </li>
                               <li>
@@ -351,56 +351,145 @@
           </div>
                   </aside>
     <main>
-      <h1>Modal Component</h1>
-<p><strong>Classes:</strong> <code>.modal-backdrop</code>, <code>.modal</code>, <code>.modal-header</code>, <code>.modal-title</code>, <code>.modal-close</code>, <code>.modal-body</code>, <code>.modal-footer</code></p>
-<p><strong>Features:</strong></p>
+      <h1>CSS Reset</h1>
+<p>Lightpack includes a modern CSS reset that ensures consistent styling across all browsers while providing sensible defaults that work with the framework's design system.</p>
+<h2>Features</h2>
 <ul>
-<li>Responsive, accessible modal dialog</li>
-<li>Overlay, header, body, footer, and close button</li>
+<li><strong>Modern Normalize</strong> - Based on modern CSS reset practices</li>
+<li><strong>Design Token Integration</strong> - Uses Lightpack variables for all defaults</li>
+<li><strong>Typography Defaults</strong> - Sensible heading and text styles</li>
+<li><strong>Accessibility</strong> - Respects <code>prefers-reduced-motion</code></li>
+<li><strong>Theme-Aware</strong> - Adapts to light/dark themes</li>
 </ul>
-<p><strong>Example</strong></p>
-<div class="demo-container">
-  <button class="btn btn-primary" data-modal-open="show-modal">Show Modal</button>
-  <div class="modal-backdrop" data-modal="show-modal" style="display:none;">
-    <div class="modal max-w-md">
-      <div class="modal-header">
-        <h3 class="modal-title">Demo Modal Title</h3>
-        <button class="modal-close" data-modal-close>×</button>
-      </div>
-      <div class="modal-body">
-        <p>You can open and close multiple modals independently on the same page.</p>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary" data-modal-cancel>Cancel</button>
-        <button class="btn btn-primary">Confirm</button>
-      </div>
-    </div>
-  </div>
-</div>
-<p><strong>Usage:</strong></p>
-<pre><code class="language-html">&lt;button class="btn btn-primary" data-modal-open="show-modal"&gt;Show Modal&lt;/button&gt;
+<hr />
+<h2>What's Included</h2>
+<h3>Box Sizing</h3>
+<pre><code class="language-css">html {
+  box-sizing: border-box;
+}
 
-&lt;!-- Modal --&gt;
-&lt;div class="modal-backdrop" data-modal="show-modal" style="display:none;"&gt;
-  &lt;div class="modal max-w-md"&gt;
-    &lt;div class="modal-header"&gt;
-      &lt;h3 class="modal-title"&gt;Demo Modal Title&lt;/h3&gt;
-      &lt;button class="modal-close" data-modal-close&gt;×&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div class="modal-body"&gt;
-      &lt;p&gt;You can open and close multiple modals independently on the same page.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="modal-footer"&gt;
-      &lt;button class="btn btn-secondary" data-modal-cancel&gt;Cancel&lt;/button&gt;
-      &lt;button class="btn btn-primary"&gt;Confirm&lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-<p><strong>JS Interactivity:</strong></p>
+*, *::before, *::after {
+  box-sizing: inherit;
+}</code></pre>
+<h3>Body Defaults</h3>
 <ul>
-<li>Use <code>[data-modal]</code> attribute to target a specific modal.</li>
+<li>Background: <code>var(--color-background)</code></li>
+<li>Text color: <code>var(--color-text)</code></li>
+<li>Font family: <code>var(--font-family)</code> (system UI stack)</li>
+<li>Font size: <code>var(--fs-base)</code> (16px)</li>
+<li>Line height: <code>var(--line-height-normal)</code> (1.5)</li>
+<li>Font smoothing enabled for better rendering</li>
 </ul>
-<hr />    </main>
+<h3>Typography</h3>
+<p><strong>Headings:</strong></p>
+<ul>
+<li>All headings use <code>font-weight: 700</code> (bold)</li>
+<li>Tight line-height for better hierarchy</li>
+<li>Negative letter-spacing for improved readability</li>
+<li>Margin top: <code>var(--g-4)</code>, Margin bottom: <code>var(--g-2)</code></li>
+</ul>
+<p><strong>Heading Sizes:</strong></p>
+<ul>
+<li><code>h1</code>: <code>--fs-4xl</code> (3rem / 48px)</li>
+<li><code>h2</code>: <code>--fs-3xl</code> (2.25rem / 36px)</li>
+<li><code>h3</code>: <code>--fs-2xl</code> (1.875rem / 30px)</li>
+<li><code>h4</code>: <code>--fs-xl</code> (1.5rem / 24px)</li>
+<li><code>h5</code>: <code>--fs-lg</code> (1.25rem / 20px)</li>
+<li><code>h6</code>: <code>--fs-base</code> (1rem / 16px) with <code>font-weight: 600</code></li>
+</ul>
+<p><strong>Paragraphs:</strong></p>
+<ul>
+<li>Margin bottom: <code>var(--g-3)</code> (1rem)</li>
+<li>No top margin</li>
+</ul>
+<h3>Links</h3>
+<ul>
+<li>Color: <code>var(--color-primary)</code></li>
+<li>Hover color: <code>var(--color-primary-dark)</code></li>
+<li>Smooth color transitions (0.2s)</li>
+<li>Theme-aware (adapts in dark mode)</li>
+</ul>
+<h3>Horizontal Rules</h3>
+<pre><code class="language-css">hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: var(--g-4) 0;
+}</code></pre>
+<h3>Images</h3>
+<ul>
+<li><code>max-width: 100%</code> - Responsive by default</li>
+<li><code>display: block</code> - Removes inline spacing issues</li>
+<li><code>vertical-align: middle</code> - Better alignment</li>
+</ul>
+<h3>Code &amp; Pre</h3>
+<ul>
+<li>Font family: <code>var(--font-family-mono)</code></li>
+<li>Inline <code>code</code>: Background with padding and border-radius</li>
+<li><code>pre</code> blocks: Padding, background, horizontal scroll</li>
+<li>Syntax: <code>&lt;code&gt;</code>, <code>&lt;kbd&gt;</code>, <code>&lt;samp&gt;</code>, <code>&lt;pre&gt;</code></li>
+</ul>
+<h3>Text Formatting</h3>
+<ul>
+<li><code>strong</code>, <code>b</code>: <code>font-weight: 700</code></li>
+<li><code>em</code>, <code>i</code>: Italic style</li>
+<li><code>small</code>: <code>font-size: var(--fs-sm)</code></li>
+<li><code>mark</code>: Yellow highlight background</li>
+</ul>
+<h3>Form Elements</h3>
+<p>All form elements inherit font properties from parent:</p>
+<pre><code class="language-css">input, button, textarea, select {
+  font: inherit;
+}</code></pre>
+<h3>Accessibility</h3>
+<p><strong>Reduced Motion Support:</strong></p>
+<pre><code class="language-css">@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
+  }
+}</code></pre>
+<hr />
+<h2>Usage</h2>
+<p>The reset is automatically included when you import Lightpack CSS:</p>
+<pre><code class="language-html">&lt;link rel="stylesheet" href="lightpack.min.css"&gt;</code></pre>
+<p><strong>Import Order</strong> (in source):</p>
+<ol>
+<li>Variables</li>
+<li><strong>Reset</strong> ← You are here</li>
+<li>Utilities</li>
+<li>Layout</li>
+<li>Components</li>
+</ol>
+<hr />
+<h2>Customization</h2>
+<p>All reset styles use CSS variables, so you can customize them by overriding variables:</p>
+<pre><code class="language-css">:root {
+  --color-background: #f5f5f5;
+  --color-text: #1a1a1a;
+  --font-family: 'Inter', sans-serif;
+  --fs-base: 18px;
+}</code></pre>
+<hr />
+<h2>Dark Theme Support</h2>
+<p>The reset automatically adapts to dark theme when <code>.theme-dark</code> is applied to <code>&lt;body&gt;</code>:</p>
+<ul>
+<li>Background switches to dark</li>
+<li>Text color inverts</li>
+<li>Links adjust for better contrast</li>
+<li>All semantic colors update</li>
+</ul>
+<hr />
+<h2>Browser Compatibility</h2>
+<ul>
+<li>✅ Chrome/Edge (latest)</li>
+<li>✅ Firefox (latest)</li>
+<li>✅ Safari (latest)</li>
+<li>✅ Mobile browsers (iOS Safari, Chrome Mobile)</li>
+</ul>
+<hr />
+<p><strong>See <code>/src/css/_reset.css</code> for complete implementation.</strong></p>    </main>
 
     <div class="sticky top-0 p-6 w-xs">
       <nav class="toc d-none d-block-sm"></nav>

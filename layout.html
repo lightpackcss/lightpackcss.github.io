@@ -288,6 +288,11 @@
                     Progress                  </a>
                 </li>
                               <li>
+                  <a href="reset.html"
+                    >
+                    Reset                  </a>
+                </li>
+                              <li>
                   <a href="spinner.html"
                     >
                     Spinner                  </a>
@@ -368,14 +373,34 @@
 </ul>
 </li>
 </ul>
-<h2>Order Utilities</h2>
+<h2>Sidebar Layout</h2>
+<p>Lightpack provides a flexible sidebar layout system for creating app-like interfaces with a fixed sidebar and scrollable main content area.</p>
+<p><strong>Classes:</strong></p>
 <ul>
-<li>(If present in code, document here)</li>
+<li><code>.sidebar-layout</code> - Container for sidebar layout</li>
+<li><code>.sidebar</code> - Sidebar panel (default width: 270px, customizable via <code>--sidebar-width</code>)</li>
+<li><code>.main</code> - Main content area</li>
 </ul>
-<h2>Vertical Alignment Helpers</h2>
+<p><strong>Features:</strong></p>
 <ul>
-<li>(If present in code, document here)</li>
+<li>Responsive: Stacks vertically on mobile (&lt; 768px)</li>
+<li>Customizable sidebar width via CSS variable</li>
+<li>Flexbox-based for modern layouts</li>
 </ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html">&lt;div class="sidebar-layout"&gt;
+  &lt;aside class="sidebar"&gt;
+    &lt;!-- Sidebar content --&gt;
+  &lt;/aside&gt;
+  &lt;main class="main"&gt;
+    &lt;!-- Main content --&gt;
+  &lt;/main&gt;
+&lt;/div&gt;</code></pre>
+<p><strong>Custom Width:</strong></p>
+<pre><code class="language-html">&lt;div class="sidebar-layout" style="--sidebar-width: 300px;"&gt;
+  &lt;aside class="sidebar"&gt;...&lt;/aside&gt;
+  &lt;main class="main"&gt;...&lt;/main&gt;
+&lt;/div&gt;</code></pre>
 <hr />
 <h2>Examples</h2>
 <h3>Basic Layout</h3>

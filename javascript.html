@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript | Lightpack CSS Framework</title>
+  <link rel="icon" type="image/x-icon" href="assets/logo.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.13-beta/dist/lightpack.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.13-beta/dist/lightpack.min.js"></script>
+  <style>
+    body {
+      font-family: 'Montserrat', Verdana, system-ui, sans-serif !important;
+      background-color: var(--color-background);
+      font-size: var(--fs-sm);
+    }
+
+    .demo-container {
+      margin: var(--g-5);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--g-2);
+      color: var(--color-text);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      margin: 0 auto;
+      align-items: flex-start;
+    }
+
+    .sidebar {
+      width: 300px;
+      background: var(--color-background);
+      border-right: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+      padding: 2.2rem 1.1rem 2.2rem 2.1rem;
+      height: 100vh;
+      overflow-y: auto;
+      border-radius: 0;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar .sidebar-logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2.2rem;
+      font-size: 1.12em;
+      font-weight: 700;
+      color: var(--color-text);
+      gap: 0.5em;
+    }
+
+    .sidebar .sidebar-logo img {
+      max-height: 2.5em;
+      margin-right: 0.5em;
+    }
+
+    .sidebar-section {
+      margin-bottom: 1em;
+    }
+
+    .sidebar-section-title {
+      margin-bottom: 0.7em;
+      color: var(--color-text);
+      font-size: --fs-sm
+      letter-spacing: 0.1px;
+      margin-top: 2.1em;
+      text-transform: uppercase;
+    }
+
+    .sidebar-section-title:first-child {
+      margin-top: 0;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 0.18em;
+    }
+
+    .sidebar a {
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: 1em;
+      display: flex;
+      align-items: center;
+      padding: 7px 0 7px 0.8em;
+      border-radius: 6px;
+      position: relative;
+      transition: background var(--transition-slow), color var(--transition-slow);
+    }
+
+    .sidebar a:hover {
+      background: var(--color-muted);
+    }
+
+    .sidebar a.active,
+    .sidebar a[aria-current="page"] {
+      background: var(--color-muted);
+      font-weight: 700;
+    }
+
+    .sidebar .sidebar-divider {
+      border-bottom: 1px solid var(--color-border);
+      margin: 1.5em 0 1.5em 0;
+    }
+
+    main {
+      flex: 1 1 0;
+      padding: 1rem 2.2rem 2.5rem 2.2rem;
+      max-width: 780px;
+      margin: 2.5rem auto 2.5rem auto;
+      margin-top: 0;
+      background: var(--color-background);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    code {
+      padding: 2px 5px;
+      background-color: var(--color-muted);
+      border-radius: var(--radius-sm);
+      font-size: var(--fs-xs);
+    }
+
+    pre,
+    pre>code {
+      background: var(--color-surface);
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', 'SFMono-Regular', 'Menlo', 'Monaco', monospace;
+      font-size: var(--fs-sm);
+    }
+
+    pre {
+      padding: 1em;
+      overflow-x: auto;
+    }
+
+    pre>code {
+      padding: 0;
+    }
+
+    @media (max-width: 1200px) {
+      main,
+      .blog-post {
+        max-width: 100%;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 950px) {
+      .container {
+        flex-direction: column;
+        padding: 0 0.5rem;
+      }
+
+      .sidebar {
+        width: 100%;
+        min-height: unset;
+        padding: 1.5rem 1rem;
+        position: static;
+        box-shadow: none;
+        height: unset;
+      }
+
+      main,
+      .blog-post {
+        margin: 1.5rem auto;
+        padding: 1.2rem 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="assets/logo.svg" /> Lightpack CSS
+      </div>
+                        <div class="sidebar-section">
+            <ul>
+                              <li>
+                  <a href="alert.html"
+                    >
+                    Alert                  </a>
+                </li>
+                              <li>
+                  <a href="avatar.html"
+                    >
+                    Avatar                  </a>
+                </li>
+                              <li>
+                  <a href="badge.html"
+                    >
+                    Badge                  </a>
+                </li>
+                              <li>
+                  <a href="breadcrumb.html"
+                    >
+                    Breadcrumb                  </a>
+                </li>
+                              <li>
+                  <a href="button.html"
+                    >
+                    Button                  </a>
+                </li>
+                              <li>
+                  <a href="card.html"
+                    >
+                    Card                  </a>
+                </li>
+                              <li>
+                  <a href="collapse.html"
+                    >
+                    Collapse                  </a>
+                </li>
+                              <li>
+                  <a href="drawer.html"
+                    >
+                    Drawer                  </a>
+                </li>
+                              <li>
+                  <a href="dropdown.html"
+                    >
+                    Dropdown                  </a>
+                </li>
+                              <li>
+                  <a href="form.html"
+                    >
+                    Form                  </a>
+                </li>
+                              <li>
+                  <a href="index.html"
+                    >
+                    Index                  </a>
+                </li>
+                              <li>
+                  <a href="javascript.html"
+                    class="active" aria-current="page" >
+                    Javascript                  </a>
+                </li>
+                              <li>
+                  <a href="layout.html"
+                    >
+                    Layout                  </a>
+                </li>
+                              <li>
+                  <a href="list.html"
+                    >
+                    List                  </a>
+                </li>
+                              <li>
+                  <a href="media.html"
+                    >
+                    Media                  </a>
+                </li>
+                              <li>
+                  <a href="modal.html"
+                    >
+                    Modal                  </a>
+                </li>
+                              <li>
+                  <a href="navbar.html"
+                    >
+                    Navbar                  </a>
+                </li>
+                              <li>
+                  <a href="pagination.html"
+                    >
+                    Pagination                  </a>
+                </li>
+                              <li>
+                  <a href="progress.html"
+                    >
+                    Progress                  </a>
+                </li>
+                              <li>
+                  <a href="reset.html"
+                    >
+                    Reset                  </a>
+                </li>
+                              <li>
+                  <a href="spinner.html"
+                    >
+                    Spinner                  </a>
+                </li>
+                              <li>
+                  <a href="stepper.html"
+                    >
+                    Stepper                  </a>
+                </li>
+                              <li>
+                  <a href="table.html"
+                    >
+                    Table                  </a>
+                </li>
+                              <li>
+                  <a href="tabs.html"
+                    >
+                    Tabs                  </a>
+                </li>
+                              <li>
+                  <a href="theming.html"
+                    >
+                    Theming                  </a>
+                </li>
+                              <li>
+                  <a href="timeline.html"
+                    >
+                    Timeline                  </a>
+                </li>
+                              <li>
+                  <a href="toast.html"
+                    >
+                    Toast                  </a>
+                </li>
+                              <li>
+                  <a href="toc.html"
+                    >
+                    Toc                  </a>
+                </li>
+                              <li>
+                  <a href="tooltip.html"
+                    >
+                    Tooltip                  </a>
+                </li>
+                              <li>
+                  <a href="utilities.html"
+                    >
+                    Utilities                  </a>
+                </li>
+                              <li>
+                  <a href="variables.html"
+                    >
+                    Variables                  </a>
+                </li>
+                          </ul>
+          </div>
+                  </aside>
+    <main>
+      <h1>JavaScript API</h1>
+<p>Lightpack provides a comprehensive JavaScript library for interactive components. All functions are namespaced under the global <code>Lightpack</code> object.</p>
+<h2>Auto-Initialization</h2>
+<p>All components are automatically initialized on <code>DOMContentLoaded</code>:</p>
+<pre><code class="language-javascript">document.addEventListener('DOMContentLoaded', function () {
+  Lightpack.initAll();
+});</code></pre>
+<hr />
+<h2>API Reference</h2>
+<h3>Master Initialization</h3>
+<h4><code>Lightpack.initAll(root = document)</code></h4>
+<p>Initializes all Lightpack components at once.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>root</code> (Element) - Root element to search within (default: <code>document</code>)</li>
+</ul>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-javascript">// Initialize all components
+Lightpack.initAll();
+
+// Initialize within a specific container
+const container = document.querySelector('#my-app');
+Lightpack.initAll(container);</code></pre>
+<hr />
+<h3>Component Initializers</h3>
+<h4><code>Lightpack.initTabs(root = document)</code></h4>
+<p>Initializes tab switching functionality.</p>
+<p><strong>Markup:</strong></p>
+<pre><code class="language-html">&lt;div class="tabs-group"&gt;
+  &lt;div class="tabs"&gt;
+    &lt;button class="tab tab-active"&gt;Tab 1&lt;/button&gt;
+    &lt;button class="tab"&gt;Tab 2&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div&gt;Content 1&lt;/div&gt;
+  &lt;div hidden&gt;Content 2&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<hr />
+<h4><code>Lightpack.initAccordions(root = document)</code></h4>
+<p>Initializes accordion behavior (one panel open at a time).</p>
+<p><strong>Markup:</strong></p>
+<pre><code class="language-html">&lt;div class="accordion"&gt;
+  &lt;div class="accordion-header"&gt;Section 1&lt;/div&gt;
+  &lt;div class="accordion-panel"&gt;Content 1&lt;/div&gt;
+  &lt;div class="accordion-header"&gt;Section 2&lt;/div&gt;
+  &lt;div class="accordion-panel"&gt;Content 2&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<hr />
+<h4><code>Lightpack.initAlerts(root = document)</code></h4>
+<p>Enables alert dismissal via close buttons.</p>
+<p><strong>Markup:</strong></p>
+<pre><code class="language-html">&lt;div class="alert alert-success"&gt;
+  &lt;span&gt;Success message&lt;/span&gt;
+  &lt;button class="alert-close"&gt;&amp;times;&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+<hr />
+<h4><code>Lightpack.initModals(root = document)</code></h4>
+<p>Initializes modal dialogs with backdrop and keyboard support.</p>
+<p><strong>Markup:</strong></p>
+<pre><code class="language-html">&lt;button data-modal-open="myModal"&gt;Open Modal&lt;/button&gt;
+
+&lt;div class="modal-backdrop" data-modal="myModal" style="display:none;"&gt;
+  &lt;div class="modal"&gt;
+    &lt;div class="modal-header"&gt;
+      &lt;h3 class="modal-title"&gt;Title&lt;/h3&gt;
+      &lt;button class="modal-close" data-modal-close&gt;&amp;times;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="modal-body"&gt;Content&lt;/div&gt;
+    &lt;div class="modal-footer"&gt;
+      &lt;button data-modal-cancel&gt;Cancel&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Click backdrop to close</li>
+<li>Press ESC to close</li>
+<li>Multiple modals supported</li>
+<li>Body scroll lock when open</li>
+</ul>
+<hr />
+<h4><code>Lightpack.initDrawers(root = document)</code></h4>
+<p>Initializes slide-in drawer panels.</p>
+<p><strong>Markup:</strong></p>
+<pre><code class="language-html">&lt;button data-drawer-open="myDrawer"&gt;Open Drawer&lt;/button&gt;
+
+&lt;div class="drawer" id="myDrawer"&gt;
+  &lt;div class="drawer-backdrop"&gt;&lt;/div&gt;
+  &lt;div class="drawer-panel"&gt;
+    &lt;button data-drawer-close&gt;&amp;times;&lt;/button&gt;
+    &lt;p&gt;Drawer content&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Left or right side (<code>.drawer-left</code>)</li>
+<li>Click backdrop to close</li>
+<li>Press ESC to close</li>
+<li>Body scroll lock when open</li>
+</ul>
+<hr />
+<h4><code>Lightpack.initCollapsibles(root = document)</code></h4>
+<p>Initializes collapsible/expandable content sections.</p>
+<p><strong>Markup:</strong></p>
+<pre><code class="language-html">&lt;!-- Multi-collapse (default) --&gt;
+&lt;div class="collapsible"&gt;
+  &lt;div class="collapse-item"&gt;
+    &lt;button class="collapse-toggle"&gt;Section 1&lt;/button&gt;
+    &lt;div class="collapse-content"&gt;Content 1&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Accordion mode (one open at a time) --&gt;
+&lt;div class="collapsible" data-collapse="accordion"&gt;
+  &lt;div class="collapse-item"&gt;
+    &lt;button class="collapse-toggle"&gt;Section 1&lt;/button&gt;
+    &lt;div class="collapse-content"&gt;Content 1&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p><strong>Modes:</strong></p>
+<ul>
+<li><code>data-collapse="multi"</code> - Multiple sections can be open (default)</li>
+<li><code>data-collapse="accordion"</code> - Only one section open at a time</li>
+</ul>
+<p><strong>Indicators:</strong></p>
+<pre><code class="language-html">&lt;button class="collapse-toggle"&gt;
+  &lt;span&gt;Section&lt;/span&gt;
+  &lt;span class="collapse-indicator" data-open="-" data-closed="+"&gt;+&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+<hr />
+<h4><code>Lightpack.initDropdowns(root = document)</code></h4>
+<p>Initializes smart dropdown menus with viewport edge detection.</p>
+<p><strong>Markup:</strong></p>
+<pre><code class="language-html">&lt;div class="dropdown"&gt;
+  &lt;button class="btn btn-primary"&gt;Dropdown&lt;/button&gt;
+  &lt;div class="dropdown-menu"&gt;
+    &lt;button class="dropdown-item"&gt;Action 1&lt;/button&gt;
+    &lt;button class="dropdown-item"&gt;Action 2&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Auto-positions to prevent viewport overflow</li>
+<li>Fixed positioning for proper layering</li>
+<li>Keyboard accessible</li>
+</ul>
+<hr />
+<h4><code>Lightpack.initPasswordToggles(root = document)</code></h4>
+<p>Enables password visibility toggle buttons.</p>
+<p><strong>Markup:</strong></p>
+<pre><code class="language-html">&lt;input type="password" id="pwd"&gt;
+&lt;button type="button" class="toggle-password"&gt;
+  &lt;i class="fa fa-eye"&gt;&lt;/i&gt;
+&lt;/button&gt;</code></pre>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Toggles between <code>type="password"</code> and <code>type="text"</code></li>
+<li>Adds <code>.showing</code> class for icon swapping</li>
+<li>Updates <code>aria-label</code></li>
+</ul>
+<hr />
+<h3>Toast Notifications</h3>
+<h4><code>Lightpack.showToast(options)</code></h4>
+<p>Displays a toast notification.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>options</code> (Object):<ul>
+<li><code>message</code> (string) - Toast content</li>
+<li><code>type</code> (string) - <code>'success'</code>, <code>'danger'</code>, <code>'warning'</code>, <code>'info'</code> (optional)</li>
+<li><code>sticky</code> (boolean) - If true, doesn't auto-dismiss (optional, default: false)</li>
+<li><code>position</code> (string) - <code>'bottom-right'</code>, <code>'bottom-left'</code>, <code>'top-right'</code>, <code>'top-left'</code> (optional, default: 'bottom-right')</li>
+</ul>
+</li>
+</ul>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-javascript">// Simple toast
+Lightpack.showToast({
+  message: 'Operation successful!',
+  type: 'success'
+});
+
+// Sticky toast (manual close only)
+Lightpack.showToast({
+  message: 'Important notice',
+  type: 'warning',
+  sticky: true,
+  position: 'top-right'
+});</code></pre>
+<h4><code>Lightpack.removeToast(id, position)</code></h4>
+<p>Manually removes a toast by ID.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>id</code> (number) - Toast ID</li>
+<li><code>position</code> (string) - Toast position</li>
+</ul>
+<hr />
+<h3>Theme Management</h3>
+<h4><code>Lightpack.setTheme(theme)</code></h4>
+<p>Sets the application theme.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>theme</code> (string) - <code>'theme-dark'</code> or <code>''</code> (light)</li>
+</ul>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-javascript">// Enable dark mode
+Lightpack.setTheme('theme-dark');
+
+// Enable light mode
+Lightpack.setTheme('');</code></pre>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Adds/removes <code>.theme-dark</code> class on <code>&lt;body&gt;</code></li>
+<li>Persists preference in <code>localStorage</code></li>
+</ul>
+<hr />
+<h4><code>Lightpack.toggleTheme()</code></h4>
+<p>Toggles between light and dark themes.</p>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-javascript">// Toggle theme
+Lightpack.toggleTheme();</code></pre>
+<pre><code class="language-html">&lt;button onclick="Lightpack.toggleTheme()"&gt;Toggle Theme&lt;/button&gt;</code></pre>
+<hr />
+<h4><code>Lightpack.initTheme()</code></h4>
+<p>Initializes theme from localStorage on page load.</p>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-javascript">// Automatically called by initAll()
+// Or call manually:
+Lightpack.initTheme();</code></pre>
+<hr />
+<h3>Utility Functions</h3>
+<h4><code>Lightpack.toggleClasses(targetSelector, classNames)</code></h4>
+<p>Toggles one or more classes on target elements.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>targetSelector</code> (string) - CSS selector for target element(s)</li>
+<li><code>classNames</code> (string|array) - Class name(s) to toggle</li>
+</ul>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-javascript">// Toggle single class
+Lightpack.toggleClasses('.sidebar', 'open');
+
+// Toggle multiple classes
+Lightpack.toggleClasses('.menu', ['active', 'visible']);
+
+// Toggle on multiple elements
+Lightpack.toggleClasses('.item', 'selected');</code></pre>
+<hr />
+<h4><code>Lightpack.generateToc(targetSelector, options)</code></h4>
+<p>Generates a table of contents from page headings.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>targetSelector</code> (string) - CSS selector for ToC container</li>
+<li><code>options</code> (Object):<ul>
+<li><code>levels</code> (array|string) - Heading levels to include (default: <code>[2,3,4,5,6]</code>)</li>
+<li><code>scrollOffset</code> (number) - Offset for fixed headers in pixels (default: <code>0</code>)</li>
+<li><code>activeClass</code> (string) - Class for active section link (default: <code>'toc-active'</code>)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-javascript">// Basic usage
+Lightpack.generateToc('.toc');
+
+// Custom options
+Lightpack.generateToc('.toc', {
+  levels: [2, 3],           // Only h2 and h3
+  scrollOffset: 64,         // 64px offset for fixed header
+  activeClass: 'toc-active' // Custom active class
+});
+
+// String format for levels
+Lightpack.generateToc('.toc', {
+  levels: 'h2,h3,h4'
+});</code></pre>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Auto-generates IDs for headings without them</li>
+<li>Nested list structure</li>
+<li>Smooth scrolling</li>
+<li>Active section highlighting</li>
+<li>Respects scroll offset</li>
+</ul>
+<p><strong>Markup:</strong></p>
+<pre><code class="language-html">&lt;nav class="toc"&gt;&lt;/nav&gt;
+
+&lt;script&gt;
+  Lightpack.generateToc('.toc', {
+    levels: [2, 3],
+    scrollOffset: 64
+  });
+&lt;/script&gt;</code></pre>
+<hr />
+<h2>Complete Example</h2>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Lightpack JS Example&lt;/title&gt;
+  &lt;link rel="stylesheet" href="lightpack.min.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Components auto-initialize --&gt;
+  &lt;button data-modal-open="demo"&gt;Open Modal&lt;/button&gt;
+  &lt;button onclick="Lightpack.showToast({ message: 'Hello!', type: 'success' })"&gt;
+    Show Toast
+  &lt;/button&gt;
+  &lt;button onclick="Lightpack.toggleTheme()"&gt;Toggle Theme&lt;/button&gt;
+
+  &lt;!-- Modal --&gt;
+  &lt;div class="modal-backdrop" data-modal="demo" style="display:none;"&gt;
+    &lt;div class="modal"&gt;
+      &lt;div class="modal-header"&gt;
+        &lt;h3 class="modal-title"&gt;Demo Modal&lt;/h3&gt;
+        &lt;button class="modal-close" data-modal-close&gt;&amp;times;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-body"&gt;Modal content here&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;script src="lightpack.min.js"&gt;&lt;/script&gt;
+  &lt;!-- Components auto-initialize on DOMContentLoaded --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<hr />
+<h2>Manual Initialization</h2>
+<p>If you dynamically add components after page load:</p>
+<pre><code class="language-javascript">// Add new content
+const container = document.querySelector('#dynamic-content');
+container.innerHTML = `
+  &lt;div class="tabs-group"&gt;
+    &lt;div class="tabs"&gt;
+      &lt;button class="tab tab-active"&gt;Tab 1&lt;/button&gt;
+      &lt;button class="tab"&gt;Tab 2&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div&gt;Content 1&lt;/div&gt;
+    &lt;div hidden&gt;Content 2&lt;/div&gt;
+  &lt;/div&gt;
+`;
+
+// Re-initialize within that container
+Lightpack.initTabs(container);</code></pre>
+<hr />
+<h2>Browser Support</h2>
+<ul>
+<li>✅ Modern browsers (Chrome, Firefox, Safari, Edge)</li>
+<li>✅ ES5+ JavaScript</li>
+<li>✅ No dependencies required</li>
+<li>✅ Works with or without build tools</li>
+</ul>
+<hr />
+<p><strong>See <code>/src/js/lightpack.js</code> for complete implementation.</strong></p>    </main>
+
+    <div class="sticky top-0 p-6 w-xs">
+      <nav class="toc d-none d-block-sm"></nav>
+    </div>
+  </div>
+  <!-- <script src="assets/toc.js"></script> -->
+  <script src="assets/html-highlighter.js"></script>
+  <script>
+    Lightpack.generateToc('.toc');
+  </script>
+</body>
+
+</html>

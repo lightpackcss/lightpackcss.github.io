@@ -288,6 +288,11 @@
                     Progress                  </a>
                 </li>
                               <li>
+                  <a href="reset.html"
+                    >
+                    Reset                  </a>
+                </li>
+                              <li>
                   <a href="spinner.html"
                     >
                     Spinner                  </a>
@@ -350,30 +355,75 @@
 <p>This file lists <strong>every available utility class</strong> in Lightpack CSS, grouped by category. All utilities are defined in <code>/src/css/_utilities.css</code>.</p>
 <hr />
 <h2>Spacing Utilities</h2>
+<h3>Gap Utilities</h3>
 <ul>
-<li><code>.gap-0</code> ... <code>.gap-9</code></li>
-<li><code>.gap-x-0</code> ... <code>.gap-x-9</code></li>
-<li><code>.gap-y-0</code> ... <code>.gap-y-9</code></li>
-<li><code>.m-0</code> ... <code>.m-9</code>, <code>.mt-0</code> ... <code>.mt-9</code>, <code>.mr-0</code> ... <code>.mr-9</code>, <code>.mb-0</code> ... <code>.mb-9</code>, <code>.ml-0</code> ... <code>.ml-9</code>, <code>.mx-auto</code></li>
-<li><code>.p-0</code> ... <code>.p-9</code>, <code>.pt-0</code> ... <code>.pt-9</code>, <code>.pr-0</code> ... <code>.pr-9</code>, <code>.pb-0</code> ... <code>.pb-9</code>, <code>.pl-0</code> ... <code>.pl-9</code></li>
-<li><code>.px-0</code> ... <code>.px-9</code>, <code>.py-0</code> ... <code>.py-9</code></li>
+<li><code>.gap-0</code> ... <code>.gap-9</code> - Gap on both axes</li>
+<li><code>.gap-x-0</code> ... <code>.gap-x-9</code> - Column gap only</li>
+<li><code>.gap-y-0</code> ... <code>.gap-y-9</code> - Row gap only</li>
+</ul>
+<h3>Margin Utilities</h3>
+<ul>
+<li><code>.m-0</code> ... <code>.m-9</code> - All sides</li>
+<li><code>.mt-0</code> ... <code>.mt-9</code> - Top</li>
+<li><code>.mr-0</code> ... <code>.mr-9</code> - Right</li>
+<li><code>.mb-0</code> ... <code>.mb-9</code> - Bottom</li>
+<li><code>.ml-0</code> ... <code>.ml-9</code> - Left</li>
+<li><code>.mx-0</code> ... <code>.mx-9</code> - Horizontal (left + right)</li>
+<li><code>.my-0</code> ... <code>.my-9</code> - Vertical (top + bottom)</li>
+<li><code>.mx-auto</code> - Horizontal auto margin (centering)</li>
+</ul>
+<h3>Padding Utilities</h3>
+<ul>
+<li><code>.p-0</code> ... <code>.p-9</code> - All sides</li>
+<li><code>.pt-0</code> ... <code>.pt-9</code> - Top</li>
+<li><code>.pr-0</code> ... <code>.pr-9</code> - Right</li>
+<li><code>.pb-0</code> ... <code>.pb-9</code> - Bottom</li>
+<li><code>.pl-0</code> ... <code>.pl-9</code> - Left</li>
+<li><code>.px-0</code> ... <code>.px-9</code> - Horizontal (left + right)</li>
+<li><code>.py-0</code> ... <code>.py-9</code> - Vertical (top + bottom)</li>
 </ul>
 <h2>Offset Utilities</h2>
 <ul>
 <li><code>.top-0</code> ... <code>.top-9</code>, <code>.right-0</code> ... <code>.right-9</code>, <code>.bottom-0</code> ... <code>.bottom-9</code>, <code>.left-0</code> ... <code>.left-9</code></li>
 </ul>
 <h2>Layout Utilities</h2>
+<h3>Display</h3>
 <ul>
 <li><code>.d-block</code>, <code>.d-inline</code>, <code>.d-inline-block</code>, <code>.d-none</code></li>
+<li>Responsive: <code>.d-block-sm/md/lg/xl</code>, <code>.d-inline-sm/md/lg/xl</code>, <code>.d-inline-block-sm/md/lg/xl</code>, <code>.d-none-sm/md/lg/xl</code></li>
+</ul>
+<h3>Visibility &amp; Position</h3>
+<ul>
 <li><code>.visibility-hidden</code>, <code>.visibility-visible</code></li>
 <li><code>.static</code>, <code>.relative</code>, <code>.absolute</code>, <code>.fixed</code>, <code>.sticky</code></li>
-<li><code>.overflow-auto</code>, <code>.overflow-scroll</code>, <code>.overflow-hidden</code>, <code>.overflow-x-auto</code>, <code>.overflow-x-scroll</code>, <code>.overflow-x-hidden</code>, <code>.overflow-y-auto</code>, <code>.overflow-y-scroll</code>, <code>.overflow-y-hidden</code></li>
+</ul>
+<h3>Overflow</h3>
+<ul>
+<li><code>.overflow-auto</code>, <code>.overflow-scroll</code>, <code>.overflow-hidden</code></li>
+<li><code>.overflow-x-auto</code>, <code>.overflow-x-scroll</code>, <code>.overflow-x-hidden</code></li>
+<li><code>.overflow-y-auto</code>, <code>.overflow-y-scroll</code>, <code>.overflow-y-hidden</code></li>
 <li><code>.scroll-smooth</code></li>
-<li><code>.flex</code>, <code>.inline-flex</code>, <code>.flex-row</code>, <code>.flex-row-reverse</code>, <code>.flex-col</code>, <code>.flex-col-reverse</code>, <code>.flex-wrap</code>, <code>.flex-nowrap</code>, <code>.flex-wrap-reverse</code>, <code>.flex-1</code>, <code>.flex-auto</code>, <code>.flex-initial</code>, <code>.flex-none</code>, <code>.grow</code>, <code>.grow-0</code>, <code>.shrink</code>, <code>.shrink-0</code></li>
-<li><code>.justify-start</code>, <code>.justify-center</code>, <code>.justify-between</code>, <code>.justify-end</code>, <code>.justify-around</code>, <code>.justify-evenly</code></li>
-<li><code>.items-start</code>, <code>.items-center</code>, <code>.items-end</code>, <code>.items-baseline</code>, <code>.items-stretch</code></li>
-<li><code>.content-start</code>, <code>.content-center</code>, <code>.content-end</code>, <code>.content-between</code>, <code>.content-around</code>, <code>.content-evenly</code></li>
-<li><code>.self-auto</code>, <code>.self-start</code>, <code>.self-center</code>, <code>.self-end</code>, <code>.self-stretch</code>, <code>.self-baseline</code></li>
+</ul>
+<h3>Flexbox</h3>
+<ul>
+<li><code>.flex</code>, <code>.inline-flex</code></li>
+<li><code>.flex-row</code>, <code>.flex-row-reverse</code>, <code>.flex-col</code>, <code>.flex-col-reverse</code></li>
+<li><code>.flex-wrap</code>, <code>.flex-nowrap</code>, <code>.flex-wrap-reverse</code></li>
+<li><code>.flex-1</code>, <code>.flex-auto</code>, <code>.flex-initial</code>, <code>.flex-none</code></li>
+<li><code>.grow</code>, <code>.grow-0</code>, <code>.shrink</code>, <code>.shrink-0</code></li>
+<li>Responsive: <code>.flex-sm/md/lg/xl</code>, <code>.flex-row-sm/md/lg/xl</code>, <code>.flex-col-sm/md/lg/xl</code>, <code>.flex-wrap-sm/md/lg/xl</code></li>
+</ul>
+<h3>Flexbox Alignment</h3>
+<ul>
+<li><strong>Justify Content:</strong> <code>.justify-start</code>, <code>.justify-center</code>, <code>.justify-between</code>, <code>.justify-end</code>, <code>.justify-around</code>, <code>.justify-evenly</code></li>
+<li><strong>Align Items:</strong> <code>.items-start</code>, <code>.items-center</code>, <code>.items-end</code>, <code>.items-baseline</code>, <code>.items-stretch</code></li>
+<li><strong>Align Content:</strong> <code>.content-start</code>, <code>.content-center</code>, <code>.content-end</code>, <code>.content-between</code>, <code>.content-around</code>, <code>.content-evenly</code></li>
+<li><strong>Align Self:</strong> <code>.self-auto</code>, <code>.self-start</code>, <code>.self-center</code>, <code>.self-end</code>, <code>.self-stretch</code>, <code>.self-baseline</code></li>
+<li>Responsive: <code>.items-center-sm/md/lg/xl</code>, <code>.justify-center-sm/md/lg/xl</code>, etc.</li>
+</ul>
+<h3>Centering Utility</h3>
+<ul>
+<li><code>.center-content</code> - Flexbox centering (both axes)</li>
 </ul>
 <h2>Content Utilities</h2>
 <ul>
@@ -403,20 +453,100 @@
 <li><code>.grid-rows-min</code>, <code>.grid-rows-max</code>, <code>.grid-rows-auto</code>, <code>.grid-cols-min</code>, <code>.grid-cols-max</code>, <code>.grid-cols-auto</code></li>
 </ul>
 <h2>Typography Utilities</h2>
+<h3>Font Sizes</h3>
 <ul>
-<li><code>.fs-xs</code>, <code>.fs-sm</code>, <code>.fs-base</code>, <code>.fs-lg</code>, <code>.fs-xl</code>, <code>.fs-2xl</code>, <code>.fs-3xl</code></li>
-<li><code>.fw-100</code>, <code>.fw-200</code>, <code>.fw-300</code>, <code>.fw-400</code>, <code>.fw-500</code>, <code>.fw-600</code>, <code>.fw-700</code></li>
+<li><code>.fs-xs</code>, <code>.fs-sm</code>, <code>.fs-base</code>, <code>.fs-md</code>, <code>.fs-lg</code>, <code>.fs-xl</code>, <code>.fs-2xl</code>, <code>.fs-3xl</code>, <code>.fs-4xl</code>, <code>.fs-5xl</code></li>
+</ul>
+<h3>Font Weights</h3>
+<ul>
+<li><code>.fw-100</code>, <code>.fw-200</code>, <code>.fw-300</code>, <code>.fw-400</code>, <code>.fw-500</code>, <code>.fw-600</code>, <code>.fw-700</code>, <code>.fw-800</code>, <code>.fw-900</code></li>
+</ul>
+<h3>Text Alignment</h3>
+<ul>
 <li><code>.text-left</code>, <code>.text-center</code>, <code>.text-right</code>, <code>.text-justify</code></li>
+<li>Responsive: <code>.text-left-sm/md/lg/xl</code>, <code>.text-center-sm/md/lg/xl</code>, <code>.text-right-sm/md/lg/xl</code>, <code>.text-justify-sm/md/lg/xl</code></li>
+</ul>
+<h3>Line Height</h3>
+<ul>
 <li><code>.lh-base</code></li>
 </ul>
-<h2>Color Utilities</h2>
+<h3>Vertical Alignment</h3>
 <ul>
-<li><code>.bg-[color]</code>, <code>.text-[color]</code> for every color in variables</li>
-<li><code>.bg-muted</code>, <code>.text-muted</code>, <code>.bg-white</code>, <code>.bg-black</code>, etc.</li>
+<li><code>.align-baseline</code>, <code>.align-top</code>, <code>.align-middle</code>, <code>.align-bottom</code>, <code>.align-text-top</code>, <code>.align-text-bottom</code></li>
+</ul>
+<h2>Color Utilities</h2>
+<h3>Natural Color Backgrounds</h3>
+<ul>
+<li><code>.bg-red</code>, <code>.bg-red-light</code>, <code>.bg-red-dark</code></li>
+<li><code>.bg-pink</code>, <code>.bg-pink-light</code>, <code>.bg-pink-dark</code></li>
+<li><code>.bg-orange</code>, <code>.bg-orange-light</code>, <code>.bg-orange-dark</code></li>
+<li><code>.bg-yellow</code>, <code>.bg-yellow-light</code>, <code>.bg-yellow-dark</code></li>
+<li><code>.bg-green</code>, <code>.bg-green-light</code>, <code>.bg-green-dark</code></li>
+<li><code>.bg-teal</code>, <code>.bg-teal-light</code>, <code>.bg-teal-dark</code></li>
+<li><code>.bg-blue</code>, <code>.bg-blue-light</code>, <code>.bg-blue-dark</code></li>
+<li><code>.bg-indigo</code>, <code>.bg-indigo-light</code>, <code>.bg-indigo-dark</code></li>
+<li><code>.bg-purple</code>, <code>.bg-purple-light</code>, <code>.bg-purple-dark</code></li>
+<li><code>.bg-brown</code>, <code>.bg-brown-light</code>, <code>.bg-brown-dark</code></li>
+<li><code>.bg-gray</code>, <code>.bg-gray-light</code>, <code>.bg-gray-dark</code></li>
+<li><code>.bg-black</code>, <code>.bg-black-light</code>, <code>.bg-black-dark</code></li>
+<li><code>.bg-white</code>, <code>.bg-white-light</code></li>
+<li><code>.bg-muted</code></li>
+</ul>
+<h3>Semantic Color Backgrounds</h3>
+<ul>
+<li><code>.bg-primary</code>, <code>.bg-primary-light</code>, <code>.bg-primary-lighter</code>, <code>.bg-primary-dark</code></li>
+<li><code>.bg-secondary</code>, <code>.bg-secondary-light</code>, <code>.bg-secondary-lighter</code>, <code>.bg-secondary-dark</code></li>
+<li><code>.bg-success</code>, <code>.bg-success-light</code>, <code>.bg-success-lighter</code>, <code>.bg-success-dark</code></li>
+<li><code>.bg-warning</code>, <code>.bg-warning-light</code>, <code>.bg-warning-lighter</code>, <code>.bg-warning-dark</code></li>
+<li><code>.bg-danger</code>, <code>.bg-danger-light</code>, <code>.bg-danger-lighter</code>, <code>.bg-danger-dark</code></li>
+<li><code>.bg-info</code>, <code>.bg-info-light</code>, <code>.bg-info-lighter</code>, <code>.bg-info-dark</code></li>
+<li><code>.bg-accent</code>, <code>.bg-accent-light</code>, <code>.bg-accent-lighter</code>, <code>.bg-accent-dark</code></li>
+<li><code>.bg-background</code>, <code>.bg-surface</code>, <code>.bg-surface-dark</code>, <code>.bg-surface-alt</code>, <code>.bg-border</code>, <code>.bg-border-dark</code></li>
+</ul>
+<h3>Natural Color Text</h3>
+<ul>
+<li><code>.text-red</code>, <code>.text-red-light</code>, <code>.text-red-dark</code></li>
+<li><code>.text-pink</code>, <code>.text-pink-light</code>, <code>.text-pink-dark</code></li>
+<li><code>.text-orange</code>, <code>.text-orange-light</code>, <code>.text-orange-dark</code></li>
+<li><code>.text-yellow</code>, <code>.text-yellow-light</code>, <code>.text-yellow-dark</code></li>
+<li><code>.text-green</code>, <code>.text-green-light</code>, <code>.text-green-dark</code></li>
+<li><code>.text-teal</code>, <code>.text-teal-light</code>, <code>.text-teal-dark</code></li>
+<li><code>.text-blue</code>, <code>.text-blue-light</code>, <code>.text-blue-dark</code></li>
+<li><code>.text-indigo</code>, <code>.text-indigo-light</code>, <code>.text-indigo-dark</code></li>
+<li><code>.text-purple</code>, <code>.text-purple-light</code>, <code>.text-purple-dark</code></li>
+<li><code>.text-brown</code>, <code>.text-brown-light</code>, <code>.text-brown-dark</code></li>
+<li><code>.text-gray</code>, <code>.text-gray-light</code>, <code>.text-gray-dark</code></li>
+<li><code>.text-black</code>, <code>.text-black-light</code>, <code>.text-black-dark</code></li>
+<li><code>.text-white</code></li>
+</ul>
+<h3>Semantic Color Text</h3>
+<ul>
+<li><code>.text-primary</code>, <code>.text-primary-light</code>, <code>.text-primary-lighter</code>, <code>.text-primary-dark</code></li>
+<li><code>.text-secondary</code>, <code>.text-secondary-light</code>, <code>.text-secondary-lighter</code>, <code>.text-secondary-dark</code></li>
+<li><code>.text-success</code>, <code>.text-success-light</code>, <code>.text-success-lighter</code>, <code>.text-success-dark</code></li>
+<li><code>.text-warning</code>, <code>.text-warning-light</code>, <code>.text-warning-lighter</code>, <code>.text-warning-dark</code></li>
+<li><code>.text-danger</code>, <code>.text-danger-light</code>, <code>.text-danger-lighter</code>, <code>.text-danger-dark</code></li>
+<li><code>.text-info</code>, <code>.text-info-light</code>, <code>.text-info-lighter</code>, <code>.text-info-dark</code></li>
+<li><code>.text-accent</code>, <code>.text-accent-light</code>, <code>.text-accent-lighter</code>, <code>.text-accent-dark</code></li>
+<li><code>.text</code>, <code>.text-muted</code>, <code>.text-inverse</code></li>
 </ul>
 <h2>Border Utilities</h2>
+<h3>Border Sides</h3>
 <ul>
-<li><code>.border</code>, <code>.border-red</code>, <code>.border-green</code>, <code>.border-blue</code>, <code>.border-gray</code>, <code>.border-black</code>, <code>.border-white</code></li>
+<li><code>.border</code> - All sides</li>
+<li><code>.border-0</code> - No border</li>
+<li><code>.border-top</code>, <code>.border-right</code>, <code>.border-bottom</code>, <code>.border-left</code></li>
+<li><code>.border-x</code> - Left + right</li>
+<li><code>.border-y</code> - Top + bottom</li>
+<li><code>.border-top-0</code>, <code>.border-right-0</code>, <code>.border-bottom-0</code>, <code>.border-left-0</code></li>
+<li><code>.border-x-0</code>, <code>.border-y-0</code></li>
+</ul>
+<h3>Border Colors</h3>
+<ul>
+<li><code>.border-red</code>, <code>.border-green</code>, <code>.border-blue</code>, <code>.border-indigo</code>, <code>.border-gray</code>, <code>.border-black</code>, <code>.border-white</code></li>
+</ul>
+<h3>Border Radius</h3>
+<ul>
 <li><code>.radius-sm</code>, <code>.radius-md</code>, <code>.radius-lg</code></li>
 </ul>
 <h2>Shadow Utilities</h2>
@@ -424,11 +554,21 @@
 <li><code>.shadow-sm</code>, <code>.shadow-md</code>, <code>.shadow-lg</code></li>
 </ul>
 <h2>Width/Height Utilities</h2>
+<h3>Width</h3>
 <ul>
-<li><code>.w-100</code>, <code>.w-xs</code>, <code>.w-sm</code>, <code>.w-md</code>, <code>.w-lg</code></li>
-<li><code>.min-w-xs</code>, <code>.min-w-sm</code>, <code>.min-w-md</code>, <code>.min-w-lg</code></li>
-<li><code>.max-w-xs</code>, <code>.max-w-sm</code>, <code>.max-w-md</code>, <code>.max-w-lg</code></li>
-<li><code>.h-100</code>, <code>.h-100vh</code>, <code>.min-h-100vh</code>, <code>.max-h-50</code>, <code>.max-h-75</code></li>
+<li><code>.w-1</code> ... <code>.w-9</code> - Fixed widths using gap scale</li>
+<li><code>.w-100</code> - 100% width</li>
+<li><code>.w-xs</code>, <code>.w-sm</code>, <code>.w-md</code>, <code>.w-lg</code> - Container widths</li>
+<li><code>.min-w-xs</code>, <code>.min-w-sm</code>, <code>.min-w-md</code>, <code>.min-w-lg</code> - Min widths</li>
+<li><code>.max-w-xs</code>, <code>.max-w-sm</code>, <code>.max-w-md</code>, <code>.max-w-lg</code> - Max widths</li>
+</ul>
+<h3>Height</h3>
+<ul>
+<li><code>.h-1</code> ... <code>.h-9</code> - Fixed heights using gap scale</li>
+<li><code>.h-100</code> - 100% height</li>
+<li><code>.h-100vh</code> - 100vh height</li>
+<li><code>.min-h-100vh</code> - Min height 100vh</li>
+<li><code>.max-h-50</code>, <code>.max-h-75</code> - Max heights</li>
 </ul>
 <h2>Opacity Utilities</h2>
 <ul>

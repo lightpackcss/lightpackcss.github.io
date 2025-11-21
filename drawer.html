@@ -288,6 +288,11 @@
                     Progress                  </a>
                 </li>
                               <li>
+                  <a href="reset.html"
+                    >
+                    Reset                  </a>
+                </li>
+                              <li>
                   <a href="spinner.html"
                     >
                     Spinner                  </a>
@@ -362,10 +367,13 @@
   </div>
 </div>
 <p><strong>Usage:</strong></p>
-<pre><code class="language-html">&lt;button class="drawer-toggle"&gt;Left Drawer&lt;/button&gt;
-&lt;div class="drawer drawer-left" id="drawer"&gt;
+<pre><code class="language-html">&lt;button data-drawer-open="left-drawer"&gt;Open Left Drawer&lt;/button&gt;
+&lt;div class="drawer drawer-left" id="left-drawer"&gt;
   &lt;div class="drawer-backdrop"&gt;&lt;/div&gt;
-  &lt;div class="drawer-panel"&gt;Drawer content here&lt;/div&gt;
+  &lt;div class="drawer-panel"&gt;
+    &lt;button data-drawer-close&gt;Close&lt;/button&gt;
+    &lt;p&gt;Drawer content here&lt;/p&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 <p><strong>Example</strong></p>
 <div class="demo-container">
@@ -376,15 +384,24 @@
   </div>
 </div>
 <p><strong>Usage:</strong></p>
-<pre><code class="language-html">&lt;button class="drawer-toggle"&gt;Right Drawer&lt;/button&gt;
-&lt;div class="drawer drawer-right" id="drawer"&gt;
+<pre><code class="language-html">&lt;button data-drawer-open="right-drawer"&gt;Open Right Drawer&lt;/button&gt;
+&lt;div class="drawer" id="right-drawer"&gt;
   &lt;div class="drawer-backdrop"&gt;&lt;/div&gt;
-  &lt;div class="drawer-panel"&gt;Drawer content here&lt;/div&gt;
+  &lt;div class="drawer-panel"&gt;
+    &lt;button data-drawer-close&gt;Close&lt;/button&gt;
+    &lt;p&gt;Drawer content here&lt;/p&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 <p><strong>JS Interactivity:</strong></p>
 <ul>
-<li>Supports left and right drawers and triggers</li>
+<li>Use <code>data-drawer-open="drawerId"</code> on trigger buttons</li>
+<li>Use <code>data-drawer-close</code> on close buttons inside drawer</li>
+<li>Clicking backdrop or pressing ESC closes the drawer</li>
+<li>Default drawer slides from right; use <code>.drawer-left</code> for left side</li>
 </ul>
+<p><strong>JavaScript API:</strong></p>
+<pre><code class="language-javascript">// Drawers are initialized automatically via Lightpack.initDrawers()
+// Called on DOMContentLoaded by Lightpack.initAll()</code></pre>
 <hr />    </main>
 
     <div class="sticky top-0 p-6 w-xs">
